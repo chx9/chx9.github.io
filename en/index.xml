@@ -31,7 +31,7 @@
       <pubDate>Sat, 29 Jul 2023 11:06:20 +0800</pubDate>
       
       <guid>https://chx9.github.io/en/posts/cs/mysql/</guid>
-      <description>常见的MySQL优化方法 MySQL的性能优化是一个复杂的过程，需要从多个方面入手。以下是一些常见的MySQL优化方法： 优化查询语句：使用索引、避免全表扫描、避免使用不必要的子查询、避免使用SELECT * 优化数据库结构：避免使用大型的VARCHAR列、避免使用TEXT和BLOB类型</description>
+      <description>脏读，幻读，不可重复读解决了什么问题 脏读、幻读、可重复读是数据库中常见的隔离级别问题，它们分别解决了以下问题： 脏读（Dirty Read）：当一个事务读取到另一个事务未提交的数据时，就产生了脏读。脏读可能导致数据的不一致性，因为读取到的数据可能会随时被其他事务修改或回滚。解决脏读的</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Sat, 29 Jul 2023 11:04:35 +0800</pubDate>
       
       <guid>https://chx9.github.io/en/posts/cs/network/</guid>
-      <description>为什么TCP要三次握手？ 最主要原因就是防止「历史连接」初始化了连接。 三次握手才可以同步双方的初始序列号 为什么TCP要四次挥手 关闭连接时，客户端向服务端发送 FIN 时，仅仅表示客户端不再发送数据了但是还能接收数据。 服务端收到客户端的 FIN 报文时，先回一个 ACK 应答报文，而服务端可能还有数据需要处</description>
+      <description>三次握手过程 四次挥手过程 为什么 TCP 要三次握手？ 最主要原因就是防止「历史连接」初始化了连接。 三次握手才可以同步双方的初始序列号 为什么 TCP 要四次挥手 关闭连接时，客户端向服务端发送 FIN 时，仅仅表示客户端不再发送数据了但是还能接收数据。 服务端收到客户端的 FIN 报文时，先回一个 ACK 应答报文，而服务端可</description>
     </item>
     
     <item>
