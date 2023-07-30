@@ -13,7 +13,7 @@
       <pubDate>Sat, 29 Jul 2023 12:17:47 +0800</pubDate>
       
       <guid>https://chx9.github.io/en/posts/cs/cpp/</guid>
-      <description>多态介绍 定义：首先，可以解释一下什么是多态。多态（Polymorphism）是面向对象编程的一个重要特性，它允许我们使用父类的指针或引用来操作子类对象。这样，同一个函数或者操作符可以对不同类型的对象产生不同的行为。 两种形式：C++中的多态主要有两种形式：静态多态（或编译时多态）和</description>
+      <description>apple 多态介绍 定义：首先，可以解释一下什么是多态。多态（Polymorphism）是面向对象编程的一个重要特性，它允许我们使用父类的指针或引用来操作子类对象。这样，同一个函数或者操作符可以对不同类型的对象产生不同的行为。 两种形式：C++中的多态主要有两种形式：静态多态（或编译时多态）</description>
     </item>
     
   </channel>

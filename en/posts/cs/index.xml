@@ -13,7 +13,7 @@
       <pubDate>Sat, 29 Jul 2023 12:17:47 +0800</pubDate>
       
       <guid>https://chx9.github.io/en/posts/cs/cpp/</guid>
-      <description>多态介绍 定义：首先，可以解释一下什么是多态。多态（Polymorphism）是面向对象编程的一个重要特性，它允许我们使用父类的指针或引用来操作子类对象。这样，同一个函数或者操作符可以对不同类型的对象产生不同的行为。 两种形式：C++中的多态主要有两种形式：静态多态（或编译时多态）和</description>
+      <description>apple 多态介绍 定义：首先，可以解释一下什么是多态。多态（Polymorphism）是面向对象编程的一个重要特性，它允许我们使用父类的指针或引用来操作子类对象。这样，同一个函数或者操作符可以对不同类型的对象产生不同的行为。 两种形式：C++中的多态主要有两种形式：静态多态（或编译时多态）</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Sat, 29 Jul 2023 11:06:43 +0800</pubDate>
       
       <guid>https://chx9.github.io/en/posts/cs/webserver/</guid>
-      <description>1、采用IO复用技术Epoll和线程池实现多线程的Reactor高并发模型 什么是IO复用 IO多路复用是现代操作系统中常用的一种网络编程技术。它允许一个进程同时监听多个文件描述符，从而可以同时处理多个网络连接，而无需为每个连接使用一个单独的线程。 常用的IO多路复用的三种方式是sel</description>
+      <description>1、采用 IO 复用技术 Epoll 和线程池实现多线程的 Reactor 高并发模型 IO 复用 IO 多路复用是现代操作系统中常用的一种网络编程技术。它允许一个进程同时监听多个文件描述符，从而可以同时处理多个网络连接，而无需为每个连接使用一个单独的线程。 常用的 IO 多路复用的三种方式是 select、poll 和 epoll。它们</description>
     </item>
     
     <item>
