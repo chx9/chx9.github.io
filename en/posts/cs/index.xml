@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>💻 Programming Basics on chx9</title>
+    <link>https://chx9.github.io/en/posts/cs/</link>
+    <description>Recent content in 💻 Programming Basics on chx9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Jul 2023 12:17:47 +0800</lastBuildDate><atom:link href="https://chx9.github.io/en/posts/cs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://chx9.github.io/en/posts/cs/cpp/</link>
+      <pubDate>Sat, 29 Jul 2023 12:17:47 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/en/posts/cs/cpp/</guid>
+      <description>多态介绍 定义：首先，可以解释一下什么是多态。多态（Polymorphism）是面向对象编程的一个重要特性，它允许我们使用父类的指针或引用来操作子类对象。这样，同一个函数或者操作符可以对不同类型的对象产生不同的行为。 两种形式：C++中的多态主要有两种形式：静态多态（或编译时多态）和</description>
+    </item>
+    
+    <item>
+      <title>Webserver</title>
+      <link>https://chx9.github.io/en/posts/cs/webserver/</link>
+      <pubDate>Sat, 29 Jul 2023 11:06:43 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/en/posts/cs/webserver/</guid>
+      <description>1、采用IO复用技术Epoll和线程池实现多线程的Reactor高并发模型 什么是IO复用 IO多路复用是现代操作系统中常用的一种网络编程技术。它允许一个进程同时监听多个文件描述符，从而可以同时处理多个网络连接，而无需为每个连接使用一个单独的线程。 常用的IO多路复用的三种方式是sel</description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://chx9.github.io/en/posts/cs/mysql/</link>
+      <pubDate>Sat, 29 Jul 2023 11:06:20 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/en/posts/cs/mysql/</guid>
+      <description>常见的MySQL优化方法 MySQL的性能优化是一个复杂的过程，需要从多个方面入手。以下是一些常见的MySQL优化方法： 优化查询语句：使用索引、避免全表扫描、避免使用不必要的子查询、避免使用SELECT * 优化数据库结构：避免使用大型的VARCHAR列、避免使用TEXT和BLOB类型</description>
+    </item>
+    
+    <item>
+      <title>Operating System</title>
+      <link>https://chx9.github.io/en/posts/cs/os/</link>
+      <pubDate>Sat, 29 Jul 2023 11:05:53 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/en/posts/cs/os/</guid>
+      <description>进程和线程区别 1、进程是资源调度的基本单位，运行一个可执行程序会创建一个或多个进程，进程就是运行起来的可执行程序 2、线程是程序执行的基本单位，是轻量级的进程。每个进程中都有唯一的主线程，且只能有一个，主线程和进程是相互依存的关系，主线程结束进程也会结束。线程启动速度快，轻量级 进程</description>
+    </item>
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://chx9.github.io/en/posts/cs/leetcode/</link>
+      <pubDate>Sat, 29 Jul 2023 11:05:24 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/en/posts/cs/leetcode/</guid>
+      <description>141 环形链表 class Solution { public: bool hasCycle(ListNode *head) { auto fast = head; auto slow = head; while(fast &amp;amp;&amp;amp; fast-&amp;gt;next){ slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; if(slow == fast) return true; } return false; } }; 142 环形链表 https://leetcode.cn/problems/linked-list-cycle-ii/?favorite=2cktkvj 有一个链表，如果有环，返回环的入口处，没有则返回 方法一：哈希表 哈希表第一个重复的值，就是入口处 方法二：快慢指针 如果有环，快慢指针将会再某一点相遇，此时的慢指针和head与环入口点距离相等 class</description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://chx9.github.io/en/posts/cs/network/</link>
+      <pubDate>Sat, 29 Jul 2023 11:04:35 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/en/posts/cs/network/</guid>
+      <description>为什么TCP要三次握手？ 最主要原因就是防止「历史连接」初始化了连接。 三次握手才可以同步双方的初始序列号 为什么TCP要四次挥手 关闭连接时，客户端向服务端发送 FIN 时，仅仅表示客户端不再发送数据了但是还能接收数据。 服务端收到客户端的 FIN 报文时，先回一个 ACK 应答报文，而服务端可能还有数据需要处</description>
+    </item>
+    
+  </channel>
+</rss>
