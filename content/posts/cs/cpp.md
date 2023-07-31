@@ -30,6 +30,7 @@ cover:
 ---
 
 [apple](./apple.jpg)
+
 # 多态介绍
 
 1. 定义：首先，可以解释一下什么是多态。多态（Polymorphism）是面向对象编程的一个重要特性，它允许我们使用父类的指针或引用来操作子类对象。这样，同一个函数或者操作符可以对不同类型的对象产生不同的行为。
@@ -68,6 +69,72 @@ void print(const T& t) {
 这里的 print 函数是一个模板函数，它可以接受任何数据类型的参数。具体处理哪种数据类型的版本由你传入的参数类型在编译时决定。
 
 静态多态的优点是效率高，因为函数调用版本的选择发生在编译时，所以没有运行时开销。缺点是所有可能的版本必须在编译时都已知，这限制了代码的灵活性。
+
+# 除了多态和继承，面向对象的其他核心概念有：
+
+封装：隐藏内部实现，仅暴露必要接口。
+抽象：简化复杂系统，展示关键信息。
+组合：使用已有对象构建新对象。
+关联/聚合：表达类之间的关系。
+接口：定义行为规范。
+
+# size_of 是在编译期还是在运行期确定
+
+sizeof 是在编译期确定的。编译器知道每种数据类型的大小，因此能够在编译时计算出 sizeof 表达式的值。这也意味着 sizeof 可以用于数组的长度等编译期常量。对于动态分配的内存（如使用 malloc 或 new 创建的），sizeof 只能返回指针本身的大小，而不是它所指向的内存块的大小。
+
+# 写一个生产者消费者模型
+
+```c++
+#include <iostream>
+#include <queue>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+
+std::queue<int> produced_nums;
+std::mutex mtx;
+std::condition_variable cv;
+
+// 生产者函数
+void producer(int id)
+{
+    for (int i = 0; ; i++) {
+        {
+            std::unique_lock<std::mutex> lock(mtx);
+            std::cout << "producing " << i << '\n';
+            produced_nums.push(i);
+        }
+        cv.notify_all();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100)); # 这句代码使当前线程暂停执行指定的时间，这里是100毫秒。用于模拟生产者生产数据所需的时间，防止过快地生产数据。
+    }
+}
+
+// 消费者函数
+void consumer(int id)
+{
+    while (true) {
+        std::unique_lock<std::mutex> lock(mtx);
+        while (produced_nums.empty()) {
+            cv.wait(lock);
+        }
+
+        std::cout << "consuming " << produced_nums.front() << '\n';
+        produced_nums.pop();
+    }
+}
+
+int main()
+{
+    std::thread p1(producer, 0);
+    std::thread c1(consumer, 0);
+
+    p1.join();
+    c1.join();
+
+    return 0;
+}
+
+```
 
 # 单继承和菱形继承时候的虚函数表内存分布情况
 
