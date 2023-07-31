@@ -6,7 +6,16 @@
     <description>Recent content on chx9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Jul 2023 12:17:47 +0800</lastBuildDate><atom:link href="https://chx9.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 11:43:25 +0800</lastBuildDate><atom:link href="https://chx9.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://chx9.github.io/en/posts/cs/docker/</link>
+      <pubDate>Mon, 31 Jul 2023 11:43:25 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/en/posts/cs/docker/</guid>
+      <description>docker 面对对象 容器 :对象 镜像 :类 常用命令 docker run 每次都会新建一个 docker container，可以添加-it命令 docker run -d image: 在后台运行容器。 docker run -it image sh: 交互式地在前台运行容器（常用于调试）。 t: 在新容器内指定一个伪终端或终端。 i: 允许你对容器内的标准输入 (STDIN) 进行交互。 image后面的sh选项可以不填，默认会</description>
+    </item>
+    
     <item>
       <title>C&#43;&#43;</title>
       <link>https://chx9.github.io/en/posts/cs/cpp/</link>
