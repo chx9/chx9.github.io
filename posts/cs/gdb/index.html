@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Docker | chx9</title>
+<title>Gdb | chx9</title>
 <meta name="keywords" content="">
-<meta name="description" content="docker 面对对象 容器 :对象 镜像 :类 常用命令 docker run 每次都会新建一个 docker container，可以添加-it命令 docker run -d image: 在后台运行容器。 docker run -it image sh: 交互式地在前台运行容器（常用于调试）。 t: 在新容器内指定一个伪终端或终端。 i: 允许你对容器内的标准输入 (STDIN) 进行交互。 image后面的sh选项可以不填，默认会">
+<meta name="description" content="debug with args gdb --args">
 <meta name="author" content="chx9">
-<link rel="canonical" href="https://chx9.github.io/posts/cs/docker/">
+<link rel="canonical" href="https://chx9.github.io/posts/cs/gdb/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://chx9.github.io/img/svin.webp">
@@ -73,16 +73,16 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta property="og:title" content="Docker" />
-<meta property="og:description" content="docker 面对对象 容器 :对象 镜像 :类 常用命令 docker run 每次都会新建一个 docker container，可以添加-it命令 docker run -d image: 在后台运行容器。 docker run -it image sh: 交互式地在前台运行容器（常用于调试）。 t: 在新容器内指定一个伪终端或终端。 i: 允许你对容器内的标准输入 (STDIN) 进行交互。 image后面的sh选项可以不填，默认会" />
+<meta property="og:title" content="Gdb" />
+<meta property="og:description" content="debug with args gdb --args" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chx9.github.io/posts/cs/docker/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-07-31T11:43:25+08:00" />
-<meta property="article:modified_time" content="2023-07-31T11:43:25+08:00" />
+<meta property="og:url" content="https://chx9.github.io/posts/cs/gdb/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-31T17:38:25+08:00" />
+<meta property="article:modified_time" content="2023-07-31T17:38:25+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Docker"/>
-<meta name="twitter:description" content="docker 面对对象 容器 :对象 镜像 :类 常用命令 docker run 每次都会新建一个 docker container，可以添加-it命令 docker run -d image: 在后台运行容器。 docker run -it image sh: 交互式地在前台运行容器（常用于调试）。 t: 在新容器内指定一个伪终端或终端。 i: 允许你对容器内的标准输入 (STDIN) 进行交互。 image后面的sh选项可以不填，默认会"/>
+<meta name="twitter:title" content="Gdb"/>
+<meta name="twitter:description" content="debug with args gdb --args"/>
 
 
 <script type="application/ld+json">
@@ -107,8 +107,8 @@ var _hmt = _hmt || [];
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "Docker",
-      "item": "https://chx9.github.io/posts/cs/docker/"
+      "name": "Gdb",
+      "item": "https://chx9.github.io/posts/cs/gdb/"
     }
   ]
 }
@@ -117,24 +117,24 @@ var _hmt = _hmt || [];
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Docker",
-  "name": "Docker",
-  "description": "docker 面对对象 容器 :对象 镜像 :类 常用命令 docker run 每次都会新建一个 docker container，可以添加-it命令 docker run -d image: 在后台运行容器。 docker run -it image sh: 交互式地在前台运行容器（常用于调试）。 t: 在新容器内指定一个伪终端或终端。 i: 允许你对容器内的标准输入 (STDIN) 进行交互。 image后面的sh选项可以不填，默认会",
+  "headline": "Gdb",
+  "name": "Gdb",
+  "description": "debug with args gdb --args",
   "keywords": [
     ""
   ],
-  "articleBody": "docker 面对对象 容器 :对象\n镜像 :类\n常用命令 docker run 每次都会新建一个 docker container，可以添加-it命令\ndocker run -d image: 在后台运行容器。\ndocker run -it image sh: 交互式地在前台运行容器（常用于调试）。\nt: 在新容器内指定一个伪终端或终端。 i: 允许你对容器内的标准输入 (STDIN) 进行交互。 image后面的sh选项可以不填，默认会启动镜像内的CMD或ENTRYPOINT指定的程序。但是如果这些程序不是交互式Shell，那么你将无法得到一个终端 docker run -p 80:80 image: 映射80端口到主机上的80端口。docker run --rm image: 容器结束后自动删除。\ndocker run -v /host/dir:/container/dir image: 挂载主机目录到容器中。\ndocker run --rm -it prakhar1989/static-site 如果已经存在，直接把旧的删除\ndocker run -d -P --name static-site prakhar1989/static-site -\n-d选项会使你的终端脱离，此命令将在后台运行容器。 -P选项将发布所有暴露的端口到随机端口。 --name对应我们想要给定的名称。 可以通过运行docker port [CONTAINER]命令来查看端口 docker rm 删除一个或者多个 container\ndocker rm 305297d7a235 ff0a5c3750b9\n删除所有状态为已退出(status=exited)的 Docker容器\ndocker rm $(docker ps -a -q -f status=exited)\n删除所有停止的容器:\ndocker container prune\n删除所有容器(无论是否运行):\ndocker rm $(docker ps -a -q)\n删除创建状态的容器:\ndocker rm $(docker ps -a -q -f status=created)\n删除所有未使用的数据(不只是容器):\ndocker system prune\n强制删除正在运行的容器:\ndocker rm -f $(docker ps -a -q)\ndocker ps 列出所有容器:\ndocker ps -a\n列出正在运行的容器:\ndocker ps\n列出最近创建的容器:\ndocker ps -l\n列出特定状态的容器, 如已退出(exited):\ndocker ps -a -f status=exited\n列出最近停止的n个容器:\ndocker ps -n\n以特定格式显示容器信息:\ndocker ps --format \"{{.ID}}: {{.Status}}\"\ndocker start docker start变种：\ndocker start container_id: 启动一个已经停止的容器。 docker start -a container_id: 启动容器并附着到其stdout/stderr和可选地stdin（与正在运行的容器一起使用）。 只显示输出 docker start -i container_id: 启动容器并附加（attach）TTY。 docker attach变种：\ndocker attach container_id: 附着到运行中的容器以查看其输出或与其交互。 docker attach --sig-proxy=true container_id: 代理所有接收的信号到进程 (默认为true)。 docker attach --no-stdin container_id: 不附加STDIN。 ",
-  "wordCount" : "797",
+  "articleBody": "debug with args gdb --args\n",
+  "wordCount" : "5",
   "inLanguage": "en",
-  "datePublished": "2023-07-31T11:43:25+08:00",
-  "dateModified": "2023-07-31T11:43:25+08:00",
+  "datePublished": "2023-07-31T17:38:25+08:00",
+  "dateModified": "2023-07-31T17:38:25+08:00",
   "author":[{
     "@type": "Person",
     "name": "chx9"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://chx9.github.io/posts/cs/docker/"
+    "@id": "https://chx9.github.io/posts/cs/gdb/"
   },
   "publisher": {
     "@type": "Organization",
@@ -243,7 +243,7 @@ var _hmt = _hmt || [];
         <header class="post-header">
             <div class="breadcrumbs"><a href="https://chx9.github.io/">🏠 主页</a>&nbsp;»&nbsp;<a href="https://chx9.github.io/posts/">📚Articles</a>&nbsp;»&nbsp;<a href="https://chx9.github.io/posts/cs/">💻 Programming Basics</a></div>
             <h1 class="post-title">
-                Docker
+                Gdb
             </h1>
             <div class="post-meta">
 
@@ -277,13 +277,13 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>797字
+        <span>5字
             &nbsp;&nbsp;
         </span>
     </span>
     <span id="post_meta_style_4">
         <span class="fa fa-clock-o"></span>
-        <span>2分钟
+        <span>1分钟
             &nbsp;&nbsp;
         </span>
     </span>
@@ -358,21 +358,8 @@ var _hmt = _hmt || [];
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#docker-%e9%9d%a2%e5%af%b9%e5%af%b9%e8%b1%a1" aria-label="docker 面对对象">docker 面对对象</a></li>
-                <li>
-                    <a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" aria-label="常用命令">常用命令</a><ul>
-                        
-                <li>
-                    <a href="#docker-run" aria-label="docker run">docker run</a></li>
-                <li>
-                    <a href="#docker-rm" aria-label="docker rm">docker rm</a></li>
-                <li>
-                    <a href="#docker-ps" aria-label="docker ps">docker ps</a></li>
-                <li>
-                    <a href="#docker-start" aria-label="docker start">docker start</a>
+                    <a href="#debug-with-args" aria-label="debug with args">debug with args</a>
                 </li>
-            </ul>
-            </li>
             </ul>
         </div>
         </details>
@@ -438,70 +425,8 @@ var _hmt = _hmt || [];
         return rect.top + win.pageYOffset;
     }
 </script>
-        <div class="post-content"><h1 id="docker-面对对象">docker 面对对象<a hidden class="anchor" aria-hidden="true" href="#docker-面对对象">#</a></h1>
-<p>容器 :对象</p>
-<p>镜像 :类</p>
-<h1 id="常用命令">常用命令<a hidden class="anchor" aria-hidden="true" href="#常用命令">#</a></h1>
-<h2 id="docker-run">docker run<a hidden class="anchor" aria-hidden="true" href="#docker-run">#</a></h2>
-<p>每次都会新建一个 docker container，可以添加<code>-it</code>命令</p>
-<p><code>docker run -d image</code>: 在后台运行容器。</p>
-<p><code>docker run -it image sh</code>: 交互式地在前台运行容器（常用于调试）。</p>
-<ul>
-<li><code>t</code>: 在新容器内指定一个伪终端或终端。</li>
-<li><code>i</code>: 允许你对容器内的标准输入 (STDIN) 进行交互。</li>
-<li><code>image</code>后面的<code>sh</code>选项可以不填，默认会启动镜像内的<code>CMD</code>或<code>ENTRYPOINT</code>指定的程序。但是如果这些程序不是交互式Shell，那么你将无法得到一个终端</li>
-</ul>
-<p><code>docker run -p 80:80 image</code>: 映射80端口到主机上的80端口。<code>docker run --rm image</code>: 容器结束后自动删除。</p>
-<p><code>docker run -v /host/dir:/container/dir image</code>: 挂载主机目录到容器中。</p>
-<p><code>docker run --rm -it prakhar1989/static-site</code> 如果已经存在，直接把旧的删除</p>
-<p><code>docker run -d -P --name static-site prakhar1989/static-site</code>  -</p>
-<ol>
-<li><code>-d</code>选项会使你的终端脱离，此命令将在后台运行容器。</li>
-<li><code>-P</code>选项将发布所有暴露的端口到随机端口。</li>
-<li><code>--name</code>对应我们想要给定的名称。</li>
-<li>可以通过运行<code>docker port [CONTAINER]</code>命令来查看端口</li>
-</ol>
-<h2 id="docker-rm">docker rm<a hidden class="anchor" aria-hidden="true" href="#docker-rm">#</a></h2>
-<p>删除一个或者多个 container</p>
-<p><code>docker rm 305297d7a235 ff0a5c3750b9</code></p>
-<p>删除所有状态为已退出(status=exited)的 Docker容器</p>
-<p><code>docker rm $(docker ps -a -q -f status=exited)</code></p>
-<p>删除所有停止的容器:</p>
-<p><code>docker container prune</code></p>
-<p>删除所有容器(无论是否运行):</p>
-<p><code>docker rm $(docker ps -a -q)</code></p>
-<p>删除创建状态的容器:</p>
-<p><code>docker rm $(docker ps -a -q -f status=created)</code></p>
-<p>删除所有未使用的数据(不只是容器):</p>
-<p><code>docker system prune</code></p>
-<p>强制删除正在运行的容器:</p>
-<p><code>docker rm -f $(docker ps -a -q)</code></p>
-<h2 id="docker-ps">docker ps<a hidden class="anchor" aria-hidden="true" href="#docker-ps">#</a></h2>
-<p>列出所有容器:</p>
-<p><code>docker ps -a</code></p>
-<p>列出正在运行的容器:</p>
-<p><code>docker ps</code></p>
-<p>列出最近创建的容器:</p>
-<p><code>docker ps -l</code></p>
-<p>列出特定状态的容器, 如已退出(exited):</p>
-<p><code>docker ps -a -f status=exited</code></p>
-<p>列出最近停止的n个容器:</p>
-<p><code>docker ps -n</code></p>
-<p>以特定格式显示容器信息:</p>
-<p><code>docker ps --format &quot;{{.ID}}: {{.Status}}&quot;</code></p>
-<h2 id="docker-start">docker start<a hidden class="anchor" aria-hidden="true" href="#docker-start">#</a></h2>
-<p><strong>docker start变种：</strong></p>
-<ol>
-<li><code>docker start container_id</code>: 启动一个已经停止的容器。</li>
-<li><code>docker start -a container_id</code>: 启动容器并附着到其stdout/stderr和可选地stdin（与正在运行的容器一起使用）。 只显示输出</li>
-<li><code>docker start -i container_id</code>: 启动容器并附加（attach）TTY。</li>
-</ol>
-<p><strong>docker attach变种：</strong></p>
-<ol>
-<li><code>docker attach container_id</code>: 附着到运行中的容器以查看其输出或与其交互。</li>
-<li><code>docker attach --sig-proxy=true container_id</code>: 代理所有接收的信号到进程 (默认为true)。</li>
-<li><code>docker attach --no-stdin container_id</code>: 不附加STDIN。</li>
-</ol>
+        <div class="post-content"><h1 id="debug-with-args">debug with args<a hidden class="anchor" aria-hidden="true" href="#debug-with-args">#</a></h1>
+<p><code>gdb --args</code></p>
 
 
         </div>
@@ -509,15 +434,10 @@ var _hmt = _hmt || [];
         <footer class="post-footer">
             
 <nav class="paginav">
-  <a class="prev" href="https://chx9.github.io/posts/cs/gdb/">
-    <span class="title">« 上一页</span>
-    <br>
-    <span>Gdb</span>
-  </a>
-  <a class="next" href="https://chx9.github.io/posts/cs/cpp/">
+  <a class="next" href="https://chx9.github.io/posts/cs/docker/">
     <span class="title">下一页 »</span>
     <br>
-    <span>C&#43;&#43;</span>
+    <span>Docker</span>
   </a>
 </nav>
 

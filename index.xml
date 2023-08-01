@@ -6,7 +6,16 @@
     <description>Recent content on chx9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Jul 2023 11:43:25 +0800</lastBuildDate><atom:link href="https://chx9.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 17:38:25 +0800</lastBuildDate><atom:link href="https://chx9.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gdb</title>
+      <link>https://chx9.github.io/posts/cs/gdb/</link>
+      <pubDate>Mon, 31 Jul 2023 17:38:25 +0800</pubDate>
+      
+      <guid>https://chx9.github.io/posts/cs/gdb/</guid>
+      <description>debug with args gdb --args</description>
+    </item>
+    
     <item>
       <title>Docker</title>
       <link>https://chx9.github.io/posts/cs/docker/</link>
