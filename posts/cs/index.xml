@@ -58,7 +58,7 @@
       <pubDate>Sat, 29 Jul 2023 11:05:24 +0800</pubDate>
       
       <guid>https://chx9.github.io/posts/cs/leetcode/</guid>
-      <description>141 环形链表 class Solution { public: bool hasCycle(ListNode *head) { auto fast = head; auto slow = head; while(fast &amp;amp;&amp;amp; fast-&amp;gt;next){ slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; if(slow == fast) return true; } return false; } }; 142 环形链表 https://leetcode.cn/problems/linked-list-cycle-ii/?favorite=2cktkvj 有一个链表，如果有环，返回环的入口处，没有则返回 方法一：哈希表 哈希表第一个重复的值，就是入口处 方法二：快慢指针 如果有环，快慢指针将会再某一点相遇，此时的慢指针和head与环入口点距离相等 class</description>
+      <description>141 环形链表 class Solution { public: bool hasCycle(ListNode *head) { auto fast = head; auto slow = head; while(fast &amp;amp;&amp;amp; fast-&amp;gt;next){ slow = slow-&amp;gt;next; fast = fast-&amp;gt;next-&amp;gt;next; if(slow == fast) return true; } return false; } }; 142 环形链表 https://leetcode.cn/problems/linked-list-cycle-ii/?favorite=2cktkvj 有一个链表，如果有环，返回环的入口处，没有则返回 方法一：哈希表 哈希表第一个重复的值，就是入口处 方法二：快慢指针 如果有环，快慢指针将会再某一点相遇，此时的慢指针和 head 与环入口点距离相等 class Solution { public:</description>
     </item>
     
     <item>
