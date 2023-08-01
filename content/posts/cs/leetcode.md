@@ -3,12 +3,12 @@ title: "Leetcode"
 date: 2023-07-29T11:05:24+08:00
 lastmod: 2023-07-29T11:05:24+08:00
 author: ["chx9"]
-keywords: 
-- 
+keywords:
+  -
 categories: # 没有分类界面可以不填写
-- 
+  -
 tags: # 标签
-- 
+  -
 description: ""
 weight:
 slug: ""
@@ -22,16 +22,12 @@ hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
 disableShare: true # 底部不显示分享栏
 showbreadcrumbs: true #顶部显示路径
 cover:
-    image: "" #图片路径例如：posts/tech/123/123.png
-    zoom: # 图片大小，例如填写 50% 表示原图像的一半大小
-    caption: "" #图片底部描述
-    alt: ""
-    relative: false
+  image: "" #图片路径例如：posts/tech/123/123.png
+  zoom: # 图片大小，例如填写 50% 表示原图像的一半大小
+  caption: "" #图片底部描述
+  alt: ""
+  relative: false
 ---
-
-
-
-
 
 ## 141 环形链表
 
@@ -50,6 +46,7 @@ public:
     }
 };
 ```
+
 ## 142 环形链表
 
 [https://leetcode.cn/problems/linked-list-cycle-ii/?favorite=2cktkvj](https://leetcode.cn/problems/linked-list-cycle-ii/?favorite=2cktkvj)
@@ -57,7 +54,7 @@ public:
 方法一：哈希表
 哈希表第一个重复的值，就是入口处
 方法二：快慢指针
-如果有环，快慢指针将会再某一点相遇，此时的慢指针和head与环入口点距离相等
+如果有环，快慢指针将会再某一点相遇，此时的慢指针和 head 与环入口点距离相等
 
 ```cpp
 class Solution {
@@ -84,12 +81,12 @@ public:
 
 ```
 
-## 146 LRU缓存
+## 146 LRU 缓存
 
 [https://leetcode.cn/problems/lru-cache/](https://leetcode.cn/problems/lru-cache/)
 
 请你设计一个`Last Recent Used Cache`
-使用一个双向指针（带有head和tail节点，同时节点中包含key和value值）以及一个unordered_map储存，实现两个函数，moveToHead()和removeTail()
+使用一个双向指针（带有 head 和 tail 节点，同时节点中包含 key 和 value 值）以及一个 unordered_map 储存，实现两个函数，moveToHead()和 removeTail()
 
 ```cpp
 class LRUCache {
@@ -173,11 +170,11 @@ public:
 ## 148 排序链表
 
 [https://leetcode.cn/problems/sort-list/?favorite=2cktkvj](https://leetcode.cn/problems/sort-list/?favorite=2cktkvj)
-merge_sort排序对链表进行排序：
-1、如果merge_sort传入的头尾链表相距一个单位，则切断链表，返回head
+merge_sort 排序对链表进行排序：
+1、如果 merge_sort 传入的头尾链表相距一个单位，则切断链表，返回 head
 2、快慢链表找到中间值
 3、合并链表
-注意遍历快慢链表的方法，fast != tail，然后在循环中判断是否需要fast进两步
+注意遍历快慢链表的方法，fast != tail，然后在循环中判断是否需要 fast 进两步
 
 ```cpp
 class Solution {
@@ -294,9 +291,8 @@ public:
 
 [https://leetcode.cn/problems/intersection-of-two-linked-lists/](https://leetcode.cn/problems/intersection-of-two-linked-lists/)
 
-
 判断两个链表是否相交
-便利 两个链表，在达到尾端（注意要达到nullptr）如果遇到相等的情况，就是相交，否则他们将会在nullptr处相交：
+便利 两个链表，在达到尾端（注意要达到 nullptr）如果遇到相等的情况，就是相交，否则他们将会在 nullptr 处相交：
 
 ```cpp
 class Solution {
@@ -307,7 +303,7 @@ public:
         auto tpb = headB;
         while(tpa!=tpb){
           tpa = tpa? tpa->next : headB;
-          tpb = tpb? tpb->next : headA; 
+          tpb = tpb? tpb->next : headA;
         }
         return tpa;
     }
@@ -348,7 +344,7 @@ public:
 
 ## 198 打家劫舍
 
-### 打家劫舍i
+### 打家劫舍 i
 
 [https://leetcode.cn/problems/house-robber/](https://leetcode.cn/problems/house-robber/)
 
@@ -391,11 +387,11 @@ public:
 };
 ```
 
-### 打家劫舍ii
+### 打家劫舍 ii
 
 [https://leetcode.cn/problems/house-robber-ii/](https://leetcode.cn/problems/house-robber-ii/)
 
-有环 ,如果偷了第0家，那么不可以偷第n-1家，所以rob(nums, 0, n-2)，如果偷了n-1家，那么不可以偷第0家，所以rob(nums, 1, n-1)。
+有环 ,如果偷了第 0 家，那么不可以偷第 n-1 家，所以 rob(nums, 0, n-2)，如果偷了 n-1 家，那么不可以偷第 0 家，所以 rob(nums, 1, n-1)。
 
 ```cpp
 class Solution {
@@ -419,7 +415,10 @@ public:
 
 ```
 
-### 打家劫舍iii
+### 打家劫舍 iii
+
+https://leetcode.cn/problems/house-robber-iii/
+
 核心思想是后序遍历，现将子节点值遍历出来
 建立两个哈希表，g[root]表示选择当前节点的最大值，f[root]表示不选择当前节点的最大值
 
@@ -428,18 +427,19 @@ public:
 ```cpp
 class Solution {
 private:
-    unordered_map<TreeNode*, int> g, f;
-    // g[node] 表示选择
-    // f[node] 表示不选择
+    unordered_map<TreeNode*, int> f; // choose
+    unordered_map<TreeNode*, int> g; // not choose
 public:
     void dfs(TreeNode* root){
-        if(root == nullptr) return;
+        if(!root){
+            return;
+        }
         dfs(root->left);
         dfs(root->right);
-        g[root] = root->val + f[root->left] + f[root->right];
-        f[root] = max(g[root->left], f[root->left]) + max(g[root->right], f[root->right]);
+        f[root] = root->val + g[root->left] + g[root->right];
+        g[root] = max(g[root->left], f[root->left]) +  max(g[root->right], f[root->right]);
     }
-    int rob(TreeNode* root) {  
+    int rob(TreeNode* root) {
         dfs(root);
         return max(g[root], f[root]);
     }
@@ -448,46 +448,45 @@ public:
 
 ## 200 岛屿数量
 
-[https://leetcode.cn/problems/number-of-islands/?favorite=2cktkvj](https://leetcode.cn/problems/number-of-islands/?favorite=2cktkvj)
-深度优先遍历+visit数组
+https://leetcode.cn/problems/number-of-islands
+
+深度优先遍历+visit 数组
 
 ```cpp
 class Solution {
 private:
+    vector<vector<int>> directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     vector<vector<bool>> visit;
-    vector<vector<int>> directions{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     int n;
     int m;
 public:
-    void dfs(vector<vector<char>>& grid, int i, int j){
-        if(i>=n || i<0 || j>=m || j<0 || visit[i][j] == true || grid[i][j]=='0'){
-            return;
-        }
+    bool is_valid(int i, int j, vector<vector<char>>& grid){
+        return i<n && i>=0 && j<m && j>=0 && !visit[i][j] && grid[i][j] == '1';
+    }
+    void dfs(int i, int j, vector<vector<char>>& grid){
         visit[i][j] = true;
-        for(auto direction: directions){
-            int next_i = i + direction[0];
-            int next_j = j + direction[1];
-            dfs(grid, next_i, next_j);
+        for(auto& direction : directions){
+            int nexti = i + direction[0];
+            int nextj = j + direction[1];
+            if(is_valid(nexti, nextj, grid)){
+                dfs(nexti, nextj, grid);
+            }
         }
     }
     int numIslands(vector<vector<char>>& grid) {
-        int n = grid.size();
-        int m = grid[0].size();
-        this->n = n;
-        this->m = m;
-        if(n==0) return 0;
-        int res = 0;
-        visit = vector<vector<bool>>(n, vector<bool>(m, false));
-        for(int i=0;i<n;i++)
-        {
+        int ans = 0;
+        n = grid.size();
+        m = grid[0].size();
+        visit = vector<vector<bool>> (n, vector<bool>(m));
+        for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(visit[i][j]==false && grid[i][j]=='1'){
-                    res++;
-                    dfs(grid, i, j);
+                if(!visit[i][j] && grid[i][j] == '1'){
+                    ans++;
+                    dfs(i, j, grid);
                 }
             }
         }
-        return res;
+        return ans;
     }
 };
 
@@ -495,9 +494,9 @@ public:
 
 ## 206 翻转链表
 
-[https://leetcode.cn/problems/reverse-linked-list/](https://leetcode.cn/problems/reverse-linked-list/)
+https://leetcode.cn/problems/reverse-linked-list
 
-头插法：正向遍历+dummy节点
+头插法：正向遍历+dummy 节点
 
 ```cpp
 class Solution {
@@ -543,27 +542,24 @@ public:
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if(head == nullptr) return nullptr;
-        if(head->next == nullptr) return head;
+        if(!head || !head->next) return nullptr;
         auto next = head->next;
         auto reversed = reverseList(head->next);
-        head->next = nullptr;
+        head->next = nullptr; // 这是重点
         next->next = head;
         return reversed;
     }
 };
 ```
 
-![Untitled](Leetcode-hot-100%20ae5bdb987aab4dafb1522f8abeb65786/Untitled%201.png)
-
 ## 207 课程表
 
-[https://leetcode.cn/problems/course-schedule/](https://leetcode.cn/problems/course-schedule/)
+https://leetcode.cn/problems/course-schedule
 
 计算入度+广度优先算法
 
 1. 先遍历，记录所有节点的入度和整张图
-2. 用stack或者queue push进入度为0的课程（表示可以直接上掉课程），while循环，每次pop出来记录可以上掉的课程，计算此课程的完成是否可以让其他课程进入入度为0的状态，如有则push进 stack或者queue，结果是完成课程的数量是否等于全部课程
+2. 用 stack 或者 queue push 进入度为 0 的课程（表示可以直接上掉课程），while 循环，每次 pop 出来记录可以上掉的课程，计算此课程的完成是否可以让其他课程进入入度为 0 的状态，如有则 push 进 stack 或者 queue，结果是完成课程的数量是否等于全部课程
 
 ```cpp
 class Solution {
@@ -606,9 +602,9 @@ public:
 
 [https://leetcode.cn/problems/implement-trie-prefix-tree/](https://leetcode.cn/problems/implement-trie-prefix-tree/)
 
-数据类型的主要结构是children，是一个vector<Trie*>, 长度为26（对应26个字母）以及一个is_end的bool变量代表是否到了结尾。
-在插入单词过程中，从this指针开始，遍历字符串的每个字符，每个字符串减去'a'，获得下标，如果当前指针的child是nullptr，那么创建新的。遍历到最后一个字母，需要将其is_end置true。
-search()和startwith()通过深度优先搜索，如果是nullptr那么就没有包含这个单词，search比startwith条件更加苛刻，需要is_end为true
+数据类型的主要结构是 children，是一个 vector<Trie\*>, 长度为 26（对应 26 个字母）以及一个 is_end 的 bool 变量代表是否到了结尾。
+在插入单词过程中，从 this 指针开始，遍历字符串的每个字符，每个字符串减去'a'，获得下标，如果当前指针的 child 是 nullptr，那么创建新的。遍历到最后一个字母，需要将其 is_end 置 true。
+search()和 startwith()通过深度优先搜索，如果是 nullptr 那么就没有包含这个单词，search 比 startwith 条件更加苛刻，需要 is_end 为 true
 
 ```cpp
 class Trie {
@@ -660,12 +656,12 @@ public:
 };
 ```
 
-## 215 数组中的第k大元素
+## 215 数组中的第 k 大元素
 
 [https://leetcode.cn/problems/kth-largest-element-in-an-array/](https://leetcode.cn/problems/kth-largest-element-in-an-array/)
 
 1、快速排序的变形
-在快速排序中，如果pivot就是第k个，就得到了最终的结果，如果pivot比k要小，那么快排pivot+1到end，如果pivot比k要大，那么快排begin到pivot-1
+在快速排序中，如果 pivot 就是第 k 个，就得到了最终的结果，如果 pivot 比 k 要小，那么快排 pivot+1 到 end，如果 pivot 比 k 要大，那么快排 begin 到 pivot-1
 
 ```cpp
 class Solution {
@@ -711,7 +707,7 @@ public:
 ```
 
 2、堆排序
-用大根堆，大根堆第一个元素是最大值，进行k次删除堆顶元素之后就是答案
+用大根堆，大根堆第一个元素是最大值，进行 k 次删除堆顶元素之后就是答案
 
 ```cpp
 class Solution {
@@ -813,7 +809,7 @@ public:
 ```
 
 2、非递归
-用stack或者queue进行储存（两种容器的代码是一样的，只不过或是层序遍历，stack是深度优先遍历）
+用 stack 或者 queue 进行储存（两种容器的代码是一样的，只不过或是层序遍历，stack 是深度优先遍历）
 
 ```cpp
 class Solution {
@@ -849,7 +845,7 @@ public:
 
 [https://leetcode.cn/problems/palindrome-linked-list/](https://leetcode.cn/problems/palindrome-linked-list/)
 
-1、用vector储存
+1、用 vector 储存
 
 ```cpp
 class Solution {
@@ -913,7 +909,7 @@ public:
 [https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
 
 1、遍历方法
-深度搜索函数搜查是否包含q和p，在搜索过程中，如果root等于q或者p并且left和right某个为正，或者左右都为正，代表是公共祖先
+深度搜索函数搜查是否包含 q 和 p，在搜索过程中，如果 root 等于 q 或者 p 并且 left 和 right 某个为正，或者左右都为正，代表是公共祖先
 
 ```cpp
 class Solution {
@@ -938,7 +934,7 @@ public:
 ```
 
 2、递归
-递归函数返回值为nullptr表示没有找到
+递归函数返回值为 nullptr 表示没有找到
 
 ```cpp
 class Solution {
@@ -948,7 +944,7 @@ public:
         auto left = lowestCommonAncestor(root->left, p, q);
         auto right = lowestCommonAncestor(root->right, p, q);
         if(left && right) return root;
-        if(left != nullptr) 
+        if(left != nullptr)
         return left;
         return right;
     }
@@ -995,7 +991,7 @@ public:
 [https://leetcode.cn/problems/sliding-window-maximum/](https://leetcode.cn/problems/sliding-window-maximum/)
 
 1、优先队列
-维护一个优先队列，内容是元素的值和下标的pair，每次push元素之前判断队列顶元素下标是否在范围内。
+维护一个优先队列，内容是元素的值和下标的 pair，每次 push 元素之前判断队列顶元素下标是否在范围内。
 
 ```cpp
 class Solution {
@@ -1069,7 +1065,7 @@ public:
 从右上开始搜索
 
 ```cpp
-class Solution 
+class Solution
 {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
@@ -1098,7 +1094,7 @@ public:
 
 ## 279 完全平方数
 
-动态规划 f[i] = min(f[i], f[i-j*j]+1)，其中(j*j≤i)
+动态规划 f[i] = min(f[i], f[i-j*j]+1)，其中(j\*j≤i)
 
 ```cpp
 class Solution {
@@ -1122,7 +1118,7 @@ public:
 
 [https://leetcode.cn/problems/move-zeroes/](https://leetcode.cn/problems/move-zeroes/)
 
-和快速排序的parition差不多
+和快速排序的 parition 差不多
 
 ```cpp
 class Solution {
@@ -1144,7 +1140,7 @@ public:
 
 [https://leetcode.cn/problems/find-the-duplicate-number/](https://leetcode.cn/problems/find-the-duplicate-number/)
 
-1、二分法O（n*lgn） 每次n次循环计算
+1、二分法 O（n\*lgn） 每次 n 次循环计算
 
 ![Untitled](Leetcode-hot-100%20ae5bdb987aab4dafb1522f8abeb65786/Untitled%202.png)
 
@@ -1325,7 +1321,7 @@ public:
         }
         return stk.empty();
     }
- 
+
     void dfs(string s, int lr, int rr, int idx){
         if(lr==0 && rr == 0 && is_valid(s)){
             res.push_back(s);
@@ -1359,14 +1355,14 @@ public:
         }
         dfs(s, lr, rr, 0);
         return res;
-    }   
+    }
 };
 ```
 
 ### 20 有效括号
 
 [https://leetcode.cn/problems/valid-parentheses/submissions/](https://leetcode.cn/problems/valid-parentheses/submissions/)
-用stack进行判断，最后判断stack是否为空
+用 stack 进行判断，最后判断 stack 是否为空
 
 ```
 class Solution {
@@ -1461,15 +1457,15 @@ public:
 
 [https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
 
-不能多次交易股票，在i天结束后，只存在两个状态，0是持有现金，1是持有股票
+不能多次交易股票，在 i 天结束后，只存在两个状态，0 是持有现金，1 是持有股票
 
 ```cpp
 f[0][i] = max(f[0][i-1], f[1][i-1]+price[i])
 f[1][i] = max(f[1][i-1], f[0][i-1]-price[i])
 ```
 
-i天如果持有现金，要么i天没有买股票，那么取i-1天持有现金，或者i天卖出股票
-i天如果持有股票， 那么i天没有买股票，那么取i-1天持有股票，或者i天买入股票
+i 天如果持有现金，要么 i 天没有买股票，那么取 i-1 天持有现金，或者 i 天卖出股票
+i 天如果持有股票， 那么 i 天没有买股票，那么取 i-1 天持有股票，或者 i 天买入股票
 
 ```cpp
 class Solution
@@ -1497,7 +1493,7 @@ class Solution
 
 [https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 
-有冷却期，那么i天结束后就有三种状态：1、持有现金，非冷却期。2、持有现金，冷却期 3、持有股票
+有冷却期，那么 i 天结束后就有三种状态：1、持有现金，非冷却期。2、持有现金，冷却期 3、持有股票
 
 ```cpp
 class Solution {
@@ -1522,7 +1518,7 @@ public:
 
 ## 312.戳气球
 
-动态规划要求子问题必须独立，所以我们将其nums扩容2（两个边界-1和n）并设置成1，气球的索引变成了1-n,并且我们将戳气球的操作变成添加气球操作
+动态规划要求子问题必须独立，所以我们将其 nums 扩容 2（两个边界-1 和 n）并设置成 1，气球的索引变成了 1-n,并且我们将戳气球的操作变成添加气球操作
 
 [题解](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485172&idx=1&sn=b860476b205b04f960ea0de6f70d3553&scene=21#wechat_redirect)
 
@@ -1532,7 +1528,7 @@ public:
 dp[i][j]
 ```
 
-表示戳破在i和j之间的气球可以获得的最大值，其中不包括i和j，这样以来就转换成求
+表示戳破在 i 和 j 之间的气球可以获得的最大值，其中不包括 i 和 j，这样以来就转换成求
 
 ```
 dp[0][n+1]
@@ -1564,7 +1560,7 @@ d[i][k]
 d[k][j]
 ```
 
-(其中i<k<j)，所以要注意顺序，
+(其中 i<k<j)，所以要注意顺序，
 
 ![image](/upload/2023/04/image.png)
 
@@ -1624,9 +1620,9 @@ public:
 
 [https://leetcode.cn/problems/counting-bits/](https://leetcode.cn/problems/counting-bits/)
 
-动态规划， 如果i是偶数，那么比特位就是i/2，如果是奇数，那么就是f[i-1]+1
-因为偶数的话相当于末尾补了一个0, 如2：`10` 4：`100`
-奇数的话就相当于上一个偶数添加了一个1, 如2:`10` 3:`11`
+动态规划， 如果 i 是偶数，那么比特位就是 i/2，如果是奇数，那么就是 f[i-1]+1
+因为偶数的话相当于末尾补了一个 0, 如 2：`10` 4：`100`
+奇数的话就相当于上一个偶数添加了一个 1, 如 2:`10` 3:`11`
 
 ```cpp
 class Solution {
@@ -1647,11 +1643,11 @@ public:
 };
 ```
 
-## 347 前k个高频元素
+## 347 前 k 个高频元素
 
 [https://leetcode.cn/problems/kth-largest-element-in-an-array/solution/](https://leetcode.cn/problems/top-k-frequent-elements/)
 
-先用unordered_map进行存储，之后对频率进行操作，类似于第k个大的元素
+先用 unordered_map 进行存储，之后对频率进行操作，类似于第 k 个大的元素
 1、优先队列
 
 ```cpp
@@ -1735,8 +1731,8 @@ public:
 ## 406 根据身高建立队列
 
 [https://leetcode.cn/problems/queue-reconstruction-by-height/](https://leetcode.cn/problems/queue-reconstruction-by-height/)
-cmp函数，第一个顺序是身高（高的排前面），第二顺序前面的人数（人少的排前面）
-然后for循环遍历插入，insert位置是vector.begin()+前面排的人数
+cmp 函数，第一个顺序是身高（高的排前面），第二顺序前面的人数（人少的排前面）
+然后 for 循环遍历插入，insert 位置是 vector.begin()+前面排的人数
 
 ```cpp
 class Solution {
@@ -1761,7 +1757,7 @@ public:
 
 [https://leetcode.cn/problems/partition-equal-subset-sum/](https://leetcode.cn/problems/partition-equal-subset-sum/)
 
-题目要求是是否存在等分子集，首先算出sum，然后转化为背包问题，也就是可以可以完全放下sum/2的物品
+题目要求是是否存在等分子集，首先算出 sum，然后转化为背包问题，也就是可以可以完全放下 sum/2 的物品
 
 ```cpp
 class Solution {
@@ -1804,7 +1800,7 @@ public:
 
 [https://leetcode.cn/problems/path-sum-iii/](https://leetcode.cn/problems/path-sum-iii/)
 
-前缀和, dfs回溯
+前缀和, dfs 回溯
 
 ```cpp
 class Solution {
@@ -1833,7 +1829,7 @@ public:
 
 ## 438 找到字符串中所有字母异位词
 
-滑动窗口,注意滑动窗口valid的条件，当windows[add]==need[add]是valid才增加或者减少，valid的数值和need的key值相同时进行左边界改变
+滑动窗口,注意滑动窗口 valid 的条件，当 windows[add]==need[add]是 valid 才增加或者减少，valid 的数值和 need 的 key 值相同时进行左边界改变
 
 ```cpp
 class Solution {
@@ -1872,7 +1868,7 @@ public:
                     window[deleted]--;
                 }
                 left++;
-            }   
+            }
         }
         return res;
     }
@@ -1906,7 +1902,7 @@ public:
 
 [https://leetcode.cn/problems/find-all-numbers-disappeared-in-an-array/](https://leetcode.cn/problems/find-all-numbers-disappeared-in-an-array/)
 
-tricky， 遍历数组， num[i]的index对应的数字加上数组的长度，最后小于等于数组长度的就是消失的。
+tricky， 遍历数组， num[i]的 index 对应的数字加上数组的长度，最后小于等于数组长度的就是消失的。
 
 ```cpp
 class Solution {
@@ -1955,7 +1951,7 @@ public:
 
 ![Untitled](Leetcode-hot-100%20ae5bdb987aab4dafb1522f8abeb65786/Untitled%204.png)
 
-算出neg的和然后转化为背包问题
+算出 neg 的和然后转化为背包问题
 
 ```cpp
 class Solution {
@@ -1992,7 +1988,7 @@ public:
 
 # 538. 把二叉搜索树转换为累加树
 
-深度搜索，不过是先右节点，中间节点，左节点，用全局的cur变量记录
+深度搜索，不过是先右节点，中间节点，左节点，用全局的 cur 变量记录
 
 ```cpp
 class Solution {
@@ -2017,7 +2013,8 @@ public:
 
 [https://leetcode.cn/problems/diameter-of-binary-tree](https://leetcode.cn/problems/diameter-of-binary-tree/)
 
-定义max_depth函数，在计算最大深度中顺便计算本题结果。
+定义 max_depth 函数，在计算最大深度中顺便计算本题结果。
+
 ```cpp
 class Solution {
 private:
@@ -2067,9 +2064,7 @@ public:
 
 [https://leetcode.cn/problems/shortest-unsorted-continuous-subarray](https://leetcode.cn/problems/shortest-unsorted-continuous-subarray/)
 
-
-
-分为三段左段，中段和右段。左端和右端是标准的升序数组，中段无序，但是满足其最小值大于左段最大值，最大值小于右端最小值。我们分别从左边开始遍历和从右边开始遍历，左边开始遍历寻找中段end，具体是，如果遍历到的点比最大值还要小那么更新end（原理是右端总是有当前值就是最大值），同理右边开始遍历，寻找中段begin，如果遍历到点比最小值还小那么更新begin（原理是左端总是有当前值就是最小值）
+分为三段左段，中段和右段。左端和右端是标准的升序数组，中段无序，但是满足其最小值大于左段最大值，最大值小于右端最小值。我们分别从左边开始遍历和从右边开始遍历，左边开始遍历寻找中段 end，具体是，如果遍历到的点比最大值还要小那么更新 end（原理是右端总是有当前值就是最大值），同理右边开始遍历，寻找中段 begin，如果遍历到点比最小值还小那么更新 begin（原理是左端总是有当前值就是最小值）
 
 ```cpp
 class Solution {
@@ -2096,7 +2091,7 @@ public:
 };
 ```
 
-## 
+##
 
 ## 617 合并二叉树
 
@@ -2198,7 +2193,7 @@ public:
 
 [https://leetcode.cn/problems/two-sum/](https://leetcode.cn/problems/two-sum/)
 
-用unordered_map储存
+用 unordered_map 储存
 
 ```cpp
 class Solution {
@@ -2231,9 +2226,9 @@ class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         //
-        // 9 9 9 9 9 9 9 
-        // 9 9 9 9 
-        // 
+        // 9 9 9 9 9 9 9
+        // 9 9 9 9
+        //
         auto dummy = new ListNode(0);
         auto cur = dummy;
         int val;
@@ -2269,9 +2264,9 @@ public:
 
 [https://leetcode.cn/problems/longest-substring-without-repeating-characters/](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
 
-双指针or滑动窗口？
+双指针 or 滑动窗口？
 
-利用哈希表unordered_map<char, int>记录字符出现的位置，左指针初始为-1，左开右比，每次更新左指针的最大值
+利用哈希表 unordered_map<char, int>记录字符出现的位置，左指针初始为-1，左开右比，每次更新左指针的最大值
 
 ```cpp
 class Solution {
@@ -2295,15 +2290,15 @@ public:
 
 ## 4 寻找两个正序数组的中位数
 
-将问题化简，当数组是奇数个时，求中间的那个，偶数时求中间的两位数，为了防止分类讨论，将问题转换为求第(n+m+1)/2个数字和第(n+m+2)/2个数字
+将问题化简，当数组是奇数个时，求中间的那个，偶数时求中间的两位数，为了防止分类讨论，将问题转换为求第(n+m+1)/2 个数字和第(n+m+2)/2 个数字
 
-这道题让我们求两个有序数组的中位数，而且限制了时间复杂度为O(log (m+n))，看到这个时间复杂度，自然而然的想到了应该使用二分查找法来求解。那么回顾一下中位数的定义，如果某个有序数组长度是奇数，那么其中位数就是最中间那个，如果是偶数，那么就是最中间两个数字的平均值。这里对于两个有序数组也是一样的，假设两个有序数组的长度分别为m和n，由于两个数组长度之和 m+n 的奇偶不确定，因此需要分情况来讨论，对于奇数的情况，直接找到最中间的数即可，偶数的话需要求最中间两个数的平均值。为了简化代码，不分情况讨论，我们使用一个小trick，我们分别找第 (m+n+1) / 2 个，和 (m+n+2) / 2 个，然后求其平均值即可，这对奇偶数均适用。加入 m+n 为奇数的话，那么其实 (m+n+1) / 2 和 (m+n+2) / 2 的值相等，相当于两个相同的数字相加再除以2，还是其本身。
+这道题让我们求两个有序数组的中位数，而且限制了时间复杂度为 O(log (m+n))，看到这个时间复杂度，自然而然的想到了应该使用二分查找法来求解。那么回顾一下中位数的定义，如果某个有序数组长度是奇数，那么其中位数就是最中间那个，如果是偶数，那么就是最中间两个数字的平均值。这里对于两个有序数组也是一样的，假设两个有序数组的长度分别为 m 和 n，由于两个数组长度之和 m+n 的奇偶不确定，因此需要分情况来讨论，对于奇数的情况，直接找到最中间的数即可，偶数的话需要求最中间两个数的平均值。为了简化代码，不分情况讨论，我们使用一个小 trick，我们分别找第 (m+n+1) / 2 个，和 (m+n+2) / 2 个，然后求其平均值即可，这对奇偶数均适用。加入 m+n 为奇数的话，那么其实 (m+n+1) / 2 和 (m+n+2) / 2 的值相等，相当于两个相同的数字相加再除以 2，还是其本身。
 
-这里我们需要定义一个函数来在两个有序数组中找到第K个元素，下面重点来看如何实现找到第K个元素。首先，为了避免产生新的数组从而增加时间复杂度，我们使用两个变量i和j分别来标记数组nums1和nums2的起始位置。然后来处理一些边界问题，比如当某一个数组的起始位置大于等于其数组长度时，说明其所有数字均已经被淘汰了，相当于一个空数组了，那么实际上就变成了在另一个数组中找数字，直接就可以找出来了。还有就是如果K=1的话，那么我们只要比较nums1和nums2的起始位置i和j上的数字就可以了。难点就在于一般的情况怎么处理？因为我们需要在两个有序数组中找到第K个元素，为了加快搜索的速度，我们要使用二分法，对K二分，意思是我们需要分别在nums1和nums2中查找第K/2个元素，注意这里由于两个数组的长度不定，所以有可能某个数组没有第K/2个数字，所以我们需要先检查一下，数组中到底存不存在第K/2个数字，如果存在就取出来，否则就赋值上一个整型最大值。如果某个数组没有第K/2个数字，那么我们就淘汰另一个数字的前K/2个数字即可。有没有可能两个数组都不存在第K/2个数字呢，这道题里是不可能的，因为我们的K不是任意给的，而是给的m+n的中间值，所以必定至少会有一个数组是存在第K/2个数字的。最后就是二分法的核心啦，比较这两个数组的第K/2小的数字midVal1和midVal2的大小，如果第一个数组的第K/2个数字小的话，那么说明我们要找的数字肯定不在nums1中的前K/2个数字，所以我们可以将其淘汰，将nums1的起始位置向后移动K/2个，并且此时的K也自减去K/2，调用递归。反之，我们淘汰nums2中的前K/2个数字，并将nums2的起始位置向后移动K/2个，并且此时的K也自减去K/2，调用递归即可。
+这里我们需要定义一个函数来在两个有序数组中找到第 K 个元素，下面重点来看如何实现找到第 K 个元素。首先，为了避免产生新的数组从而增加时间复杂度，我们使用两个变量 i 和 j 分别来标记数组 nums1 和 nums2 的起始位置。然后来处理一些边界问题，比如当某一个数组的起始位置大于等于其数组长度时，说明其所有数字均已经被淘汰了，相当于一个空数组了，那么实际上就变成了在另一个数组中找数字，直接就可以找出来了。还有就是如果 K=1 的话，那么我们只要比较 nums1 和 nums2 的起始位置 i 和 j 上的数字就可以了。难点就在于一般的情况怎么处理？因为我们需要在两个有序数组中找到第 K 个元素，为了加快搜索的速度，我们要使用二分法，对 K 二分，意思是我们需要分别在 nums1 和 nums2 中查找第 K/2 个元素，注意这里由于两个数组的长度不定，所以有可能某个数组没有第 K/2 个数字，所以我们需要先检查一下，数组中到底存不存在第 K/2 个数字，如果存在就取出来，否则就赋值上一个整型最大值。如果某个数组没有第 K/2 个数字，那么我们就淘汰另一个数字的前 K/2 个数字即可。有没有可能两个数组都不存在第 K/2 个数字呢，这道题里是不可能的，因为我们的 K 不是任意给的，而是给的 m+n 的中间值，所以必定至少会有一个数组是存在第 K/2 个数字的。最后就是二分法的核心啦，比较这两个数组的第 K/2 小的数字 midVal1 和 midVal2 的大小，如果第一个数组的第 K/2 个数字小的话，那么说明我们要找的数字肯定不在 nums1 中的前 K/2 个数字，所以我们可以将其淘汰，将 nums1 的起始位置向后移动 K/2 个，并且此时的 K 也自减去 K/2，调用递归。反之，我们淘汰 nums2 中的前 K/2 个数字，并将 nums2 的起始位置向后移动 K/2 个，并且此时的 K 也自减去 K/2，调用递归即可。
 
 ```cpp
 class Solution {
-public: 
+public:
 
     double findKth(vector<int>& nums1, int i1, vector<int>& nums2, int i2, int k){
         if(i1 >= nums1.size()) return nums2[i2+k-1];
@@ -2321,15 +2316,15 @@ public:
         int m = nums2.size();
         int left = (m+n+1)/2;
         int right = (m+n+2)/2;
-        return (1.0*findKth(nums1, 0, nums2, 0, left) + findKth(nums1, 0, nums2, 0, right))/2; 
-    } 
-    
+        return (1.0*findKth(nums1, 0, nums2, 0, left) + findKth(nums1, 0, nums2, 0, right))/2;
+    }
+
 };
 ```
 
 ## 5 最长回文字串
 
-trick中间增长法 
+trick 中间增长法
 
 ```jsx
 class Solution {
@@ -2363,7 +2358,7 @@ public:
 
 [https://leetcode.cn/problems/container-with-most-water/](https://leetcode.cn/problems/container-with-most-water/)
 
-left=0， right = size()-1,  当前的水容量是
+left=0， right = size()-1, 当前的水容量是
 
 $$
 min(height[left], height[right])* (right-left)
@@ -2425,7 +2420,7 @@ public:
         {
             if(i!=0 && nums[i] == nums[i-1]) continue;
             twoSum(nums, i, -nums[i]);
-        } 
+        }
         return res;
     }
 };
@@ -2489,7 +2484,7 @@ public:
        while(fast->next){
            fast = fast->next;
            slow = slow->next;
-       } 
+       }
        slow->next = slow->next->next;
        return dummy->next;
     }
@@ -2592,11 +2587,11 @@ public:
         if(left==n && right==n){
             res.push_back(cur);
         }
-        
+
         cur.push_back('(');
         dfs(cur, left+1, right);
         cur.pop_back();
-        
+
         cur.push_back(')');
         dfs(cur, left, right+1);;
         cur.pop_back();
@@ -2610,7 +2605,7 @@ public:
 };
 ```
 
-## 23 合并K个升序链表
+## 23 合并 K 个升序链表
 
 利用堆，注意大于是小根堆，小于是大根堆
 
@@ -2618,7 +2613,7 @@ public:
 class Solution {
 public:
     class cmp{
-        public: 
+        public:
             bool operator ()(ListNode* a, ListNode* b){
                 return a->val > b->val;
             }
@@ -2649,11 +2644,10 @@ public:
 
 ## !31 下一个排列
 
-
 ```cpp
 class Solution {
 public:
- 
+
     void nextPermutation(vector<int>& nums) {
         int i = nums.size()-1;
         while(i>0){
@@ -2674,7 +2668,7 @@ public:
             }
             j--;
         }
-        
+
         swap(nums[i], nums[j]);
         sort(nums.begin()+i+1, nums.end());
     }
@@ -2688,18 +2682,17 @@ public:
 
 动态规划
 
-dp[i] 是i个位置的字符为结尾的有效括号长度
+dp[i] 是 i 个位置的字符为结尾的有效括号长度
 
-当s[i]是`(`的时候，dp[i]为0， 
+当 s[i]是`(`的时候，dp[i]为 0，
 
-当s[i]是`)`的时候,  讨论s[i-1]的情况
+当 s[i]是`)`的时候, 讨论 s[i-1]的情况
 
-当s[i-1]是`(`，那么 dp[i] = dp[i-2]+2; 注意i-2的是合法
+当 s[i-1]是`(`，那么 dp[i] = dp[i-2]+2; 注意 i-2 的是合法
 
-当s[i-2]是`)`, 那么需要讨论i-1-len，len是dp[i-1]的值，如果s[i-1-len]是`(`，那么dp[i] = dp[i-1]+dp[i-1-dp[i-1]-1] +2
+当 s[i-2]是`)`, 那么需要讨论 i-1-len，len 是 dp[i-1]的值，如果 s[i-1-len]是`(`，那么 dp[i] = dp[i-1]+dp[i-1-dp[i-1]-1] +2
 
-最终返回所有dp的最大值
-
+最终返回所有 dp 的最大值
 
 ```cpp
 class Solution {
@@ -2744,7 +2737,7 @@ public:
 
 ## 49 [字母异分位词](https://leetcode.cn/problems/group-anagrams/)
 
-利用dict
+利用 dict
 
 ```cpp
 class Solution {
@@ -2760,7 +2753,7 @@ public:
             cache[reve].push_back(str);
         }
         for(auto it=cache.begin();it!=cache.end();it++){
-            res.push_back(it->second);   
+            res.push_back(it->second);
         }
         return res;
     }
@@ -2790,7 +2783,7 @@ public:
 
 [https://leetcode.cn/problems/jump-game/](https://leetcode.cn/problems/jump-game/)
 
-贪心，定义一个最远能跳的距离most_right, 遍历数组，如果能小于等于most_right,那么通过该下表推进most_right
+贪心，定义一个最远能跳的距离 most_right, 遍历数组，如果能小于等于 most_right,那么通过该下表推进 most_right
 
 ```cpp
 class Solution {
@@ -2812,9 +2805,9 @@ public:
 };
 ```
 
-## 33 ****[搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/)****
+## 33 \***\*[搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/)\*\***
 
-二分搜索，分类讨论，target是在两块区间的那个部分（和nums[0]作比较），然后再讨论num[mid]在哪个区间
+二分搜索，分类讨论，target 是在两块区间的那个部分（和 nums[0]作比较），然后再讨论 num[mid]在哪个区间
 
 ```cpp
 class Solution {
@@ -2859,7 +2852,7 @@ public:
 
 [https://leetcode.cn/problems/merge-intervals](https://leetcode.cn/problems/merge-intervals)
 
-首先对区间进行sort，第一排序顺序是左边界，第二排序顺序号是右边边界，建立 result vector数组，对区间进行遍历，如果区间右边界大于result数组最后一个的右边界，那么push进去，否则对result最后一个的右边界进行扩增
+首先对区间进行 sort，第一排序顺序是左边界，第二排序顺序号是右边边界，建立 result vector 数组，对区间进行遍历，如果区间右边界大于 result 数组最后一个的右边界，那么 push 进去，否则对 result 最后一个的右边界进行扩增
 
 ```cpp
 class Solution {
@@ -2887,13 +2880,13 @@ public:
 };
 ```
 
-## 34 ****[在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)****
+## 34 \***\*[在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)\*\***
 
 [https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
-upper_bound和lower_bound函数的实现
+upper_bound 和 lower_bound 函数的实现
 
-要注意两点，第一个是注意返回的idx的合法性，第二个是upper_bound返回的index需要-1
+要注意两点，第一个是注意返回的 idx 的合法性，第二个是 upper_bound 返回的 index 需要-1
 
 ```cpp
 class Solution {
@@ -2910,7 +2903,7 @@ public:
             }else if(target==nums[mid]){
                 right = mid;
             }else{
-                 // 
+                 //
                  // target < nums[mid]
                  right = mid;
             }
@@ -2993,8 +2986,7 @@ public:
 
 ## 42 接雨水
 
-
-维护一个left_max和right_max
+维护一个 left_max 和 right_max
 
 ```cpp
 
@@ -3008,7 +3000,7 @@ public:
         int max_right = height[right];
         while(left < right)
         {
-            if(height[left] > height[right]){  
+            if(height[left] > height[right]){
                     res += max(0, max_right - height[right]);
                     max_right = max(max_right, height[right]);
                     right--;
@@ -3027,7 +3019,7 @@ public:
 
 [https://leetcode.cn/problems/permutations](https://leetcode.cn/problems/permutations)
 
-回溯，visit数组
+回溯，visit 数组
 
 ```cpp
 class Solution {
@@ -3055,9 +3047,9 @@ public:
     vector<vector<int>> permute(vector<int>& nums) {
         visit = vector<bool> (nums.size(), false);
         vector<int> cur_vec;
-    
+
         dfs(nums, cur_vec);
-    
+
         return res;
     }
 };
@@ -3067,9 +3059,7 @@ public:
 
 [https://leetcode.cn/problems/rotate-image/](https://leetcode.cn/problems/rotate-image/)
 
-先进行轴翻转，然后行reverse，在轴翻转的过程中注意i的范围是(0, n), j的范围是(i, m)，否则的话翻过来再翻过去等于没翻
-
-
+先进行轴翻转，然后行 reverse，在轴翻转的过程中注意 i 的范围是(0, n), j 的范围是(i, m)，否则的话翻过来再翻过去等于没翻
 
 ```cpp
 class Solution {
@@ -3117,7 +3107,7 @@ public:
 
 [https://leetcode.cn/problems/group-anagrams/](https://leetcode.cn/problems/group-anagrams/)?
 
-利用dict和sort函数
+利用 dict 和 sort 函数
 
 ```cpp
 class Solution {
@@ -3133,7 +3123,7 @@ public:
             cache[reve].push_back(str);
         }
         for(auto it=cache.begin();it!=cache.end();it++){
-            res.push_back(it->second);   
+            res.push_back(it->second);
         }
         return res;
     }
@@ -3186,7 +3176,7 @@ public:
         }
         for(int i=1;i<m;i++){
             f[0][i] = f[0][i-1] + grid[0][i];
-        } 
+        }
         for(int i=1;i<n;i++)
         {
             for(int j=1;j<m;j++)
@@ -3226,7 +3216,6 @@ public:
 ## 72 编辑距离
 
 动态规划
-
 
 ```cpp
 class Solution {
@@ -3268,7 +3257,7 @@ public:
 
 三指针
 
-本质就是三个指针，头指针和中指针负责0和1的交换，中指针和尾指针负责把2移到末
+本质就是三个指针，头指针和中指针负责 0 和 1 的交换，中指针和尾指针负责把 2 移到末
 
 ```cpp
 class Solution {
@@ -3352,7 +3341,7 @@ public:
             stk.push(i);
         }
         int res = 0;
-        
+
         for(int i=0;i<heights.size();i++)
         {
             int left = left_min[i];
@@ -3369,7 +3358,7 @@ public:
 
 单调栈
 
-！ 注意matrix是字符的情况，转换成int的matrix的时候一定要注意先决条件matrix[i][j] == '0'
+！ 注意 matrix 是字符的情况，转换成 int 的 matrix 的时候一定要注意先决条件 matrix[i][j] == '0'
 
 ```cpp
 class Solution {
@@ -3382,9 +3371,9 @@ public:
         vector<vector<int>> int_matrix(n, vector<int>(m, 0));
         for(int i=0;i<n;i++)
         {
-            int_matrix[i][0] = matrix[i][0] == '0' ? 0 : 1; 
+            int_matrix[i][0] = matrix[i][0] == '0' ? 0 : 1;
         }
-    
+
         for(int i=0;i<n;i++)
         {
             for(int j=1;j<m;j++)
@@ -3496,7 +3485,7 @@ public:
         dfs(root->left);
         if(init == false){
             init = true;
-            
+
         }else{
             if(root->val <= cur){
                 res = false;
@@ -3650,6 +3639,7 @@ public:
 ```
 
 ## 124 二叉树的最大路径和
+
 [https://leetcode.cn/problems/binary-tree-maximum-path-sum](https://leetcode.cn/problems/binary-tree-maximum-path-sum)
 
 递归
@@ -3676,7 +3666,7 @@ public:
 
 ## 128 最长连续序列
 
- 用map或者set（有序的）， 并且用iterator
+用 map 或者 set（有序的）， 并且用 iterator
 
 ```cpp
 class Solution {
@@ -3700,7 +3690,7 @@ public:
             }
             res = max(res, streak);
             it++;
-        } 
+        }
         return res;
     }
 };
@@ -3760,10 +3750,10 @@ public:
 };
 ```
 
-
-
 # 剑指 Offer 12. 矩阵中的路径
-用visit数组
+
+用 visit 数组
+
 ```c++
 class Solution {
 private:
@@ -3804,9 +3794,12 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 14- I. 剪绳子
+
 动态规划，切出来的部分分为两种情况：
 一种继续切割，另一种一整块，不切割
+
 ```c++
 class Solution {
 public:
@@ -3819,7 +3812,7 @@ public:
                 int x2 = i-j;
                 f[i] = max(f[i], f[x1]*x2);
                 f[i] = max(f[i], x1*x2);
-           
+
             }
         }
         return f[n];
@@ -3828,7 +3821,9 @@ public:
 ```
 
 # 剑指 Offer 16. 数值的整数次方
+
 递归的方式（其实是二分）
+
 ```c++
 class Solution {
 public:
@@ -3845,11 +3840,14 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 26. 树的子结构
+
 递归
+
 ```c++
 class Solution {
-    
+
 public:
     bool dfs(TreeNode* A, TreeNode* B){
         if(!B) return true;
@@ -3864,7 +3862,9 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 31. 栈的压入、弹出序列
+
 ```c++
 class Solution {
 public:
@@ -3884,7 +3884,9 @@ public:
 ```
 
 # 剑指 Offer 33. 二叉搜索树的后序遍历序列
-遍历，`veriy(vector<int>& postorder, int begin, int end)`， i从begin到root是小于， begin+1，到end是小于，最后判断i是否等于end。
+
+遍历，`veriy(vector<int>& postorder, int begin, int end)`， i 从 begin 到 root 是小于， begin+1，到 end 是小于，最后判断 i 是否等于 end。
+
 ```c++
 class Solution {
 public:
@@ -3900,14 +3902,17 @@ public:
             i++;
         }
         return i==end && veriy(postorder, begin, left) && veriy(postorder, left+1, end-1);
-    } 
+    }
     bool verifyPostorder(vector<int>& postorder) {
         return veriy(postorder, 0, postorder.size()-1);
     }
 };
 ```
+
 # 剑指 Offer 34. 二叉树中和为某一值的路径
+
 dfs
+
 ```c++
 class Solution {
 private:
@@ -3941,8 +3946,11 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 35. 复杂链表的复制
-用一个unordered_map存储对应的节点，然后利用后序遍历，当遍历完成之后，map也做好了
+
+用一个 unordered_map 存储对应的节点，然后利用后序遍历，当遍历完成之后，map 也做好了
+
 ```c++
 class Solution {
 private:
@@ -3951,15 +3959,18 @@ public:
     Node* copyRandomList(Node* head) {
         if(head == nullptr) return nullptr;
         auto root = new Node(head->val);
-        cache[head] = root; 
+        cache[head] = root;
         root->next = copyRandomList(head->next);
         root->random = cache[head->random];
         return root;
     }
 };
 ```
+
 # 剑指 Offer 36. 二叉搜索树与双向链表
-head和prev
+
+head 和 prev
+
 ```c++
 class Solution {
 private:
@@ -3989,10 +4000,13 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 38. 字符串的排列
+
 1、对字符串进行排序
-2、`if(i!=0 && s[i]==s[i-1] && visit[i-1]==true) continue;` 在dfs的时候去重
-```c++
+2、`if(i!=0 && s[i]==s[i-1] && visit[i-1]==true) continue;` 在 dfs 的时候去重
+
+````c++
 class Solution {
 private:
     Node* prev = nullptr;
@@ -4036,20 +4050,25 @@ public:
             }else{
                 dp[i] = dp[i-1];
             }
-        }  
+        }
         return dp[str.size()];
     }
 };
-```
+````
+
 # 剑指 Offer 46. 把数字翻译成字符串
+
 动态规划
-如果`str[i-1]+str[i]` 在10到25之间的数字 
+如果`str[i-1]+str[i]` 在 10 到 25 之间的数字
+
 $$
-f_{i} = f_{i-1} + f_{i-2} 
+f_{i} = f_{i-1} + f_{i-2}
 $$
+
 否则
+
 $$
-f_{i} = f_{i-1} 
+f_{i} = f_{i-1}
 $$
 
 ```c++
@@ -4067,14 +4086,17 @@ public:
             }else{
                 dp[i] = dp[i-1];
             }
-        }  
+        }
 
         return dp[str.size()];
     }
 };
 ```
+
 # 剑指 Offer 47. 礼物的最大价值
+
 动态规划
+
 ```c++
 class Solution {
 public:
@@ -4083,26 +4105,29 @@ public:
         int m = grid[0].size();
         vector<vector<int>> dp(n, vector<int>(m, 0));
         dp[0][0] = grid[0][0];
-        for(int i=1;i<n;i++) 
+        for(int i=1;i<n;i++)
         {
             dp[i][0] = dp[i-1][0] + grid[i][0];
         }
         for(int j=1;j<m;j++)
         {
             dp[0][j] = dp[0][j-1] + grid[0][j];
-        } 
+        }
         for(int i=1;i<n;i++)
         {
             for(int j=1;j<m;j++){
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]) + grid[i][j];
             }
-        } 
+        }
         return dp[n-1][m-1];
     }
 };
 ```
+
 # 剑指 Offer 49. 丑数
+
 类似于合并三个有序链表
+
 ```c++
 class Solution {
 public:
@@ -4132,8 +4157,11 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 56 - I. 数组中数字出现的次数
-首先将所有数字进行异或操作，得到x， x中找到那个为1的位，根据异或为1的那个位将数字分为两组
+
+首先将所有数字进行异或操作，得到 x， x 中找到那个为 1 的位，根据异或为 1 的那个位将数字分为两组
+
 ```c++
 class Solution {
 public:
@@ -4159,9 +4187,12 @@ public:
 };
 
 ```
+
 # 剑指 Offer 56 - II. 数组中数字出现的次数 II
-题目大概意思是有一个数只出现过1次，其他数都出现过3次。
-解法是每个位上的1进行统计，然后对三取余，如果是1的话说明只出现过一次的数这个位上有1
+
+题目大概意思是有一个数只出现过 1 次，其他数都出现过 3 次。
+解法是每个位上的 1 进行统计，然后对三取余，如果是 1 的话说明只出现过一次的数这个位上有 1
+
 ```c++
 class Solution {
 public:
@@ -4186,12 +4217,17 @@ public:
     }
 };
 ```
-# 剑指 Offer 60. n个骰子的点数
+
+# 剑指 Offer 60. n 个骰子的点数
+
 逆向推导
 
 ![image-1680526735131](/upload/2023/04/image-1680526735131.png)
-# 剑指 Offer 64. 求1+2+…+n
+
+# 剑指 Offer 64. 求 1+2+…+n
+
 后序遍历
+
 ```c++
 class Solution {
 private:
@@ -4204,8 +4240,11 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 66. 构建乘积数组
+
 构建从左边和从右边的累计数组
+
 ```c++
 class Solution {
 public:
@@ -4227,7 +4266,9 @@ public:
 };
 
 ```
-# 面试题13. 机器人的运动范围
+
+# 面试题 13. 机器人的运动范围
+
 ```c++
 class Solution {
 public:
@@ -4248,14 +4289,17 @@ public:
     }
 };
 ```
-# 面试题45. 把数组排成最小的数
+
+# 面试题 45. 把数组排成最小的数
+
 对数字进行排序
+
 ```c++
 string ab = a+b;
 string ba = b+a;
 return ab<ba;
 ```
- 
+
 ```c++
 class Solution {
 public:
@@ -4278,8 +4322,11 @@ public:
     }
 };
 ```
-# !面试题59 - II. 队列的最大值
-一个queue还有一个deque，queue push_back的时候，将max deque中back中小于等于value的都pop走，在pop_front的时候，将max deque中front中等于pop出来的value的pop出去，总体维护的队列back到front的数据是有序增大的
+
+# !面试题 59 - II. 队列的最大值
+
+一个 queue 还有一个 deque，queue push_back 的时候，将 max deque 中 back 中小于等于 value 的都 pop 走，在 pop_front 的时候，将 max deque 中 front 中等于 pop 出来的 value 的 pop 出去，总体维护的队列 back 到 front 的数据是有序增大的
+
 ```c++
 class MaxQueue {
 private:
@@ -4317,11 +4364,14 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 19. 正则表达式匹配
+
 https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof
 当`p[i-1] == '*'`的时候，总是可以删除一个前一个字符，即
-` dp[i][j] |= dp[i][j-2];`，同时，如果如果当`s[i-1] == p[j-2] || p[j-2] == '.'`时，匹配 
+` dp[i][j] |= dp[i][j-2];`，同时，如果如果当`s[i-1] == p[j-2] || p[j-2] == '.'`时，匹配
 s 末尾的一个字符，将该字符扔掉，而该组合还可以继续进行匹配；
+
 ```c++
 class Solution {
 public:
@@ -4351,9 +4401,12 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 51. 数组中的逆序对
+
 https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof
-利用merge_sort
+利用 merge_sort
+
 ```c++
 class Solution {
 private:
@@ -4403,8 +4456,11 @@ public:
     }
 };
 ```
+
 # 剑指 Offer 41. 数据流中的中位数
+
 https://leetcode.cn/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/
+
 ```c++
 class MedianFinder {
 private:
@@ -4413,9 +4469,9 @@ private:
 public:
     /** initialize your data structure here. */
     MedianFinder() {
-        
+
     }
-    
+
     void addNum(int num) {
         max_q.push(num);
         int tp = max_q.top();
@@ -4428,7 +4484,7 @@ public:
             max_q.push(tp);
         }
     }
-    
+
     double findMedian() {
         if(min_q.size() == max_q.size()){
             return (1.0 * min_q.top() + max_q.top()) / 2;
@@ -4437,7 +4493,9 @@ public:
     }
 };
 ```
-# 剑指 Offer 43. 1～n 整数中 1 出现的次数
+
+# 剑指 Offer 43. 1 ～ n 整数中 1 出现的次数
+
 ```c++
 class Solution {
 public:
@@ -4453,12 +4511,12 @@ public:
                 // 12033; left:(0-11), right:(0-99);
                 ans += left*k;
             }else if(now == 1){
-                // 12133  left:(0-11), right(0-99), 当left=left时, right=(0, right) 
-                ans += left*k + right+ 1; 
+                // 12133  left:(0-11), right(0-99), 当left=left时, right=(0, right)
+                ans += left*k + right+ 1;
             }else{
                 // 12933  left:(left)
                 ans += (left+1)*k;
-            }   
+            }
             k = k*10;
         }
         return ans;
