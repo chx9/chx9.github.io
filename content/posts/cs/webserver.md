@@ -102,10 +102,28 @@ Proactor 模型：
 
 ## epoll 触发模式
 
-epoll 支持三种触发模式：
+1. **边缘触发 (Edge-triggered, ET) 与水平触发 (Level-triggered, LT) 的区别**
 
-1. EPOLL_ET（边沿触发）：只有当文件描述符状态发生变化时，epoll 才会触发相应的事件。该模式适用于需要及时响应文件描述符状态变化的场景，但相对来说需要更加精细的管理。
-2. EPOLL_LT（水平触发）：只要文件描述符处于就绪状态，epoll 就会持续不断地触发事件。该模式适用于需要频繁读写文件描述符的场景，但相对来说会产生更多的 CPU 开销。
+   在 epoll 中，有两种事件触发模式：边缘触发和水平触发。
+
+   - 边缘触发（ET）: 当被监控的 Socket 描述符上有可读事件发生时，服务器端只会从 epoll_wait 中苏醒一次。即使进程没有调用 read 函数从内核读取数据，也依然只苏醒一次。因此，我们的程序必须保证一次性读取完内核缓冲区的所有数据。
+   - 水平触发（LT）: 当被监控的 Socket 上有可读事件发生时，服务器端会不断地从 epoll_wait 中苏醒，直到内核缓冲区的数据被 read 函数完全读取。目的是告知我们有数据需要读取。
+
+   举例来说：
+
+   - 边缘触发类似于你的快递到达一个快递箱，这个快递箱只会通过短信通知你一次。即使你没有取走快递，它也不会再发送第二条短信提醒你。
+   - 水平触发就像快递箱发现你的快递还未取走，于是会不停地发短信提醒你，直到你取走了快递。
+
+   总结下来：
+
+   水平触发是只要满足事件条件（例如内核中有数据需要读），就一直反复通知用户。而边缘触发则是当第一次满足条件的时候才触发，之后不会再传递同样的事件。
+
+   这种差异影响到两种模式的使用方式：
+
+   - 在水平触发模式下，内核通知文件描述符可读写后，我们可以继续检查其状态，看它是否仍可读或可写。所以接到通知后，没有必要一次尽可能多地进行读写操作。
+   - 在边缘触发模式下，I/O 事件只会通知一次，而且我们无法知道能读写多少数据。所以收到通知后，应尽可能多地进行读写操作，避免错过读写机会。由于我们会循环读写文件描述符，如果文件描述符是阻塞的且没有数据可读写，进程会阻塞在那里，无法继续执行。因此，边缘触发模式常与非阻塞 I/O 配合使用，程序会持续执行 I/O 操作，直到系统调用（如 read 和 write）返回错误，错误类型为 EAGAIN 或 EWOULDBLOCK。
+
+   通常，边缘触发模式的效率高于水平触发模式，因为边缘触发模式可以减少 epoll_wait 的系统调用次数，降低系统调用的开销（涉及上下文切换）。
 
 # epoll 底层是如何实现的
 
@@ -205,54 +223,54 @@ struct epitem {
   public:
     Buffer(int initBuffSize = 1024);
     ~Buffer() = default;
-
+  
     // 有多少字节的数据可以写
     size_t WritableBytes() const;
     // 有多少字节的数据可以读
     size_t ReadableBytes() const;
     // buffer头部有多少字节的数据空出来
     size_t PrependableBytes() const;
-
+  
     // 返回第一个可读字节的char地址
     const char *Peek() const;
     // 确保WritableBytes小于len，如果不是，就调用MakeSpace_动态扩容
     void EnsureWriteable(size_t len);
     // 写入结束，更新writePos_
     void HasWritten(size_t len);
-
+  
     // 写出，根据长度调整readPos_
     void Retrieve(size_t len);
     // 写出，根据指针计算写出的长度，并调用Retrieve
     void RetrieveUntil(const char *end);
-
+  
     // 重置缓冲区，在写入内核区缓存后来调用
     void RetrieveAll();
     std::string RetrieveAllToStr();
-
+  
     // 定位buffer内数据段末尾，在了http解析函数中使用
     const char *BeginWriteConst() const;
     // 定位buffer内数据段首部
     char *BeginWrite();
-
+  
     // 动态扩容
     void Append(const std::string &str);
     // 核心是这个，其他重载函数内部调用了这个
     void Append(const char *str, size_t len);
     void Append(const void *data, size_t len);
     void Append(const Buffer &buff);
-
+  
     // 采用分散读，分散读的好处是减少系统调用次数，提高IO效率
     ssize_t ReadFd(int fd, int *Errno);
     // 这个函数没有用，WriteFd写在了HttpConn::write中
     ssize_t WriteFd(int fd, int *Errno);
-
+  
   private:
     // 返回buffer头部指针
     char *BeginPtr_();
     const char *BeginPtr_() const;
     // 若PrependableBytes和WritableBytes大于len，整体数据往前移，若小于，那就要resize
     void MakeSpace_(size_t len);
-
+  
     // 用动态数组封装的char缓冲区
     std::vector<char> buffer_;
     // 如果没有实现log的话，就不需要原子，因为每个线程独自占有各自的buffer

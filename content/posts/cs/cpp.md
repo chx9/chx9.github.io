@@ -385,17 +385,17 @@ public:
   char b[] = "Hello";                         // 按字符串初始化，大小为6
   char c[] = {'H', 'e', 'l', 'l', 'o', '\0'}; // 按字符初始化
   int *arr = new int[10];                     // 动态创建一维数组
-
+  
   // 指针
   int *p = new int(0); // 指向对象的指针
   delete p;
-
+  
   int *p1 = new int[10]; // 指向数组的指针
   delete[] p1;           // 指向类的指针：
-
+  
   string *p2 = new string;
   delete p2;
-
+  
   int **pp = &p; // 指向指针的指针（二级指针）
   **pp = 10;
   ```
@@ -587,53 +587,19 @@ char* cp = reinterpret_cast<char*>(ip);
 
 # 简述一下 C++11 中 Lambda 新特性
 
-lambda 表达式可以方便的创建和定义匿名函数
+1. 利用 lambda 表达式可以编写内嵌的匿名函数，用以替换独立函数或者函数对象；
+2. 每当你定义一个 lambda 表达式后，编译器会自动生成一个**匿名类**（这个类当然重载了()运算符），我们称为闭包类型（closure type）。那么在运行时，这个 lambda 表达式就会返回一个匿名的闭包实例，其实一个右值。
 
-语法：
+所以，我们上面的 lambda 表达式的结果就是一个个闭包。闭包的一个强大之处是其可以通过传值或者引用的方式捕捉其封装作用域内的变量，前面的方括号就是用来定义捕捉模式以及变量，我们又将其称为 lambda 捕捉块。
 
-`[capture list] (params list) mutable exception-> return type { function body }`
+3. lambda 表达式的语法定义如下：
 
-各项具体含义如下
-
-1. capture list：捕获外部变量列表
-2. params list：形参列表
-3. mutable 指示符：用来说用是否可以修改捕获的变量
-4. exception：异常设定
-5. return type：返回类型
-6. function body：函数体
-
-此外，我们还可以省略其中的某些成分来声明“不完整”的 Lambda 表达式，常见的有以下几种：
-
-| 序号 | 格式                                                        |
-| ---- | ----------------------------------------------------------- |
-| 1    | [capture list] (params list) -> return type {function body} |
-| 2    | [capture list] (params list) {function body}                |
-| 3    | [capture list] {function body}                              |
-
-其中：
-
-- 格式 1 声明了 const 类型的表达式，这种类型的表达式不能修改捕获列表中的值。
-- 格式 2 省略了返回值类型，但编译器可以根据以下规则推断出 Lambda 表达式的返回类型： （1）：如果 function body 中存在 return 语句，则该 Lambda 表达式的返回类型由 return 语句的返回类型确定； （2）：如果 function body 中没有 return 语句，则返回值为 void 类型。
-- 格式 3 中省略了参数列表，类似普通函数中的无参函数。
-
-Lambda 表达式可以使用其可见范围内的外部变量，但必须明确声明（明确声明哪些外部变量可以被该 Lambda 表达式使用.
-
-```cpp
-#include<iostream>
-using namespace std;
-
-int main()
-{
-    string captured_var = "captured";
-    auto fun = [captured_var](int a){
-        cout<<"hello"<<endl;
-        cout<<captured_var<<endl;
-
-    };
-    fun(1);
-    return 0;
-}
 ```
+[capture] （parameters） mutable ->return-type {statement};
+即 [捕获列表](参数)mutable -&gt; 返回值 {函数体}
+```
+
+4. lambda 必须使用尾置返回来指定返回类型，可以忽略参数列表和返回值，但必须永远包含捕获列表和函数体；
 
 # 多态实现的原理
 
@@ -656,7 +622,7 @@ int main()
 
 # C++11 新语法
 
-智能指针 ，lambda 表达式，auto 自动推到类型，右值引用和移动语义，列表初始化, Range-based for loops), 智能指针，Lambda 表达式
+智能指针 ，lambda 表达式，auto 自动推到类型，右值引用和移动语义，列表初始化, Range-based for loops, 智能指针，Lambda 表达式
 
 # 列表初始化的优点
 
@@ -1694,3 +1660,24 @@ int main() {
 2. 空间复杂度：
    - `std::map` 使用红黑树作为底层数据结构时，空间复杂度为 O(N)，其中 N 是 `std::map` 中存储的键值对数量。每个键值对需要一个节点来存储，同时可能还有一些额外的指针和元数据。
    - 需要注意的是，红黑树作为自平衡二叉查找树，相对于其他平衡二叉查找树（如 AVL 树），其节点所带的额外颜色属性会增加空间开销，但它可以提供较好的平衡性能，保持树的高度较低，从而保证常数时间的查找、插入和删除操作
+
+# c++和 java 的区别
+
+内存管理： - c++需要程序员手动管理内存，new 分配，delete 释放，这样更加灵活。 - java 内置 gc，不需要手动管理
+
+平台依赖性： - c++生成机器码，他是平台相关 - java 是字节码可以在任何 java 虚拟机上运行
+
+面对对象： - c++ 支持多重继承 - java 不支持
+
+# 讲一讲c++的new
+new的步骤
+1. 根据传入的参数计算需要分配的内存大小
+2. 分配内存
+3. 调用构造函数
+4. 返回指针
+
+失败会返回nullptr
+
+抛出异常情况，会抛出std::bad_alloc
+
+
