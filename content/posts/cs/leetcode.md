@@ -609,49 +609,43 @@ search()和 startwith()通过深度优先搜索，如果是 nullptr 那么就没
 ```cpp
 class Trie {
 private:
-    vector<Trie*> children;
+    vector<Trie*> cache;
     bool is_end;
-    Trie* dfs(string word){
+public:
+    Trie(): cache(26), is_end(false) {
+        is_end = false;
+    }
+    Trie* dfs(const string& word){
         auto cur = this;
         for(char c: word){
-            int idx = c - 'a';
-            if(cur->children[idx] == nullptr){
+            int index = c - 'a';
+            if(!cur->cache[index]){
                 return nullptr;
             }
-            cur = cur->children[idx];
+            cur = cur->cache[index];
         }
         return cur;
     }
-public:
-    Trie():children(26), is_end(false) {
-
-    }
     void insert(string word) {
         auto cur = this;
-        for(char c: word){
-            int idx = c-'a';
-            if(cur->children[idx] == nullptr){
-                cur->children[idx] = new Trie();
+        for(char c:word){
+            int index = c - 'a';
+            if(!cur->cache[index]){
+                cur->cache[index] = new Trie();
             }
-            cur = cur->children[idx];
+            cur = cur->cache[index];
         }
         cur->is_end = true;
     }
 
     bool search(string word) {
-        auto res = dfs(word);
-        if(res!=nullptr && res->is_end){
-            return true;
-        }
-        return false;
+        auto cur = dfs(word);
+        return cur!=nullptr && cur->is_end;
     }
 
     bool startsWith(string prefix) {
-        auto res = dfs(prefix);
-        if(res!=nullptr){
-            return true;
-        }
-        return false;
+        auto cur = dfs(prefix);
+        return cur!=nullptr;
     }
 };
 ```
@@ -666,41 +660,33 @@ public:
 ```cpp
 class Solution {
 private:
-    int res;
     int k;
 public:
-    int partition(vector<int>& nums, int begin, int end){
-        int i = begin-1;
-        int j;
-        int pivot_val = nums[end];
-        for(j=begin;j<end;j++){
-            if(nums[j] > pivot_val){
+    int partition(vector<int>& nums, int left, int right){
+        int i = left-1;
+        int pivot_val = nums[right];
+        for(int j=left;j<right;j++){
+            if(nums[j] < pivot_val){
                 i++;
                 swap(nums[j], nums[i]);
             }
         }
         i++;
-        swap(nums[i], nums[end]);
+        swap(nums[i], nums[right]);
         return i;
     }
-    void quick_sort(vector<int>& nums, int begin, int end){
-        if(begin >= end){
-            res = nums[begin];
-            return;
+    int quick_sort(vector<int>& nums, int left, int right){
+        int pivot = partition(nums, left, right);
+        if(pivot == k){
+            return nums[pivot];
+        }else if(pivot < k){
+            return quick_sort(nums, pivot+1, right);
         }
-        int pivot = partition(nums, begin, end);
-        if(pivot==k){
-            res = nums[pivot];
-        }else if(pivot<k){
-            quick_sort(nums, pivot+1, end);
-        }else{
-            quick_sort(nums, begin, pivot-1);
-        }
+        return quick_sort(nums, left, pivot-1);
     }
     int findKthLargest(vector<int>& nums, int k) {
-        this->k = k-1;
-        quick_sort(nums, 0, nums.size()-1);
-        return res;
+        this->k = nums.size() - k ;
+        return quick_sort(nums, 0, nums.size()-1);
     }
 };
 
@@ -712,36 +698,35 @@ public:
 ```cpp
 class Solution {
 public:
-    void heapfy(vector<int> &nums, int i, int n){
-        int largest_idx = i;
+    void heapify(vector<int>& nums, int i, int n){
         int left = i*2+1;
         int right = i*2+2;
-        if(left<n && nums[left] > nums[largest_idx]){
-            largest_idx = left;
+        int largest = i;
+        if(left < n && nums[left]> nums[largest] ){
+            largest = left;
         }
-        if(right<n && nums[right] > nums[largest_idx]){
-            largest_idx = right;
+        if(right < n && nums[right] > nums[largest]){
+            largest = right;
         }
-        if(i!=largest_idx){
-            swap(nums[largest_idx], nums[i]);
-            heapfy(nums, largest_idx, n);
+        if(largest!=i){
+            swap(nums[largest], nums[i]);
+            heapify(nums, largest, n);
         }
     }
     void build_heap(vector<int>& nums){
-        int n = nums.size();
-        for(int i=n/2-1;i>=0;i--){
-            heapfy(nums, i, n);
+        for(int i=(nums.size()-2)/2;i>=0;i--){
+            heapify(nums, i, nums.size());
         }
     }
     int findKthLargest(vector<int>& nums, int k) {
         build_heap(nums);
-        int heap_size = nums.size();
-        for(int i=0;i<k;i++){
-            swap(nums[0], nums[heap_size-1]);
-            heap_size--;
-            heapfy(nums, 0, heap_size);
+        int n = nums.size();
+        for(int i=0;i<k-1;i++){
+            swap(nums[0], nums[n-1]);
+            n--;
+            heapify(nums, 0, n);
         }
-        return nums[heap_size];
+        return nums[0];
     }
 };
 
@@ -798,9 +783,11 @@ public:
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        if(root == nullptr) return root;
-        auto left = invertTree(root->left);
-        auto right = invertTree(root->right);
+        if(!root) return root;
+        auto left = root->left;
+        auto right = root->right;
+        invertTree(root->left);
+        invertTree(root->right);
         root->left = right;
         root->right = left;
         return root;

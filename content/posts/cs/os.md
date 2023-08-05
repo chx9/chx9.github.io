@@ -358,7 +358,7 @@ kill 命令在 Linux 中被用来终止或发送信号给进程。-9 和-15 是�
 互斥锁（Mutex）：
 
 - 当无法获得锁时，线程会进入睡眠状态，直到有其他线程释放锁唤醒它。
-- 如果被保护的代码可能需要长时间执行或等待其他资源，使用互斥锁将更有效，因为它能让出CPU给其他线程使用。
+- 如果被保护的代码可能需要长时间执行或等待其他资源，使用互斥锁将更有效，因为它能让出 CPU 给其他线程使用。
 
 # sed 和 awk 的区别
 
@@ -368,7 +368,7 @@ sed：
 
 - 提供了基于行的处理方式，例如删除行、插入行或替换行。
 - 常用于简单的文本转换和操作。
-awk：
+  awk：
 
 更强大的文本处理工具，提供了编程语言的特性，如变量、循环和条件判断。
 
@@ -378,16 +378,16 @@ awk：
 # history 命令
 
 1. `history`: 显示先前执行过的命令列表。
-2. `history n`: 显示最近的n个命令。
-3. `!n`: 重复执行历史中的第n个命令。
+2. `history n`: 显示最近的 n 个命令。
+3. `!n`: 重复执行历史中的第 n 个命令。
 4. `!!`: 重复执行上一个命令。
-5. `!-n`: 重复执行倒数第n个命令。
+5. `!-n`: 重复执行倒数第 n 个命令。
 6. `!string`: 运行以指定字符串开始的最后一个命令。
 7. `!?string?`: 运行包含指定字符串的最后一个命令。
 8. `history -c`: 清除历史记录。
 9. `history -d offset`: 删除历史中的特定条目。
 
-Bash shell允许通过HISTCONTROL和HISTIGNORE环境变量来控制`history`命令的行为：
+Bash shell 允许通过 HISTCONTROL 和 HISTIGNORE 环境变量来控制`history`命令的行为：
 
 - `HISTCONTROL`可以设置为：
 
@@ -395,23 +395,49 @@ Bash shell允许通过HISTCONTROL和HISTIGNORE环境变量来控制`history`命�
   - `ignoredups`：连续的重复命令只会保存一次。
   - `ignoreboth`：同时应用上述两种规则。
 
-- `HISTIGNORE`允许您指定一个模式列表，匹配的命令不会保存到历史记录中。例如，`HISTIGNORE='ls:cd:pwd'`会忽略ls、cd
-# find命令
+- `HISTIGNORE`允许您指定一个模式列表，匹配的命令不会保存到历史记录中。例如，`HISTIGNORE='ls:cd:pwd'`会忽略 ls、cd
 
-`find`命令用于在Linux文件系统中搜索和定位文件的列表，此命令可以根据多种条件如名称、类型、大小等来查找文件。
+# find 命令
 
-1. `find /dir/ -name filename`: 在/dir/目录及其子目录中查找名为filename的文件。
+`find`命令用于在 Linux 文件系统中搜索和定位文件的列表，此命令可以根据多种条件如名称、类型、大小等来查找文件。
+
+1. `find /dir/ -name filename`: 在/dir/目录及其子目录中查找名为 filename 的文件。
 2. `find /dir/ -iname filename`: 同上，但忽略大小写。
 3. `find . -type f`: 在当前目录及其子目录中查找所有普通文件。
 4. `find . -type d`: 在当前目录及其子目录中查找所有目录。
-5. `find /dir/ -user username`: 查找/dir/目录及其子目录中所有者为username的文件。
-6. `find /dir/ -mmin n`: 查找/dir/目录及其子目录中在n分钟前被修改的文件。
-7. `find /dir/ -size +10M`: 查找/dir/目录及其子目录中大于10MB的文件。
+5. `find /dir/ -user username`: 查找/dir/目录及其子目录中所有者为 username 的文件。
+6. `find /dir/ -mmin n`: 查找/dir/目录及其子目录中在 n 分钟前被修改的文件。
+7. `find /dir/ -size +10M`: 查找/dir/目录及其子目录中大于 10MB 的文件。
 
-你还可以通过-exec选项与其他命令结合使用，对搜索结果执行操作： 8. `find /dir/ -name '*.txt' -exec rm {} \;`: 在/dir/目录及其子目录中查找所有.txt文件并删除之。
+你还可以通过-exec 选项与其他命令结合使用，对搜索结果执行操作： 8. `find /dir/ -name '*.txt' -exec rm {} \;`: 在/dir/目录及其子目录中查找所有.txt 文件并删除之。
 
+# mmap
 
-# merge 和 rebase的区别
+`mmap()` 是一种在进程的虚拟地址空间内映射文件或设备的方法，它是 Unix 和 Linux 系统提供的系统调用。`mmap()` 的全称是“memory map”，即内存映射。
+
+当你使用 `mmap()` 映射一个文件时，你实际上创建了一个新的内存区域，并将文件的内容放到这个内存区域中。此时，不需要再使用 `read()` 或 `write()` 这类系统调用来操作文件，而是直接通过内存操作就可以对文件进行读写。
+
+`mmap()` 函数原型如下：
+
+```c++
+void *mmap(void *addr, size_t length, int prot, int flags,int fd, off_t offset);
+```
+
+- `addr`：指定映射区的起始地址，通常设置为 NULL，表示由系统自动选择地址。
+- `length`：映射区的长度。以字节为单位，不足一内存页按一内存页处理。
+- `prot`：期望的内存保护标志，可以为 `PROT_NONE、PROT_READ、PROT_WRITE、PROT_EXEC`，或者他们的组合。
+- `flags`：指定映射对象的类型，必选项是 `MAP_SHARED`（共享）与 `MAP_PRIVATE`（私有），还可以与 `MAP_FIXED` 组合。
+- `fd`：要映射的文件描述符。
+- `offset`：文件映射的偏移量，通常设置为 0，表示从文件最前方开始对应。
+
+`mmap()` 返回一个指向映射区域开始处的指针。
+
+`mmap()` 映射的内存区域在进程退出时会被自动解除映射，当然，也可以显式地调用 `munmap()` 来解除映射。
+
+通常情况下，`mmap()` 用于处理大文件和实现共享内存。
+
+# merge 和 rebase 的区别
+
 Merge（合并）：
 
 1. 保留原始分支的历史，不改变提交顺序。

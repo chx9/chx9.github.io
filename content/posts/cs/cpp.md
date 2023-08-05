@@ -385,17 +385,17 @@ public:
   char b[] = "Hello";                         // 按字符串初始化，大小为6
   char c[] = {'H', 'e', 'l', 'l', 'o', '\0'}; // 按字符初始化
   int *arr = new int[10];                     // 动态创建一维数组
-  
+
   // 指针
   int *p = new int(0); // 指向对象的指针
   delete p;
-  
+
   int *p1 = new int[10]; // 指向数组的指针
   delete[] p1;           // 指向类的指针：
-  
+
   string *p2 = new string;
   delete p2;
-  
+
   int **pp = &p; // 指向指针的指针（二级指针）
   **pp = 10;
   ```
@@ -1553,8 +1553,10 @@ while(!condition) {
 ```c++
 cv.wait(lock, [] {return !q.empty(); });
 ```
- # gcc的参数
- `gcc` 是 GNU Compiler Collection 的缩写，它是一个用于编译C/C++以及其他语言的强大编译器。以下是一些常用的 `gcc` 命令行参数：
+
+# gcc 的参数
+
+`gcc` 是 GNU Compiler Collection 的缩写，它是一个用于编译 C/C++以及其他语言的强大编译器。以下是一些常用的 `gcc` 命令行参数：
 
 1. `-o outputfile`: 指定输出文件的名称。例如，`gcc -o myprog myprog.c` 将会编译 `myprog.c` 并生成可执行文件 `myprog`。
 2. `-c`: 只编译但不链接，通常生成 `.o` 对象文件。例如，`gcc -c myprog.c` 会生成 `myprog.o`。
@@ -1563,7 +1565,132 @@ cv.wait(lock, [] {return !q.empty(); });
 5. `-I dir`: 添加头文件搜索路径。如果你的头文件不在标准的系统路径下，你可以用 `-I` 参数告诉 `gcc` 到哪里找它们。
 6. `-L dir`: 添加库文件搜索路径。如果你的库文件不在标准的系统路径下，你可以用 `-L` 参数告诉 `gcc` 到哪里找它们。
 7. `-l libname`: 链接到名为 `libname` 的库。例如，`-lm` 将链接到数学库 `libm`。
-8. `-std=`: 用于指定C或C++的版本，例如 `-std=c99` 或 `-std=c++11`。
+8. `-std=`: 用于指定 C 或 C++的版本，例如 `-std=c99` 或 `-std=c++11`。
 9. `-D name`: 定义预处理宏。例如，`gcc -D DEBUG ...` 相当于在源码前面添加了 `#define DEBUG`。
 
 以上只是 `gcc` 最常用的部分参数，实际上 `gcc` 的参数非常丰富，可以根据具体需求选择合适的参数。
+
+# 手撕 string 类
+
+```c++
+#include <iostream>
+#include <cstring>
+
+class MyString {
+private:
+    char* m_data; // 用于存储字符串的字符数组
+
+public:
+    // 默认构造函数
+    MyString() : m_data(nullptr) {}
+
+    // 带参构造函数
+    MyString(const char* str) {
+        if (str != nullptr) {
+            size_t length = std::strlen(str);
+            m_data = new char[length + 1];
+            std::strcpy(m_data, str);
+        } else {
+            m_data = nullptr;
+        }
+    }
+
+    // 拷贝构造函数
+    MyString(const MyString& other) {
+        if (other.m_data != nullptr) {
+            size_t length = std::strlen(other.m_data);
+            m_data = new char[length + 1];
+            std::strcpy(m_data, other.m_data);
+        } else {
+            m_data = nullptr;
+        }
+    }
+
+    // 移动构造函数
+    MyString(MyString&& other) noexcept {
+        m_data = other.m_data;
+        other.m_data = nullptr;
+    }
+
+    // 析构函数
+    ~MyString() {
+        delete[] m_data;
+    }
+
+    // 重载赋值运算符
+    MyString& operator=(const MyString& other) {
+        if (this != &other) {
+            delete[] m_data;
+
+            if (other.m_data != nullptr) {
+                size_t length = std::strlen(other.m_data);
+                m_data = new char[length + 1];
+                std::strcpy(m_data, other.m_data);
+            } else {
+                m_data = nullptr;
+            }
+        }
+        return *this;
+    }
+
+    // 输出字符串
+    void print() {
+        if (m_data != nullptr) {
+            std::cout << m_data << std::endl;
+        } else {
+            std::cout << "(Empty)" << std::endl;
+        }
+    }
+};
+
+int main() {
+    MyString str1; // 默认构造函数
+    str1.print(); // 输出为空
+
+    MyString str2("Hello"); // 带参构造函数
+    str2.print(); // 输出 "Hello"
+
+    MyString str3 = str2; // 调用拷贝构造函数
+    str3.print();
+
+    MyString str4 = std::move(str2); // 调用移动构造函数
+    str4.print();
+    str2.print(); // 输出为空，因为数据被移动
+
+    return 0;
+}
+
+```
+
+# 内联函数
+
+内联函数是一种用于优化程序性能的 C++特性。它允许编译器将函数的代码插入调用它的地方，而不是通过常规的函数调用机制进行调用。这可以减少函数调用的开销，从而提高程序的执行效率
+
+- 函数体简短：内联函数适用于函数体较短的函数，通常不宜超过 10 行左右。
+- 频繁调用的函数：如果一个函数被频繁调用，可以考虑将其定义为内联函数，以减少函数调用的开销。
+
+限制：
+
+内联函数的代码较长会导致代码膨胀，因为每次调用都会复制一份函数体到调用位置，这可能会增加可执行文件的大小
+
+内联函数不能包含复杂的控制结构，比如循环和递归，因为这些会使得函数体过长，影响性能。
+
+什么情况下编译器可能不会内联一个内联函数？
+回答：编译器可能不会内联一个内联函数的情况包括：
+
+- 函数体过长：如果函数体较长，编译器可能认为内联会导致代码膨胀，从而选择不进行内联。
+- 递归函数：内联函数不能包含递归调用，所以递归函数不会被内联。
+- 虚函数：虚函数通常在运行时动态绑定，所以不适合内联。
+
+# map
+
+1. `std::map` 底层实现：
+   - 红黑树：`std::map` 的标准实现通常是使用红黑树。红黑树是一种自平衡二叉查找树，它具有以下特性：
+     - 每个节点都带有颜色属性，可以是红色或黑色。
+     - 根节点是黑色的。
+     - 每个叶子节点（NIL 节点，即空节点）是黑色的。
+     - 如果一个节点是红色的，则它的两个子节点都是黑色的。
+     - 从根节点到每个叶子节点的路径上，黑色节点的数量是相同的。
+2. 空间复杂度：
+   - `std::map` 使用红黑树作为底层数据结构时，空间复杂度为 O(N)，其中 N 是 `std::map` 中存储的键值对数量。每个键值对需要一个节点来存储，同时可能还有一些额外的指针和元数据。
+   - 需要注意的是，红黑树作为自平衡二叉查找树，相对于其他平衡二叉查找树（如 AVL 树），其节点所带的额外颜色属性会增加空间开销，但它可以提供较好的平衡性能，保持树的高度较低，从而保证常数时间的查找、插入和删除操作
