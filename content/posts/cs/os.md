@@ -449,3 +449,66 @@ Rebase（变基）：
 1. 将当前分支的更改移动到另一个分支的基础上，形成一个线性历史。
 2. 不会创建新的合并提交，使得提交历史更为简洁。
 3. 可能会改写提交历史，因此需要谨慎使用，尤其是在公共分支上。
+
+# 进程和线程
+
+1、线程启动速度快，轻量级
+
+2、线程的系统开销小
+
+3、线程使用有一定难度，需要处理数据一致性问题
+
+4、同一线程共享的有堆、全局变量、静态变量、指针，引用、文件等，而独自占有栈
+
+```c++
+#include <iostream>
+#include <thread>
+#include <fstream>
+
+// 全局变量
+int globalVar = 10;
+
+// 静态变量
+static int staticVar = 20;
+
+// 在堆上分配内存
+int* heapVar = new int(30);
+
+void threadFunc(std::ofstream& outFile) {
+    // 修改全局变量
+    ++globalVar;
+
+    // 修改静态变量
+    ++staticVar;
+
+    // 修改堆变量
+    ++(*heapVar);
+
+    outFile << "Thread ID: " << std::this_thread::get_id() << std::endl;
+    outFile << "Global variable: " << globalVar << std::endl;
+    outFile << "Static variable: " << staticVar << std::endl;
+    outFile << "Heap variable: " << *heapVar << std::endl;
+    outFile << "---------------------------" << std::endl;
+}
+
+int main() {
+    std::ofstream outFile("shared.txt");
+
+    if (!outFile) {
+        std::cerr << "Error opening file." << std::endl;
+        return -1;
+    }
+
+    std::thread t1(threadFunc, std::ref(outFile));
+    std::thread t2(threadFunc, std::ref(outFile));
+
+    t1.join();
+    t2.join();
+
+    delete heapVar; // 记得删除堆内存
+    outFile.close();
+
+    return 0;
+}
+
+```
