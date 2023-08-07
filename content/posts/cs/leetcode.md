@@ -1129,8 +1129,6 @@ public:
 
 1、二分法 O（n\*lgn） 每次 n 次循环计算
 
-![Untitled](Leetcode-hot-100%20ae5bdb987aab4dafb1522f8abeb65786/Untitled%202.png)
-
 ```cpp
 class Solution {
 public:
