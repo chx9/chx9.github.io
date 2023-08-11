@@ -1502,7 +1502,7 @@ public:
 ```
 
 ## 312.戳气球
-
+https://leetcode.cn/problems/burst-balloons/
 动态规划要求子问题必须独立，所以我们将其 nums 扩容 2（两个边界-1 和 n）并设置成 1，气球的索引变成了 1-n,并且我们将戳气球的操作变成添加气球操作
 
 [题解](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485172&idx=1&sn=b860476b205b04f960ea0de6f70d3553&scene=21#wechat_redirect)
@@ -1547,7 +1547,6 @@ d[k][j]
 
 (其中 i<k<j)，所以要注意顺序，
 
-![image](/upload/2023/04/image.png)
 
 ```cpp
 class Solution {
