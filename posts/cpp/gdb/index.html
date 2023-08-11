@@ -7,9 +7,9 @@
 <meta name="robots" content="index, follow">
 <title>Gdb | chx9</title>
 <meta name="keywords" content="">
-<meta name="description" content="debug with args gdb --args">
+<meta name="description" content="Gdb - chx9">
 <meta name="author" content="chx9">
-<link rel="canonical" href="/posts/cs/gdb/">
+<link rel="canonical" href="/posts/cpp/gdb/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="img/svin.webp">
@@ -74,15 +74,15 @@ var _hmt = _hmt || [];
 })();
 </script>
 <meta property="og:title" content="Gdb" />
-<meta property="og:description" content="debug with args gdb --args" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/cs/gdb/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-07-31T17:38:25+08:00" />
-<meta property="article:modified_time" content="2023-07-31T17:38:25+08:00" />
+<meta property="og:url" content="/posts/cpp/gdb/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-11T21:48:16+08:00" />
+<meta property="article:modified_time" content="2023-08-11T21:48:16+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gdb"/>
-<meta name="twitter:description" content="debug with args gdb --args"/>
+<meta name="twitter:description" content=""/>
 
 
 <script type="application/ld+json">
@@ -96,19 +96,12 @@ var _hmt = _hmt || [];
           "position":  2 ,
           "name": "📚Articles",
           "item": "/posts/"
-        },
-
-        {
-          "@type": "ListItem",
-          "position":  3 ,
-          "name": "💻 Programming Basics",
-          "item": "/posts/cs/"
         }, 
     {
       "@type": "ListItem",
-      "position":  4 ,
+      "position":  3 ,
       "name": "Gdb",
-      "item": "/posts/cs/gdb/"
+      "item": "/posts/cpp/gdb/"
     }
   ]
 }
@@ -119,22 +112,22 @@ var _hmt = _hmt || [];
   "@type": "BlogPosting",
   "headline": "Gdb",
   "name": "Gdb",
-  "description": "debug with args gdb --args",
+  "description": "",
   "keywords": [
     ""
   ],
-  "articleBody": "debug with args gdb --args\n",
-  "wordCount" : "5",
+  "articleBody": "",
+  "wordCount" : "0",
   "inLanguage": "en",
-  "datePublished": "2023-07-31T17:38:25+08:00",
-  "dateModified": "2023-07-31T17:38:25+08:00",
+  "datePublished": "2023-08-11T21:48:16+08:00",
+  "dateModified": "2023-08-11T21:48:16+08:00",
   "author":[{
     "@type": "Person",
     "name": "chx9"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/posts/cs/gdb/"
+    "@id": "/posts/cpp/gdb/"
   },
   "publisher": {
     "@type": "Organization",
@@ -241,7 +234,7 @@ var _hmt = _hmt || [];
 <article class="post-single">
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="">🏠 主页</a>&nbsp;»&nbsp;<a href="/posts/">📚Articles</a>&nbsp;»&nbsp;<a href="/posts/cs/">💻 Programming Basics</a></div>
+            <div class="breadcrumbs"><a href="">🏠 主页</a>&nbsp;»&nbsp;<a href="/posts/">📚Articles</a></div>
             <h1 class="post-title">
                 Gdb
             </h1>
@@ -264,7 +257,7 @@ var _hmt = _hmt || [];
 <span class="parent-post-meta">
     <span id="post_meta_style_1">
         <span class="fa fa-calendar-check-o"></span>
-        <span>2023-07-31
+        <span>2023-08-11
             &nbsp;&nbsp;
         </span>
     </span>
@@ -277,13 +270,13 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>5字
+        <span>0字
             &nbsp;&nbsp;
         </span>
     </span>
     <span id="post_meta_style_4">
         <span class="fa fa-clock-o"></span>
-        <span>1分钟
+        <span>0分钟
             &nbsp;&nbsp;
         </span>
     </span>
@@ -349,100 +342,15 @@ var _hmt = _hmt || [];
                 </span>
 
 </div>
-        </header> <aside id="toc-container" class="toc-container wide">
-    <div class="toc">
-        <details  open>
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">目录</span>
-        </summary>
-
-        <div class="inner"><ul>
-                <li>
-                    <a href="#debug-with-args" aria-label="debug with args">debug with args</a>
-                </li>
-            </ul>
-        </div>
-        </details>
-    </div>
-</aside>
-<script>
-    let activeElement;
-    let elements;
-    window.addEventListener('DOMContentLoaded', function (event) {
-        checkTocPosition();
-
-        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
-        
-        activeElement = elements[0];
-        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
-        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
-    }, false);
-
-    window.addEventListener('resize', function(event) {
-        checkTocPosition();
-    }, false);
-
-    window.addEventListener('scroll', () => {
-        
-        if (elements) {
-            activeElement = Array.from(elements).find((element) => {
-                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
-                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
-                    return element;
-                }
-            }) || activeElement
-
-            elements.forEach(element => {
-                const id = encodeURI(element.getAttribute('id')).toLowerCase();
-                if (element === activeElement){
-                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
-                } else {
-                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
-                }
-            })
-        }
-    }, false);
-
-    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
-    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
-    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
-
-    function checkTocPosition() {
-        const width = document.body.scrollWidth;
-        if (width - main - (toc * 2) - (gap * 4) > 0) {
-            document.getElementById("toc-container").classList.add("wide");
-        } else {
-            document.getElementById("toc-container").classList.remove("wide");
-        }
-    }
-
-    function getOffsetTop(element) {
-        if (!element.getClientRects().length) {
-            return 0;
-        }
-        let rect = element.getBoundingClientRect();
-        let win = element.ownerDocument.defaultView;
-        return rect.top + win.pageYOffset;
-    }
-</script>
-        <div class="post-content"><h1 id="debug-with-args">debug with args<a hidden class="anchor" aria-hidden="true" href="#debug-with-args">#</a></h1>
-<p><code>gdb --args</code></p>
-
-
-        </div>
+        </header> 
 
         <footer class="post-footer">
             
 <nav class="paginav">
-  <a class="prev" href="/posts/cpp/cmake/">
-    <span class="title">« 上一页</span>
-    <br>
-    <span>Cmake</span>
-  </a>
-  <a class="next" href="/posts/cs/docker/">
+  <a class="next" href="/posts/cpp/cmake/">
     <span class="title">下一页 »</span>
     <br>
-    <span>Docker</span>
+    <span>Cmake</span>
   </a>
 </nav>
 
