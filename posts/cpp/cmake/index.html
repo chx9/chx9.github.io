@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Cmake | chx9</title>
 <meta name="keywords" content="">
-<meta name="description" content="Cmake - chx9">
+<meta name="description" content="CMake介绍 CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。 第一个CMake文件 在一个C&#43;&#43;项目中，我们通常需要编写">
 <meta name="author" content="chx9">
 <link rel="canonical" href="/posts/cpp/cmake/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -74,7 +74,7 @@ var _hmt = _hmt || [];
 })();
 </script>
 <meta property="og:title" content="Cmake" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="CMake介绍 CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。 第一个CMake文件 在一个C&#43;&#43;项目中，我们通常需要编写" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/cpp/cmake/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-11T21:43:12+08:00" />
@@ -82,7 +82,7 @@ var _hmt = _hmt || [];
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cmake"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="CMake介绍 CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。 第一个CMake文件 在一个C&#43;&#43;项目中，我们通常需要编写"/>
 
 
 <script type="application/ld+json">
@@ -96,10 +96,17 @@ var _hmt = _hmt || [];
           "position":  2 ,
           "name": "📚Articles",
           "item": "/posts/"
+        },
+
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "🍇 C++ Programming Language",
+          "item": "/posts/cpp/"
         }, 
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  4 ,
       "name": "Cmake",
       "item": "/posts/cpp/cmake/"
     }
@@ -112,12 +119,12 @@ var _hmt = _hmt || [];
   "@type": "BlogPosting",
   "headline": "Cmake",
   "name": "Cmake",
-  "description": "",
+  "description": "CMake介绍 CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。 第一个CMake文件 在一个C++项目中，我们通常需要编写",
   "keywords": [
     ""
   ],
-  "articleBody": "",
-  "wordCount" : "0",
+  "articleBody": "CMake介绍 CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。\n第一个CMake文件 在一个C++项目中，我们通常需要编写一个名为CMakeLists.txt的文件来指导CMake如何构建项目。在这个文件中，我们可以定义项目的源文件、头文件、依赖关系等信息。\n让我们一起来创建一个简单的CMakeLists.txt文件。\n# CMake版本要求 cmake_minimum_required(VERSION 3.10) # 项目名称和版本 project(HelloWorld VERSION 1.0.0) # 添加一个可执行文件 add_executable(${PROJECT_NAME} main.cpp) 以下是每行代码的简介：\ncmake_minimum_required(VERSION 3.10): 这一行定义了要构建此项目所需的最低CMake版本。如果使用的CMake版本低于此版本，将会提示错误。 project(HelloWorld VERSION 1.0.0): 这一行定义了项目的名称（此处为HelloWorld）和版本号（此处为1.0.0）。${PROJECT_NAME}变量将被设置为\"HelloWorld\"，在后续的命令中可以使用。 add_executable(${PROJECT_NAME} main.cpp): 这一行添加了一个可执行文件。第一个参数是生成的可执行文件的名称，这里我们用之前定义的项目名变量${PROJECT_NAME}作为输出的可执行文件名；后面的参数是构成这个可执行文件的源文件，这里只有一个main.cpp。 CMake中的变量定义 在CMake中，我们可以通过 set 命令来定义一个变量。以下是一些基本示例：\nset(VAR_NAME \"Hello, CMake!\") 定义一个列表变量 set(SOURCE_FILES main.cpp util.cpp) 这条命令定义了一个名为SOURCE_FILES的变量，它包含两个元素：main.cpp和util.cpp。列表变量在处理源文件或者库文件时非常有用。\n使用变量 在CMake中，我们可以使用 ${} 来引用一个变量。例如：\nset(SOURCE_FILES main.cpp util.cpp) add_executable(${PROJECT_NAME} ${SOURCE_FILES}) 这里，${SOURCE_FILES} 将会被替换为 main.cpp util.cpp。\n修改变量 我们也可以修改已经存在的变量。例如下面的命令将向SOURCE_FILES列表添加新的元素：\nset(SOURCE_FILES main.cpp util.cpp) list(APPEND SOURCE_FILES other.cpp) # Now SOURCE_FILES contains main.cpp, util.cpp and other.cpp 以上就是在CMake中如何定义和使用变量的基本方法。正确地使用变量可以让你的CMakeLists.txt更加清晰和灵活。\n指定C++版本 在CMake中，你可以使用set命令和CMAKE_CXX_STANDARD变量来指定C++的版本。以下是一个示例：\n# 设置C++标准为C++14 set(CMAKE_CXX_STANDARD 14) # 我们也可以要求编译器必须支持这一标准： set(CMAKE_CXX_STANDARD_REQUIRED ON) # 如果你不希望编译器使用比指定版本更新的标准，你可以设置下面的变量为ON： set(CMAKE_CXX_EXTENSIONS OFF) 其中，\nCMAKE_CXX_STANDARD 变量用于设定项目中所使用的C++标准。常见的值有11、14、17等，对应C++11、C++14、C++17标准。 CMAKE_CXX_STANDARD_REQUIRED 变量决定是否强制要求编译器支持设定的C++标准。如果设置为 ON，那么当编译器不支持设定的标准时，CMake将报错。 CMAKE_CXX_EXTENSIONS 变量用于控制编译器是否允许使用比设定的C++标准更新的语言扩展。如果设置为 OFF，编译器将只使用标准C++，而不包含任何特定编译器的扩展。 注意以上的这些变量设置必须放在项目声明 (project()) 之后，否则可能不会生效。\n这种方式适用于CMake版本3.1及以上，如果你使用的CMake版本较低，可能需要另找其他方式设定C++版本。\n指定输出路径 在CMake中，你可以设置 CMAKE_RUNTIME_OUTPUT_DIRECTORY 变量来指定可执行文件的输出路径，设置 CMAKE_LIBRARY_OUTPUT_DIRECTORY 和 CMAKE_ARCHIVE_OUTPUT_DIRECTORY 变量来指定库文件的输出路径。以下是一个示例：\nset(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) 这段代码将会把所有的可执行文件输出到构建目录下的bin文件夹中，所有的库文件（包括动态库和静态库）输出到构建目录下的lib文件夹中。\n其中，${CMAKE_BINARY_DIR}变量表示的是构建目录（即你调用cmake命令的那个目录）。如果你希望使用其他目录作为输出路径，只需要替换掉对应的目录即可。\n注意，这些设置通常放在顶层的 CMakeLists.txt 文件中，以确保它们对整个项目生效。\n搜索文件 file 搜索指定子目录下的所有 .cpp 文件 file(GLOB SOURCES \"src/*.cpp\") 这个命令将会搜索当前源目录下的 src 子目录中所有的 .cpp 文件，并将结果存储到 SOURCES 变量中。\n在指定子目录中递归搜索 .cpp 文件 file(GLOB_RECURSE SOURCES \"src/*.cpp\") GLOB_RECURSE 可以递归地搜索目录下的文件，上面的例子中搜索了 include 目录下的所有 .h 文件。\nfile(GLOB_RECURSE HEADER_FILES \"${CMAKE_SOURCE_DIR}/include/*.h\") aux_source_directory 搜索源文件 aux_source_directory 命令是一个更专注于构建源文件的工具。它会在指定目录中搜索所有源文件，并将它们添加到一个变量中，然后可以将该变量用于构建目标。\naux_source_directory(${CMAKE_SOURCE_DIR}/src SOURCE_FILES) add_executable(MyApp ${SOURCE_FILES}) 上面的例子中，aux_source_directory 命令会将 src 目录中的所有源文件添加到 SOURCE_FILES 变量中，然后可以将该变量用于构建目标。\ncmake指定头文件目录 在 CMake 中，要指定头文件目录，你可以使用 include_directories() 命令或 target_include_directories() 命令。这些命令允许你向 CMake 表示哪些目录应该被添加到头文件搜索路径中。\n下面是两种常用的方式：\n使用 include_directories() 命令：\n这个命令会将指定的目录添加到整个项目的头文件搜索路径中。在项目的 CMakeLists.txt 文件中使用它。\ninclude_directories(${CMAKE_SOURCE_DIR}/include) include_directories(${CMAKE_SOURCE_DIR}/other_include) 或者，你可以将多个目录合并成一个列表：\nset(INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/other_include ) include_directories(${INCLUDE_DIRS}) 使用 target_include_directories() 命令：\n这个命令会将指定的目录添加到特定目标（例如可执行文件或库）的头文件搜索路径中。这是一种更推荐的方式，因为它将目录限定在特定目标，避免了全局的头文件搜索路径混乱。\nadd_executable(MyApp ${SOURCES}) target_include_directories(MyApp PRIVATE ${CMAKE_SOURCE_DIR}/include) 如果你在多个目标中使用同样的头文件路径，也可以将路径设置为变量：\nset(INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/include) add_executable(MyApp ${SOURCES}) target_include_directories(MyApp PRIVATE ${INCLUDE_DIRS}) CMake制作库 制作静态库：\n用add_library ，\n静态库使用STATIC，默认是STATIC可以忽略\n动态库使用SHARED\nadd_library(MyStaticLib STATIC source_file1.cpp source_file2.cpp ) 在 CMake 中制作静态库（也称为静态链接库）通常涉及创建一个包含编译后目标代码的归档文件。\nCMake使用库 当使用CMake构建C++项目时，连接（链接）库是将代码与外部库整合在一起的关键部分。以下是四个关于连接库的CMake命令，以及它们的应用场景和区别：\nlink_libraries： 作用：指定全局性的连接库，适用于整个项目。 用法：link_libraries(library_name1 library_name2 ...) 示例：link_libraries(SDL2 SDL2_image) 适用场景：在项目中多个目标都需要链接同样的库时，使用这个命令。 link_directories： 作用：定义链接库时的搜索路径。 用法：link_directories(directory_path) 示例：link_directories(/path/to/libs) 适用场景：当你使用的库不在默认搜索路径中，需要指定额外的库搜索路径时，使用这个命令。 target_link_libraries： 作用：将指定目标与一个或多个库链接。 用法：target_link_libraries(target_name library_name1 library_name2 ...) 示例：target_link_libraries(my_app SDL2) 适用场景：为特定目标（可执行文件或库）指定它所需的连接库。 target_link_directories： 作用：为特定目标定义连接库的搜索路径。 用法：target_link_directories(target_name PRIVATE|PUBLIC|INTERFACE directory_path) 示例：target_link_directories(my_app PRIVATE /path/to/libs) 适用场景：在特定目标上为连接库的搜索路径提供定制化配置，以确保链接器能够找到所需的库文件。 target_link_directories的权限 target_link_directories命令用于为特定目标指定连接库时的搜索路径，具有三种权限：PRIVATE、PUBLIC和INTERFACE。\nPRIVATE权限仅适用于目标本身，不传递给依赖目标。 PUBLIC权限适用于目标和依赖目标。 INTERFACE权限适用于依赖目标，不影响目标本身。 字符串操作 set命令 在CMake中，你可以使用set和list等命令来进行字符串操作和列表操作。以下是一些常见的操作及其示例：\n字符串操作：\n设置变量：使用set命令来创建或设置变量。\nset(my_string \"Hello, CMake!\") 字符串拼接：使用${}来访问变量的值，进行字符串拼接。\nset(greeting \"Hello\") set(name \"John\") set(message \"${greeting}, ${name}!\") 子字符串截取：使用string(SUBSTRING ...)来获取子字符串。\nset(full_string \"CMake is awesome!\") string(SUBSTRING ${full_string} 0 5 sub_string) 列表操作：\n创建列表：使用set命令创建一个包含多个元素的列表。\nset(my_list_item1 \"apple\") set(my_list_item2 \"banana\") set(fruit_list ${my_list_item1} ${my_list_item2}) 访问列表元素：使用${}来访问列表中的元素。\nset(fruits \"apple\" \"banana\" \"cherry\") message(\"First fruit: ${fruits}\") 列表追加：使用list(APPEND ...)将元素添加到列表。\nset(colors \"red\" \"green\") list(APPEND colors \"blue\") 列表长度：使用list(LENGTH ...)获取列表的长度。\nset(numbers 1 2 3) list(LENGTH numbers length) 列表循环：使用foreach循环遍历列表元素。\nset(shapes \"circle\" \"square\" \"triangle\") foreach(shape ${shapes}) message(\"Shape: ${shape}\") endforeach() 这些示例演示了CMake中的基本字符串操作和列表操作。你可以根据具体需求使用这些命令来进行字符串和列表的处理。\nlist命令 在 CMake 中，list 命令是用于操作列表（数组）的命令。它允许你对列表进行添加、删除、查询等操作。CMake 中的列表类似于编程中的数组，可以包含一系列的元素。list 命令提供了多个子命令，用于操作列表的不同方面。\n以下是一些常用的 list 命令及其子命令：\nlist(APPEND list_name element1 element2 ...)：\n将一个或多个元素追加到列表的末尾。\nlist(APPEND MY_LIST \"item1\" \"item2\") list(INSERT list_name index element)：\n在列表的指定位置插入一个元素。\nlist(INSERT MY_LIST 2 \"new_item\") list(REMOVE_ITEM list_name element)：\n从列表中移除指定的元素。\nlist(REMOVE_ITEM MY_LIST \"item_to_remove\") list(REMOVE_AT list_name index)：\n从列表中移除指定索引位置的元素。\nlist(REMOVE_AT MY_LIST 1) list(GET list_name index variable_name)：\n获取列表中指定索引位置的元素，并将其存储在一个变量中。\nlist(GET MY_LIST 0 FIRST_ITEM) list(LENGTH list_name length_variable)：\n获取列表的长度（元素个数），并将其存储在一个变量中。\nlist(LENGTH MY_LIST LIST_LENGTH) list(POP_FRONT list_name variable_name)：\n弹出列表的第一个元素，并将其存储在一个变量中。\nlist(POP_FRONT MY_LIST FIRST_ITEM) list(REVERSE list_name)：\n反转列表中的元素顺序。\nlist(REVERSE MY_LIST) 这些命令可以用来操作列表，帮助你在 CMake 中更灵活地管理数据。列表在构建过程中经常用于存储文件、路径、变量等一系列相关的数据。\n定义宏 在CMake中，你可以使用add_definitions()或者更推荐的方法，使用target_compile_definitions()命令来定义宏。下面是两种定义宏的方式：\n使用add_definitions()命令：\n这种方式在全局范围内定义宏，会应用于整个项目。但在CMake 3.12及以后的版本，推荐使用target_compile_definitions()来更精确地在目标级别定义宏。\nadd_definitions(-DMY_MACRO=1) 使用target_compile_definitions()命令：\n这种方式在特定目标上定义宏，更加灵活，能够在目标级别控制宏的作用范围。\nadd_executable(my_app main.cpp) target_compile_definitions(my_app PRIVATE MY_MACRO=1) 在这个例子中，宏MY_MACRO会应用于my_app目标，但不会影响其他目标。\n无论你选择哪种方式，定义宏都是为了在编译过程中向源代码添加预定义的符号，用于条件编译、功能开关等。\n",
+  "wordCount" : "4239",
   "inLanguage": "en",
   "datePublished": "2023-08-11T21:43:12+08:00",
   "dateModified": "2023-08-11T21:43:12+08:00",
@@ -234,7 +241,7 @@ var _hmt = _hmt || [];
 <article class="post-single">
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="">🏠 主页</a>&nbsp;»&nbsp;<a href="/posts/">📚Articles</a></div>
+            <div class="breadcrumbs"><a href="">🏠 主页</a>&nbsp;»&nbsp;<a href="/posts/">📚Articles</a>&nbsp;»&nbsp;<a href="/posts/cpp/">🍇 C&#43;&#43; Programming Language</a></div>
             <h1 class="post-title">
                 Cmake
             </h1>
@@ -270,13 +277,13 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>0字
+        <span>4239字
             &nbsp;&nbsp;
         </span>
     </span>
     <span id="post_meta_style_4">
         <span class="fa fa-clock-o"></span>
-        <span>0分钟
+        <span>9分钟
             &nbsp;&nbsp;
         </span>
     </span>
@@ -342,7 +349,416 @@ var _hmt = _hmt || [];
                 </span>
 
 </div>
-        </header> 
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#cmake%e4%bb%8b%e7%bb%8d" aria-label="CMake介绍">CMake介绍</a></li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%80%e4%b8%aacmake%e6%96%87%e4%bb%b6" aria-label="第一个CMake文件">第一个CMake文件</a></li>
+                <li>
+                    <a href="#cmake%e4%b8%ad%e7%9a%84%e5%8f%98%e9%87%8f%e5%ae%9a%e4%b9%89" aria-label="CMake中的变量定义">CMake中的变量定义</a><ul>
+                        
+                <li>
+                    <a href="#%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e5%88%97%e8%a1%a8%e5%8f%98%e9%87%8f" aria-label="定义一个列表变量">定义一个列表变量</a></li>
+                <li>
+                    <a href="#%e4%bd%bf%e7%94%a8%e5%8f%98%e9%87%8f" aria-label="使用变量">使用变量</a></li>
+                <li>
+                    <a href="#%e4%bf%ae%e6%94%b9%e5%8f%98%e9%87%8f" aria-label="修改变量">修改变量</a></li>
+                <li>
+                    <a href="#%e6%8c%87%e5%ae%9ac%e7%89%88%e6%9c%ac" aria-label="指定C&#43;&#43;版本">指定C++版本</a></li>
+                <li>
+                    <a href="#%e6%8c%87%e5%ae%9a%e8%be%93%e5%87%ba%e8%b7%af%e5%be%84" aria-label="指定输出路径">指定输出路径</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%90%9c%e7%b4%a2%e6%96%87%e4%bb%b6" aria-label="搜索文件">搜索文件</a><ul>
+                        
+                <li>
+                    <a href="#file" aria-label="file">file</a></li>
+                <li>
+                    <a href="#%e6%90%9c%e7%b4%a2%e6%8c%87%e5%ae%9a%e5%ad%90%e7%9b%ae%e5%bd%95%e4%b8%8b%e7%9a%84%e6%89%80%e6%9c%89-cpp-%e6%96%87%e4%bb%b6" aria-label="搜索指定子目录下的所有 .cpp 文件">搜索指定子目录下的所有 <code>.cpp</code> 文件</a></li>
+                <li>
+                    <a href="#%e5%9c%a8%e6%8c%87%e5%ae%9a%e5%ad%90%e7%9b%ae%e5%bd%95%e4%b8%ad%e9%80%92%e5%bd%92%e6%90%9c%e7%b4%a2-cpp-%e6%96%87%e4%bb%b6" aria-label="在指定子目录中递归搜索 .cpp 文件">在指定子目录中递归搜索 <code>.cpp</code> 文件</a></li>
+                <li>
+                    <a href="#aux_source_directory-%e6%90%9c%e7%b4%a2%e6%ba%90%e6%96%87%e4%bb%b6" aria-label="aux_source_directory 搜索源文件"><code>aux_source_directory</code> 搜索源文件</a></li></ul>
+                </li>
+                <li>
+                    <a href="#cmake%e6%8c%87%e5%ae%9a%e5%a4%b4%e6%96%87%e4%bb%b6%e7%9b%ae%e5%bd%95" aria-label="cmake指定头文件目录">cmake指定头文件目录</a></li>
+                <li>
+                    <a href="#cmake%e5%88%b6%e4%bd%9c%e5%ba%93" aria-label="CMake制作库">CMake制作库</a></li>
+                <li>
+                    <a href="#cmake%e4%bd%bf%e7%94%a8%e5%ba%93" aria-label="CMake使用库">CMake使用库</a><ul>
+                        
+                <li>
+                    <a href="#target_link_directories%e7%9a%84%e6%9d%83%e9%99%90" aria-label="target_link_directories的权限">target_link_directories的权限</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%93%8d%e4%bd%9c" aria-label="字符串操作">字符串操作</a><ul>
+                        
+                <li>
+                    <a href="#set%e5%91%bd%e4%bb%a4" aria-label="set命令">set命令</a></li>
+                <li>
+                    <a href="#list%e5%91%bd%e4%bb%a4" aria-label="list命令">list命令</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ae%9a%e4%b9%89%e5%ae%8f" aria-label="定义宏">定义宏</a>
+                </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h1 id="cmake介绍">CMake介绍<a hidden class="anchor" aria-hidden="true" href="#cmake介绍">#</a></h1>
+<p>CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。</p>
+<h1 id="第一个cmake文件">第一个CMake文件<a hidden class="anchor" aria-hidden="true" href="#第一个cmake文件">#</a></h1>
+<p>在一个C++项目中，我们通常需要编写一个名为CMakeLists.txt的文件来指导CMake如何构建项目。在这个文件中，我们可以定义项目的源文件、头文件、依赖关系等信息。</p>
+<p>让我们一起来创建一个简单的CMakeLists.txt文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e"># CMake版本要求
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cmake_minimum_required(VERSION <span style="color:#ae81ff">3.10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 项目名称和版本
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>project(HelloWorld VERSION <span style="color:#ae81ff">1.0.0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加一个可执行文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>add_executable(<span style="color:#960050;background-color:#1e0010">$</span>{PROJECT_NAME} main.cpp)
+</span></span></code></pre></div><p>以下是每行代码的简介：</p>
+<ul>
+<li><code>cmake_minimum_required(VERSION 3.10)</code>: 这一行定义了要构建此项目所需的最低CMake版本。如果使用的CMake版本低于此版本，将会提示错误。</li>
+<li><code>project(HelloWorld VERSION 1.0.0)</code>: 这一行定义了项目的名称（此处为<code>HelloWorld</code>）和版本号（此处为<code>1.0.0</code>）。<code>${PROJECT_NAME}</code>变量将被设置为&quot;HelloWorld&quot;，在后续的命令中可以使用。</li>
+<li><code>add_executable(${PROJECT_NAME} main.cpp)</code>: 这一行添加了一个可执行文件。第一个参数是生成的可执行文件的名称，这里我们用之前定义的项目名变量<code>${PROJECT_NAME}</code>作为输出的可执行文件名；后面的参数是构成这个可执行文件的源文件，这里只有一个<code>main.cpp</code>。</li>
+</ul>
+<h1 id="cmake中的变量定义">CMake中的变量定义<a hidden class="anchor" aria-hidden="true" href="#cmake中的变量定义">#</a></h1>
+<p>在CMake中，我们可以通过 <code>set</code> 命令来定义一个变量。以下是一些基本示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">VAR_NAME</span> <span style="color:#e6db74">&#34;Hello, CMake!&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="定义一个列表变量">定义一个列表变量<a hidden class="anchor" aria-hidden="true" href="#定义一个列表变量">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">SOURCE_FILES</span> <span style="color:#e6db74">main.cpp</span> <span style="color:#e6db74">util.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>这条命令定义了一个名为<code>SOURCE_FILES</code>的变量，它包含两个元素：<code>main.cpp</code>和<code>util.cpp</code>。列表变量在处理源文件或者库文件时非常有用。</p>
+<h2 id="使用变量">使用变量<a hidden class="anchor" aria-hidden="true" href="#使用变量">#</a></h2>
+<p>在CMake中，我们可以使用 <code>${}</code> 来引用一个变量。例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">SOURCE_FILES</span> <span style="color:#e6db74">main.cpp</span> <span style="color:#e6db74">util.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>add_executable(<span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span> <span style="color:#f92672">${</span>SOURCE_FILES<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>这里，<code>${SOURCE_FILES}</code> 将会被替换为 <code>main.cpp util.cpp</code>。</p>
+<h2 id="修改变量">修改变量<a hidden class="anchor" aria-hidden="true" href="#修改变量">#</a></h2>
+<p>我们也可以修改已经存在的变量。例如下面的命令将向<code>SOURCE_FILES</code>列表添加新的元素：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">SOURCE_FILES</span> <span style="color:#e6db74">main.cpp</span> <span style="color:#e6db74">util.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>list(<span style="color:#e6db74">APPEND</span> <span style="color:#e6db74">SOURCE_FILES</span> <span style="color:#e6db74">other.cpp</span>) <span style="color:#75715e"># Now SOURCE_FILES contains main.cpp, util.cpp and other.cpp
+</span></span></span></code></pre></div><p>以上就是在CMake中如何定义和使用变量的基本方法。正确地使用变量可以让你的CMakeLists.txt更加清晰和灵活。</p>
+<h2 id="指定c版本">指定C++版本<a hidden class="anchor" aria-hidden="true" href="#指定c版本">#</a></h2>
+<p>在CMake中，你可以使用<code>set</code>命令和<code>CMAKE_CXX_STANDARD</code>变量来指定C++的版本。以下是一个示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#75715e"># 设置C++标准为C++14
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD</span> <span style="color:#e6db74">14</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 我们也可以要求编译器必须支持这一标准：
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD_REQUIRED</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 如果你不希望编译器使用比指定版本更新的标准，你可以设置下面的变量为ON：
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_EXTENSIONS</span> <span style="color:#e6db74">OFF</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>其中，</p>
+<ul>
+<li><code>CMAKE_CXX_STANDARD</code> 变量用于设定项目中所使用的C++标准。常见的值有11、14、17等，对应C++11、C++14、C++17标准。</li>
+<li><code>CMAKE_CXX_STANDARD_REQUIRED</code> 变量决定是否强制要求编译器支持设定的C++标准。如果设置为 <code>ON</code>，那么当编译器不支持设定的标准时，CMake将报错。</li>
+<li><code>CMAKE_CXX_EXTENSIONS</code> 变量用于控制编译器是否允许使用比设定的C++标准更新的语言扩展。如果设置为 <code>OFF</code>，编译器将只使用标准C++，而不包含任何特定编译器的扩展。</li>
+</ul>
+<p>注意以上的这些变量设置必须放在项目声明 (<code>project()</code>) 之后，否则可能不会生效。</p>
+<p>这种方式适用于CMake版本3.1及以上，如果你使用的CMake版本较低，可能需要另找其他方式设定C++版本。</p>
+<h2 id="指定输出路径">指定输出路径<a hidden class="anchor" aria-hidden="true" href="#指定输出路径">#</a></h2>
+<p>在CMake中，你可以设置 <code>CMAKE_RUNTIME_OUTPUT_DIRECTORY</code> 变量来指定可执行文件的输出路径，设置 <code>CMAKE_LIBRARY_OUTPUT_DIRECTORY</code> 和 <code>CMAKE_ARCHIVE_OUTPUT_DIRECTORY</code> 变量来指定库文件的输出路径。以下是一个示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">CMAKE_RUNTIME_OUTPUT_DIRECTORY</span> <span style="color:#f92672">${</span>CMAKE_BINARY_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/bin</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_LIBRARY_OUTPUT_DIRECTORY</span> <span style="color:#f92672">${</span>CMAKE_BINARY_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/lib</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_ARCHIVE_OUTPUT_DIRECTORY</span> <span style="color:#f92672">${</span>CMAKE_BINARY_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/lib</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>这段代码将会把所有的可执行文件输出到构建目录下的<code>bin</code>文件夹中，所有的库文件（包括动态库和静态库）输出到构建目录下的<code>lib</code>文件夹中。</p>
+<p>其中，<code>${CMAKE_BINARY_DIR}</code>变量表示的是构建目录（即你调用<code>cmake</code>命令的那个目录）。如果你希望使用其他目录作为输出路径，只需要替换掉对应的目录即可。</p>
+<p>注意，这些设置通常放在顶层的 <code>CMakeLists.txt</code> 文件中，以确保它们对整个项目生效。</p>
+<h1 id="搜索文件">搜索文件<a hidden class="anchor" aria-hidden="true" href="#搜索文件">#</a></h1>
+<h2 id="file">file<a hidden class="anchor" aria-hidden="true" href="#file">#</a></h2>
+<h2 id="搜索指定子目录下的所有-cpp-文件">搜索指定子目录下的所有 <code>.cpp</code> 文件<a hidden class="anchor" aria-hidden="true" href="#搜索指定子目录下的所有-cpp-文件">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>file(<span style="color:#e6db74">GLOB</span> <span style="color:#e6db74">SOURCES</span> <span style="color:#e6db74">&#34;src/*.cpp&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>这个命令将会搜索当前源目录下的 <code>src</code> 子目录中所有的 <code>.cpp</code> 文件，并将结果存储到 <code>SOURCES</code> 变量中。</p>
+<h2 id="在指定子目录中递归搜索-cpp-文件">在指定子目录中递归搜索 <code>.cpp</code> 文件<a hidden class="anchor" aria-hidden="true" href="#在指定子目录中递归搜索-cpp-文件">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>file(<span style="color:#e6db74">GLOB_RECURSE</span> <span style="color:#e6db74">SOURCES</span> <span style="color:#e6db74">&#34;src/*.cpp&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p><code>GLOB_RECURSE</code> 可以递归地搜索目录下的文件，上面的例子中搜索了 <code>include</code> 目录下的所有 <code>.h</code> 文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>file(<span style="color:#e6db74">GLOB_RECURSE</span> <span style="color:#e6db74">HEADER_FILES</span> <span style="color:#e6db74">&#34;${CMAKE_SOURCE_DIR}/include/*.h&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="aux_source_directory-搜索源文件"><code>aux_source_directory</code> 搜索源文件<a hidden class="anchor" aria-hidden="true" href="#aux_source_directory-搜索源文件">#</a></h2>
+<p><code>aux_source_directory</code> 命令是一个更专注于构建源文件的工具。它会在指定目录中搜索所有源文件，并将它们添加到一个变量中，然后可以将该变量用于构建目标。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>aux_source_directory(<span style="color:#f92672">${</span>CMAKE_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/src</span> <span style="color:#e6db74">SOURCE_FILES</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>add_executable(<span style="color:#e6db74">MyApp</span> <span style="color:#f92672">${</span>SOURCE_FILES<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>上面的例子中，<code>aux_source_directory</code> 命令会将 <code>src</code> 目录中的所有源文件添加到 <code>SOURCE_FILES</code> 变量中，然后可以将该变量用于构建目标。</p>
+<h1 id="cmake指定头文件目录">cmake指定头文件目录<a hidden class="anchor" aria-hidden="true" href="#cmake指定头文件目录">#</a></h1>
+<p>在 CMake 中，要指定头文件目录，你可以使用 <code>include_directories()</code> 命令或 <code>target_include_directories()</code> 命令。这些命令允许你向 CMake 表示哪些目录应该被添加到头文件搜索路径中。</p>
+<p>下面是两种常用的方式：</p>
+<ol>
+<li>
+<p><strong>使用 <code>include_directories()</code> 命令</strong>：</p>
+<p>这个命令会将指定的目录添加到整个项目的头文件搜索路径中。在项目的 CMakeLists.txt 文件中使用它。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>include_directories(<span style="color:#f92672">${</span>CMAKE_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/include</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>include_directories(<span style="color:#f92672">${</span>CMAKE_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/other_include</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>或者，你可以将多个目录合并成一个列表：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>set(INCLUDE_DIRS
+</span></span><span style="display:flex;"><span>    ${CMAKE_SOURCE_DIR}/include
+</span></span><span style="display:flex;"><span>    ${CMAKE_SOURCE_DIR}/other_include
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>include_directories(${INCLUDE_DIRS})
+</span></span></code></pre></div></li>
+<li>
+<p><strong>使用 <code>target_include_directories()</code> 命令</strong>：</p>
+<p>这个命令会将指定的目录添加到特定目标（例如可执行文件或库）的头文件搜索路径中。这是一种更推荐的方式，因为它将目录限定在特定目标，避免了全局的头文件搜索路径混乱。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>add_executable(<span style="color:#e6db74">MyApp</span> <span style="color:#f92672">${</span>SOURCES<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_include_directories(<span style="color:#e6db74">MyApp</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>CMAKE_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/include</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>如果你在多个目标中使用同样的头文件路径，也可以将路径设置为变量：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">INCLUDE_DIRS</span> <span style="color:#f92672">${</span>CMAKE_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/include</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>add_executable(<span style="color:#e6db74">MyApp</span> <span style="color:#f92672">${</span>SOURCES<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_include_directories(<span style="color:#e6db74">MyApp</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>INCLUDE_DIRS<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+</ol>
+<h1 id="cmake制作库">CMake制作库<a hidden class="anchor" aria-hidden="true" href="#cmake制作库">#</a></h1>
+<p><strong>制作静态库</strong>：</p>
+<p>用<code>add_library</code> ，</p>
+<ul>
+<li>
+<p>静态库使用STATIC，默认是STATIC可以忽略</p>
+</li>
+<li>
+<p>动态库使用SHARED</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Cmake" data-lang="Cmake"><span style="display:flex;"><span>add_library(<span style="color:#e6db74">MyStaticLib</span> <span style="color:#e6db74">STATIC</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">source_file1.cpp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">source_file2.cpp</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>在 CMake 中制作静态库（也称为静态链接库）通常涉及创建一个包含编译后目标代码的归档文件。</p>
+<h1 id="cmake使用库">CMake使用库<a hidden class="anchor" aria-hidden="true" href="#cmake使用库">#</a></h1>
+<p>当使用CMake构建C++项目时，连接（链接）库是将代码与外部库整合在一起的关键部分。以下是四个关于连接库的CMake命令，以及它们的应用场景和区别：</p>
+<ol>
+<li><strong><code>link_libraries</code></strong>：
+<ul>
+<li>作用：指定全局性的连接库，适用于整个项目。</li>
+<li>用法：<code>link_libraries(library_name1 library_name2 ...)</code></li>
+<li>示例：<code>link_libraries(SDL2 SDL2_image)</code></li>
+<li>适用场景：在项目中多个目标都需要链接同样的库时，使用这个命令。</li>
+</ul>
+</li>
+<li><strong><code>link_directories</code></strong>：
+<ul>
+<li>作用：定义链接库时的搜索路径。</li>
+<li>用法：<code>link_directories(directory_path)</code></li>
+<li>示例：<code>link_directories(/path/to/libs)</code></li>
+<li>适用场景：当你使用的库不在默认搜索路径中，需要指定额外的库搜索路径时，使用这个命令。</li>
+</ul>
+</li>
+<li><strong><code>target_link_libraries</code></strong>：
+<ul>
+<li>作用：将指定目标与一个或多个库链接。</li>
+<li>用法：<code>target_link_libraries(target_name library_name1 library_name2 ...)</code></li>
+<li>示例：<code>target_link_libraries(my_app SDL2)</code></li>
+<li>适用场景：为特定目标（可执行文件或库）指定它所需的连接库。</li>
+</ul>
+</li>
+<li><strong><code>target_link_directories</code></strong>：
+<ul>
+<li>作用：为特定目标定义连接库的搜索路径。</li>
+<li>用法：<code>target_link_directories(target_name PRIVATE|PUBLIC|INTERFACE directory_path)</code></li>
+<li>示例：<code>target_link_directories(my_app PRIVATE /path/to/libs)</code></li>
+<li>适用场景：在特定目标上为连接库的搜索路径提供定制化配置，以确保链接器能够找到所需的库文件。</li>
+</ul>
+</li>
+</ol>
+<h2 id="target_link_directories的权限">target_link_directories的权限<a hidden class="anchor" aria-hidden="true" href="#target_link_directories的权限">#</a></h2>
+<p><code>target_link_directories</code>命令用于为特定目标指定连接库时的搜索路径，具有三种权限：<code>PRIVATE</code>、<code>PUBLIC</code>和<code>INTERFACE</code>。</p>
+<ol>
+<li><code>PRIVATE</code>权限仅适用于目标本身，不传递给依赖目标。</li>
+<li><code>PUBLIC</code>权限适用于目标和依赖目标。</li>
+<li><code>INTERFACE</code>权限适用于依赖目标，不影响目标本身。</li>
+</ol>
+<h1 id="字符串操作">字符串操作<a hidden class="anchor" aria-hidden="true" href="#字符串操作">#</a></h1>
+<h2 id="set命令">set命令<a hidden class="anchor" aria-hidden="true" href="#set命令">#</a></h2>
+<p>在CMake中，你可以使用<code>set</code>和<code>list</code>等命令来进行字符串操作和列表操作。以下是一些常见的操作及其示例：</p>
+<ol>
+<li>
+<p><strong>字符串操作</strong>：</p>
+<ul>
+<li>
+<p>设置变量：使用<code>set</code>命令来创建或设置变量。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">my_string</span> <span style="color:#e6db74">&#34;Hello, CMake!&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>字符串拼接：使用<code>${}</code>来访问变量的值，进行字符串拼接。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">greeting</span> <span style="color:#e6db74">&#34;Hello&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">name</span> <span style="color:#e6db74">&#34;John&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">message</span> <span style="color:#e6db74">&#34;${greeting}, ${name}!&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>子字符串截取：使用<code>string(SUBSTRING ...)</code>来获取子字符串。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">full_string</span> <span style="color:#e6db74">&#34;CMake is awesome!&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>string(<span style="color:#e6db74">SUBSTRING</span> <span style="color:#f92672">${</span>full_string<span style="color:#f92672">}</span> <span style="color:#e6db74">0</span> <span style="color:#e6db74">5</span> <span style="color:#e6db74">sub_string</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>列表操作</strong>：</p>
+<ul>
+<li>
+<p>创建列表：使用<code>set</code>命令创建一个包含多个元素的列表。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">my_list_item1</span> <span style="color:#e6db74">&#34;apple&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">my_list_item2</span> <span style="color:#e6db74">&#34;banana&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">fruit_list</span> <span style="color:#f92672">${</span>my_list_item1<span style="color:#f92672">}</span> <span style="color:#f92672">${</span>my_list_item2<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>访问列表元素：使用<code>${}</code>来访问列表中的元素。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">fruits</span> <span style="color:#e6db74">&#34;apple&#34;</span> <span style="color:#e6db74">&#34;banana&#34;</span> <span style="color:#e6db74">&#34;cherry&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>message(<span style="color:#e6db74">&#34;First fruit: ${fruits}&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>列表追加：使用<code>list(APPEND ...)</code>将元素添加到列表。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">colors</span> <span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#e6db74">&#34;green&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>list(<span style="color:#e6db74">APPEND</span> <span style="color:#e6db74">colors</span> <span style="color:#e6db74">&#34;blue&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>列表长度：使用<code>list(LENGTH ...)</code>获取列表的长度。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">numbers</span> <span style="color:#e6db74">1</span> <span style="color:#e6db74">2</span> <span style="color:#e6db74">3</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>list(<span style="color:#e6db74">LENGTH</span> <span style="color:#e6db74">numbers</span> <span style="color:#e6db74">length</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>列表循环：使用<code>foreach</code>循环遍历列表元素。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">shapes</span> <span style="color:#e6db74">&#34;circle&#34;</span> <span style="color:#e6db74">&#34;square&#34;</span> <span style="color:#e6db74">&#34;triangle&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>foreach(<span style="color:#e6db74">shape</span> <span style="color:#f92672">${</span>shapes<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    message(<span style="color:#e6db74">&#34;Shape: ${shape}&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endforeach()<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p>这些示例演示了CMake中的基本字符串操作和列表操作。你可以根据具体需求使用这些命令来进行字符串和列表的处理。</p>
+<h2 id="list命令">list命令<a hidden class="anchor" aria-hidden="true" href="#list命令">#</a></h2>
+<p>在 CMake 中，<code>list</code> 命令是用于操作列表（数组）的命令。它允许你对列表进行添加、删除、查询等操作。CMake 中的列表类似于编程中的数组，可以包含一系列的元素。<code>list</code> 命令提供了多个子命令，用于操作列表的不同方面。</p>
+<p>以下是一些常用的 <code>list</code> 命令及其子命令：</p>
+<ol>
+<li>
+<p><strong><code>list(APPEND list_name element1 element2 ...)</code></strong>：</p>
+<p>将一个或多个元素追加到列表的末尾。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">APPEND</span> <span style="color:#e6db74">MY_LIST</span> <span style="color:#e6db74">&#34;item1&#34;</span> <span style="color:#e6db74">&#34;item2&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong><code>list(INSERT list_name index element)</code></strong>：</p>
+<p>在列表的指定位置插入一个元素。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">INSERT</span> <span style="color:#e6db74">MY_LIST</span> <span style="color:#e6db74">2</span> <span style="color:#e6db74">&#34;new_item&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong><code>list(REMOVE_ITEM list_name element)</code></strong>：</p>
+<p>从列表中移除指定的元素。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">REMOVE_ITEM</span> <span style="color:#e6db74">MY_LIST</span> <span style="color:#e6db74">&#34;item_to_remove&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong><code>list(REMOVE_AT list_name index)</code></strong>：</p>
+<p>从列表中移除指定索引位置的元素。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">REMOVE_AT</span> <span style="color:#e6db74">MY_LIST</span> <span style="color:#e6db74">1</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong><code>list(GET list_name index variable_name)</code></strong>：</p>
+<p>获取列表中指定索引位置的元素，并将其存储在一个变量中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">GET</span> <span style="color:#e6db74">MY_LIST</span> <span style="color:#e6db74">0</span> <span style="color:#e6db74">FIRST_ITEM</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong><code>list(LENGTH list_name length_variable)</code></strong>：</p>
+<p>获取列表的长度（元素个数），并将其存储在一个变量中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">LENGTH</span> <span style="color:#e6db74">MY_LIST</span> <span style="color:#e6db74">LIST_LENGTH</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong><code>list(POP_FRONT list_name variable_name)</code></strong>：</p>
+<p>弹出列表的第一个元素，并将其存储在一个变量中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">POP_FRONT</span> <span style="color:#e6db74">MY_LIST</span> <span style="color:#e6db74">FIRST_ITEM</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong><code>list(REVERSE list_name)</code></strong>：</p>
+<p>反转列表中的元素顺序。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>list(<span style="color:#e6db74">REVERSE</span> <span style="color:#e6db74">MY_LIST</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+</ol>
+<p>这些命令可以用来操作列表，帮助你在 CMake 中更灵活地管理数据。列表在构建过程中经常用于存储文件、路径、变量等一系列相关的数据。</p>
+<h1 id="定义宏">定义宏<a hidden class="anchor" aria-hidden="true" href="#定义宏">#</a></h1>
+<p>在CMake中，你可以使用<code>add_definitions()</code>或者更推荐的方法，使用<code>target_compile_definitions()</code>命令来定义宏。下面是两种定义宏的方式：</p>
+<ol>
+<li>
+<p><strong>使用<code>add_definitions()</code>命令</strong>：</p>
+<p>这种方式在全局范围内定义宏，会应用于整个项目。但在CMake 3.12及以后的版本，推荐使用<code>target_compile_definitions()</code>来更精确地在目标级别定义宏。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>add_definitions(<span style="color:#e6db74">-DMY_MACRO=1</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>使用<code>target_compile_definitions()</code>命令</strong>：</p>
+<p>这种方式在特定目标上定义宏，更加灵活，能够在目标级别控制宏的作用范围。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>add_executable(<span style="color:#e6db74">my_app</span> <span style="color:#e6db74">main.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_compile_definitions(<span style="color:#e6db74">my_app</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#e6db74">MY_MACRO=1</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>在这个例子中，宏<code>MY_MACRO</code>会应用于<code>my_app</code>目标，但不会影响其他目标。</p>
+</li>
+</ol>
+<p>无论你选择哪种方式，定义宏都是为了在编译过程中向源代码添加预定义的符号，用于条件编译、功能开关等。</p>
+
+
+        </div>
 
         <footer class="post-footer">
             

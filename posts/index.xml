@@ -7,23 +7,5 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 11 Aug 2023 21:48:16 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Gdb</title>
-      <link>/posts/cpp/gdb/</link>
-      <pubDate>Fri, 11 Aug 2023 21:48:16 +0800</pubDate>
-      
-      <guid>/posts/cpp/gdb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cmake</title>
-      <link>/posts/cpp/cmake/</link>
-      <pubDate>Fri, 11 Aug 2023 21:43:12 +0800</pubDate>
-      
-      <guid>/posts/cpp/cmake/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>🍇 C&#43;&#43; Programming Language on chx9</title>
+    <link>/posts/cpp/</link>
+    <description>Recent content in 🍇 C&#43;&#43; Programming Language on chx9</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Aug 2023 21:48:16 +0800</lastBuildDate><atom:link href="/posts/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gdb</title>
+      <link>/posts/cpp/gdb/</link>
+      <pubDate>Fri, 11 Aug 2023 21:48:16 +0800</pubDate>
+      
+      <guid>/posts/cpp/gdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cmake</title>
+      <link>/posts/cpp/cmake/</link>
+      <pubDate>Fri, 11 Aug 2023 21:43:12 +0800</pubDate>
+      
+      <guid>/posts/cpp/cmake/</guid>
+      <description>CMake介绍 CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。 第一个CMake文件 在一个C++项目中，我们通常需要编写</description>
+    </item>
+    
+  </channel>
+</rss>
