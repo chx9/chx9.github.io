@@ -50,7 +50,7 @@ languages:
             url: posts/cs
           - name: 📕 reading
             url: posts/read
-          - name: 🏖 生活
+          - name: 🏖 C++
             url: posts/cpp
     menu:
       main:
