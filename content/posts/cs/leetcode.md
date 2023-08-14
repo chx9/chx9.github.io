@@ -1812,6 +1812,7 @@ public:
 ```
 
 ## 438 找到字符串中所有字母异位词
+https://leetcode.cn/problems/find-all-anagrams-in-a-string/
 
 滑动窗口,注意滑动窗口 valid 的条件，当 windows[add]==need[add]是 valid 才增加或者减少，valid 的数值和 need 的 key 值相同时进行左边界改变
 
