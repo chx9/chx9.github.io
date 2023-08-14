@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/cpp/</loc>
-    <lastmod>2023-08-11T21:48:16+08:00</lastmod>
-  </url><url>
     <loc>/posts/</loc>
     <lastmod>2023-08-11T21:48:16+08:00</lastmod>
   </url><url>
     <loc>/</loc>
     <lastmod>2023-08-11T21:48:16+08:00</lastmod>
   </url><url>
-    <loc>/posts/cpp/gdb/</loc>
+    <loc>/posts/toolchain/gdb/</loc>
     <lastmod>2023-08-11T21:48:16+08:00</lastmod>
   </url><url>
-    <loc>/posts/cpp/cmake/</loc>
+    <loc>/posts/toolchain/</loc>
+    <lastmod>2023-08-11T21:48:16+08:00</lastmod>
+  </url><url>
+    <loc>/posts/toolchain/cmake/</loc>
     <lastmod>2023-08-11T21:43:12+08:00</lastmod>
   </url><url>
     <loc>/posts/cs/</loc>
