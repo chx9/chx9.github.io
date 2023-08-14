@@ -6,16 +6,7 @@
     <description>Recent content in 💻 Programming Basics on chx9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Jul 2023 17:38:25 +0800</lastBuildDate><atom:link href="/posts/cs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Gdb</title>
-      <link>/posts/cs/gdb/</link>
-      <pubDate>Mon, 31 Jul 2023 17:38:25 +0800</pubDate>
-      
-      <guid>/posts/cs/gdb/</guid>
-      <description>title: &amp;ldquo;Gdb&amp;rdquo; date: 2023-08-11T21:48:16+08:00 lastmod: 2023-08-11T21:48:16+08:00 author: [&amp;ldquo;chx9&amp;rdquo;] keywords: categories: # 没有分类界面可以不填写 tags: # 标签 description: &amp;quot;&amp;quot; weight: slug: &amp;quot;&amp;quot; draft: false # 是否为草稿 comments: true # 本页面是否显示评论 reward: false # 打赏 mermaid: true #是否开启mermaid showToc: true # 显示目录 TocOpen: true # 自动展开目录 hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等 disableShare: true # 底部不显示分享栏 showbreadcrumbs: true #顶部显示路径 cover: image: &amp;quot;&amp;quot; #图片路径例如：</description>
-    </item>
-    
+    <lastBuildDate>Mon, 31 Jul 2023 11:43:25 +0800</lastBuildDate><atom:link href="/posts/cs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker</title>
       <link>/posts/cs/docker/</link>
