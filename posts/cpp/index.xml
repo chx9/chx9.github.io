@@ -13,7 +13,7 @@
       <pubDate>Fri, 11 Aug 2023 21:48:16 +0800</pubDate>
       
       <guid>/posts/cpp/gdb/</guid>
-      <description></description>
+      <description>gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下 gdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置 首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行： gdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该</description>
     </item>
     
     <item>

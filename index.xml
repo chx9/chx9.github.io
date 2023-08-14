@@ -13,7 +13,7 @@
       <pubDate>Fri, 11 Aug 2023 21:48:16 +0800</pubDate>
       
       <guid>/posts/cpp/gdb/</guid>
-      <description></description>
+      <description>gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下 gdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置 首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行： gdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Mon, 31 Jul 2023 17:38:25 +0800</pubDate>
       
       <guid>/posts/cs/gdb/</guid>
-      <description>debug with args gdb --args</description>
+      <description>title: &amp;ldquo;Gdb&amp;rdquo; date: 2023-08-11T21:48:16+08:00 lastmod: 2023-08-11T21:48:16+08:00 author: [&amp;ldquo;chx9&amp;rdquo;] keywords: categories: # 没有分类界面可以不填写 tags: # 标签 description: &amp;quot;&amp;quot; weight: slug: &amp;quot;&amp;quot; draft: false # 是否为草稿 comments: true # 本页面是否显示评论 reward: false # 打赏 mermaid: true #是否开启mermaid showToc: true # 显示目录 TocOpen: true # 自动展开目录 hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等 disableShare: true # 底部不显示分享栏 showbreadcrumbs: true #顶部显示路径 cover: image: &amp;quot;&amp;quot; #图片路径例如：</description>
     </item>
     
     <item>

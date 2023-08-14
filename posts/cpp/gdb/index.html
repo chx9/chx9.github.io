@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Gdb | chx9</title>
 <meta name="keywords" content="">
-<meta name="description" content="Gdb - chx9">
+<meta name="description" content="gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下 gdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置 首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行： gdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该">
 <meta name="author" content="chx9">
 <link rel="canonical" href="/posts/cpp/gdb/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -74,7 +74,7 @@ var _hmt = _hmt || [];
 })();
 </script>
 <meta property="og:title" content="Gdb" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下 gdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置 首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行： gdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/cpp/gdb/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-11T21:48:16+08:00" />
@@ -82,7 +82,7 @@ var _hmt = _hmt || [];
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gdb"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下 gdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置 首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行： gdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该"/>
 
 
 <script type="application/ld+json">
@@ -119,12 +119,12 @@ var _hmt = _hmt || [];
   "@type": "BlogPosting",
   "headline": "Gdb",
   "name": "Gdb",
-  "description": "",
+  "description": "gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下 gdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置 首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行： gdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该",
   "keywords": [
     ""
   ],
-  "articleBody": "",
-  "wordCount" : "0",
+  "articleBody": "gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下\ngdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置\n首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行：\ngdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该运行：\n(gdb) set args arg1 arg2 现在，当你使用 run 命令开始执行程序时，它将使用你指定的参数。你可以使用 show args 命令查看当前设置的参数：\n(gdb) show args Argument list to give program being debugged when it is started is \"arg1 arg2\". run (r) 运行程序\nr(un) break (b) 设置断点\nb(reak) main next (n) 执行下一行代码\nn(ext) list (l) 显示源代码\nl(ist) up 进入上一级函数的上下文\nup down 进入下一级函数的上下文\ndown display/undisplay 每次步进时显示或取消显示变量的值\ndisplay variable_name undisplay variable_name backtrace (bt) 显示函数调用堆栈\nbt(acktrace) step 单步进入函数\ns(tep) continue 继续执行直到下一个断点\n``` c(ontinue) ``` finish 执行完当前函数并停在调用该函数的位置\n``` finish ``` watch 监视变量的值是否发生变化\n``` watch variable_name ``` info breakpoints 显示当前设置的断点信息\n``` info breakpoints ``` delete 删除指定断点\n``` delete breakpoint_number ``` reverse-next (rn) 反向执行到上一行\n``` reverse-next ``` set var 设置变量的值\n``` set var x = new_value ``` print (p) 打印变量的值\narduinoCopy code print variable_name info locals 显示当前函数的局部变量\ninfo locals info args 显示当前函数的参数\ninfo args set breakpoint condition 设置断点的触发条件\nbreak main if condition disable/enable breakpoints 禁用/启用断点\ndisable breakpoint_number enable breakpoint_number ignore breakpoint 设置忽略断点的次数\nignore breakpoint_number count tbreak (tb) 在单次执行后自动移除断点\ntbreak function_name info frame 显示当前栈帧的信息\ninfo frame info registers 显示寄存器的内容\ninfo registers set $register = value 设置寄存器的值\n``` set $rax = 42 ``` x 以不同的格式显示内存内容\n``` x/4xw memory_address ``` info threads 显示所有线程的信息\n``` info threads ``` thread 切换到指定线程的上下文\n``` thread thread_number ``` set pagination off/on 关闭/打开分页显示\n``` set pagination off ``` attach 附加到正在运行的进程\n``` attach process_id ``` detach 从正在调试的进程中分离\n``` detach ``` info functions 显示可用函数的列表\n``` info functions ``` ",
+  "wordCount" : "673",
   "inLanguage": "en",
   "datePublished": "2023-08-11T21:48:16+08:00",
   "dateModified": "2023-08-11T21:48:16+08:00",
@@ -277,13 +277,13 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>0字
+        <span>673字
             &nbsp;&nbsp;
         </span>
     </span>
     <span id="post_meta_style_4">
         <span class="fa fa-clock-o"></span>
-        <span>0分钟
+        <span>2分钟
             &nbsp;&nbsp;
         </span>
     </span>
@@ -349,7 +349,317 @@ var _hmt = _hmt || [];
                 </span>
 
 </div>
-        </header> 
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#gdb%e5%90%af%e5%8a%a8%e7%9a%84%e6%97%b6%e5%80%99%e6%8c%87%e5%ae%9a%e5%8f%82%e6%95%b0" aria-label="gdb启动的时候指定参数">gdb启动的时候指定参数</a></li>
+                <li>
+                    <a href="#run-r" aria-label="run (r)"><strong>run (r)</strong></a></li>
+                <li>
+                    <a href="#break-b" aria-label="break (b)"><strong>break (b)</strong></a></li>
+                <li>
+                    <a href="#next-n" aria-label="next (n)"><strong>next (n)</strong></a></li>
+                <li>
+                    <a href="#list-l" aria-label="list (l)"><strong>list (l)</strong></a></li>
+                <li>
+                    <a href="#up" aria-label="up"><strong>up</strong></a></li>
+                <li>
+                    <a href="#down" aria-label="down"><strong>down</strong></a></li>
+                <li>
+                    <a href="#displayundisplay" aria-label="display/undisplay"><strong>display/undisplay</strong></a></li>
+                <li>
+                    <a href="#backtrace-bt" aria-label="backtrace (bt)"><strong>backtrace (bt)</strong></a></li>
+                <li>
+                    <a href="#step" aria-label="step"><strong>step</strong></a></li>
+                <li>
+                    <a href="#continue" aria-label="continue"><strong>continue</strong></a></li>
+                <li>
+                    <a href="#finish" aria-label="finish"><strong>finish</strong></a></li>
+                <li>
+                    <a href="#watch" aria-label="watch"><strong>watch</strong></a></li>
+                <li>
+                    <a href="#info-breakpoints" aria-label="info breakpoints"><strong>info breakpoints</strong></a></li>
+                <li>
+                    <a href="#delete" aria-label="delete"><strong>delete</strong></a></li>
+                <li>
+                    <a href="#reverse-next-rn" aria-label="reverse-next (rn)"><strong>reverse-next (rn)</strong></a></li>
+                <li>
+                    <a href="#set-var" aria-label="set var"><strong>set var</strong></a></li>
+                <li>
+                    <a href="#print-p" aria-label="print (p)"><strong>print (p)</strong></a></li>
+                <li>
+                    <a href="#info-locals" aria-label="info locals"><strong>info locals</strong></a></li>
+                <li>
+                    <a href="#info-args" aria-label="info args"><strong>info args</strong></a></li>
+                <li>
+                    <a href="#set-breakpoint-condition" aria-label="set breakpoint condition"><strong>set breakpoint condition</strong></a></li>
+                <li>
+                    <a href="#disableenable-breakpoints" aria-label="disable/enable breakpoints"><strong>disable/enable breakpoints</strong></a></li>
+                <li>
+                    <a href="#ignore-breakpoint" aria-label="ignore breakpoint"><strong>ignore breakpoint</strong></a></li>
+                <li>
+                    <a href="#tbreak-tb" aria-label="tbreak (tb)"><strong>tbreak (tb)</strong></a></li>
+                <li>
+                    <a href="#info-frame" aria-label="info frame"><strong>info frame</strong></a></li>
+                <li>
+                    <a href="#info-registers" aria-label="info registers"><strong>info registers</strong></a></li>
+                <li>
+                    <a href="#set-register--value" aria-label="set $register = value"><strong>set $register = value</strong></a></li>
+                <li>
+                    <a href="#x" aria-label="x"><strong>x</strong></a></li>
+                <li>
+                    <a href="#info-threads" aria-label="info threads"><strong>info threads</strong></a></li>
+                <li>
+                    <a href="#thread" aria-label="thread"><strong>thread</strong></a></li>
+                <li>
+                    <a href="#set-pagination-offon" aria-label="set pagination off/on"><strong>set pagination off/on</strong></a></li>
+                <li>
+                    <a href="#attach" aria-label="attach"><strong>attach</strong></a></li>
+                <li>
+                    <a href="#detach" aria-label="detach"><strong>detach</strong></a></li>
+                <li>
+                    <a href="#info-functions" aria-label="info functions"><strong>info functions</strong></a>
+                </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h1 id="gdb启动的时候指定参数">gdb启动的时候指定参数<a hidden class="anchor" aria-hidden="true" href="#gdb启动的时候指定参数">#</a></h1>
+<p>一种方法是在 gdb 启动程序的同时直接指定参数。格式如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gdb --args your_program arg1 arg2 arg3...
+</span></span></code></pre></div><p>另一种方法是在gdb中设置</p>
+<ol>
+<li>
+<p>首先启动 gdb 并加载你的程序。例如，如果你的程序名为 <code>myprogram</code>，则运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>gdb myprogram
+</span></span></code></pre></div></li>
+<li>
+<p>在 gdb 提示符下，使用 <code>set args</code> 命令设置参数。例如，如果你想将 <code>arg1</code> 和 <code>arg2</code> 作为参数传递给你的程序，你应该运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(gdb) set args arg1 arg2
+</span></span></code></pre></div></li>
+<li>
+<p>现在，当你使用 <code>run</code> 命令开始执行程序时，它将使用你指定的参数。你可以使用 <code>show args</code> 命令查看当前设置的参数：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(gdb) show args
+</span></span><span style="display:flex;"><span>Argument list to give program being debugged when it is started is &#34;arg1 arg2&#34;.
+</span></span></code></pre></div></li>
+</ol>
+<h1 id="run-r"><strong>run (r)</strong><a hidden class="anchor" aria-hidden="true" href="#run-r">#</a></h1>
+<p>运行程序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>r(un)
+</span></span></code></pre></div><h1 id="break-b"><strong>break (b)</strong><a hidden class="anchor" aria-hidden="true" href="#break-b">#</a></h1>
+<p>设置断点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>b(reak) main
+</span></span></code></pre></div><h1 id="next-n"><strong>next (n)</strong><a hidden class="anchor" aria-hidden="true" href="#next-n">#</a></h1>
+<p>执行下一行代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>n(ext)
+</span></span></code></pre></div><h1 id="list-l"><strong>list (l)</strong><a hidden class="anchor" aria-hidden="true" href="#list-l">#</a></h1>
+<p>显示源代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>l(ist)
+</span></span></code></pre></div><h1 id="up"><strong>up</strong><a hidden class="anchor" aria-hidden="true" href="#up">#</a></h1>
+<p>进入上一级函数的上下文</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>up
+</span></span></code></pre></div><h1 id="down"><strong>down</strong><a hidden class="anchor" aria-hidden="true" href="#down">#</a></h1>
+<p>进入下一级函数的上下文</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>down
+</span></span></code></pre></div><h1 id="displayundisplay"><strong>display/undisplay</strong><a hidden class="anchor" aria-hidden="true" href="#displayundisplay">#</a></h1>
+<p>每次步进时显示或取消显示变量的值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>display variable_name
+</span></span><span style="display:flex;"><span>undisplay variable_name
+</span></span></code></pre></div><h1 id="backtrace-bt"><strong>backtrace (bt)</strong><a hidden class="anchor" aria-hidden="true" href="#backtrace-bt">#</a></h1>
+<p>显示函数调用堆栈</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>bt(acktrace)
+</span></span></code></pre></div><h1 id="step"><strong>step</strong><a hidden class="anchor" aria-hidden="true" href="#step">#</a></h1>
+<p>单步进入函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>s(tep)
+</span></span></code></pre></div><h1 id="continue"><strong>continue</strong><a hidden class="anchor" aria-hidden="true" href="#continue">#</a></h1>
+<p>继续执行直到下一个断点</p>
+<pre><code>```
+c(ontinue)
+```
+</code></pre>
+<h1 id="finish"><strong>finish</strong><a hidden class="anchor" aria-hidden="true" href="#finish">#</a></h1>
+<p>执行完当前函数并停在调用该函数的位置</p>
+<pre><code>```
+finish
+```
+</code></pre>
+<h1 id="watch"><strong>watch</strong><a hidden class="anchor" aria-hidden="true" href="#watch">#</a></h1>
+<p>监视变量的值是否发生变化</p>
+<pre><code>```
+watch variable_name
+```
+</code></pre>
+<h1 id="info-breakpoints"><strong>info breakpoints</strong><a hidden class="anchor" aria-hidden="true" href="#info-breakpoints">#</a></h1>
+<p>显示当前设置的断点信息</p>
+<pre><code>```
+info breakpoints
+```
+</code></pre>
+<h1 id="delete"><strong>delete</strong><a hidden class="anchor" aria-hidden="true" href="#delete">#</a></h1>
+<p>删除指定断点</p>
+<pre><code>```
+delete breakpoint_number
+```
+</code></pre>
+<h1 id="reverse-next-rn"><strong>reverse-next (rn)</strong><a hidden class="anchor" aria-hidden="true" href="#reverse-next-rn">#</a></h1>
+<p>反向执行到上一行</p>
+<pre><code>```
+reverse-next
+```
+</code></pre>
+<h1 id="set-var"><strong>set var</strong><a hidden class="anchor" aria-hidden="true" href="#set-var">#</a></h1>
+<p>设置变量的值</p>
+<pre><code>```
+set var x = new_value
+```
+</code></pre>
+<h1 id="print-p"><strong>print (p)</strong><a hidden class="anchor" aria-hidden="true" href="#print-p">#</a></h1>
+<p>打印变量的值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>arduinoCopy code
+</span></span><span style="display:flex;"><span>print variable_name
+</span></span></code></pre></div><h1 id="info-locals"><strong>info locals</strong><a hidden class="anchor" aria-hidden="true" href="#info-locals">#</a></h1>
+<p>显示当前函数的局部变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>info locals
+</span></span></code></pre></div><h1 id="info-args"><strong>info args</strong><a hidden class="anchor" aria-hidden="true" href="#info-args">#</a></h1>
+<p>显示当前函数的参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>info args
+</span></span></code></pre></div><h1 id="set-breakpoint-condition"><strong>set breakpoint condition</strong><a hidden class="anchor" aria-hidden="true" href="#set-breakpoint-condition">#</a></h1>
+<p>设置断点的触发条件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>break main if condition
+</span></span></code></pre></div><h1 id="disableenable-breakpoints"><strong>disable/enable breakpoints</strong><a hidden class="anchor" aria-hidden="true" href="#disableenable-breakpoints">#</a></h1>
+<p>禁用/启用断点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>disable breakpoint_number
+</span></span><span style="display:flex;"><span>enable breakpoint_number
+</span></span></code></pre></div><h1 id="ignore-breakpoint"><strong>ignore breakpoint</strong><a hidden class="anchor" aria-hidden="true" href="#ignore-breakpoint">#</a></h1>
+<p>设置忽略断点的次数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ignore breakpoint_number count
+</span></span></code></pre></div><h1 id="tbreak-tb"><strong>tbreak (tb)</strong><a hidden class="anchor" aria-hidden="true" href="#tbreak-tb">#</a></h1>
+<p>在单次执行后自动移除断点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tbreak function_name
+</span></span></code></pre></div><h1 id="info-frame"><strong>info frame</strong><a hidden class="anchor" aria-hidden="true" href="#info-frame">#</a></h1>
+<p>显示当前栈帧的信息</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>info frame
+</span></span></code></pre></div><h1 id="info-registers"><strong>info registers</strong><a hidden class="anchor" aria-hidden="true" href="#info-registers">#</a></h1>
+<p>显示寄存器的内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>info registers
+</span></span></code></pre></div><h1 id="set-register--value"><strong>set $register = value</strong><a hidden class="anchor" aria-hidden="true" href="#set-register--value">#</a></h1>
+<p>设置寄存器的值</p>
+<pre><code>```
+set $rax = 42
+```
+</code></pre>
+<h1 id="x"><strong>x</strong><a hidden class="anchor" aria-hidden="true" href="#x">#</a></h1>
+<p>以不同的格式显示内存内容</p>
+<pre><code>```
+x/4xw memory_address
+```
+</code></pre>
+<h1 id="info-threads"><strong>info threads</strong><a hidden class="anchor" aria-hidden="true" href="#info-threads">#</a></h1>
+<p>显示所有线程的信息</p>
+<pre><code>```
+info threads
+```
+</code></pre>
+<h1 id="thread"><strong>thread</strong><a hidden class="anchor" aria-hidden="true" href="#thread">#</a></h1>
+<p>切换到指定线程的上下文</p>
+<pre><code>```
+thread thread_number
+```
+</code></pre>
+<h1 id="set-pagination-offon"><strong>set pagination off/on</strong><a hidden class="anchor" aria-hidden="true" href="#set-pagination-offon">#</a></h1>
+<p>关闭/打开分页显示</p>
+<pre><code>```
+set pagination off
+```
+</code></pre>
+<h1 id="attach"><strong>attach</strong><a hidden class="anchor" aria-hidden="true" href="#attach">#</a></h1>
+<p>附加到正在运行的进程</p>
+<pre><code>```
+attach process_id
+```
+</code></pre>
+<h1 id="detach"><strong>detach</strong><a hidden class="anchor" aria-hidden="true" href="#detach">#</a></h1>
+<p>从正在调试的进程中分离</p>
+<pre><code>```
+detach
+```
+</code></pre>
+<h1 id="info-functions"><strong>info functions</strong><a hidden class="anchor" aria-hidden="true" href="#info-functions">#</a></h1>
+<p>显示可用函数的列表</p>
+<pre><code>```
+info functions
+```
+</code></pre>
+
+
+        </div>
 
         <footer class="post-footer">
             
