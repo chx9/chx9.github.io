@@ -1,5 +1,5 @@
 ---
-title: "Cmake"
+title: "CMake"
 date: 2023-08-11T21:43:12+08:00
 lastmod: 2023-08-11T21:43:12+08:00
 author: ["chx9"]

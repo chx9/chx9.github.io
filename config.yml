@@ -50,8 +50,8 @@ languages:
             url: posts/cs
           - name: 📕 reading
             url: posts/read
-          - name: 🏖 C++
-            url: posts/cpp
+          - name: 🏖 toolchain
+            url: posts/toolchain
     menu:
       main:
         - identifier: search
