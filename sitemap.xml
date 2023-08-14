@@ -2,72 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/</loc>
+    <loc>www.junshou.top/posts/</loc>
     <lastmod>2023-08-11T21:48:16+08:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>www.junshou.top/</loc>
     <lastmod>2023-08-11T21:48:16+08:00</lastmod>
   </url><url>
-    <loc>/posts/toolchain/gdb/</loc>
+    <loc>www.junshou.top/posts/toolchain/gdb/</loc>
     <lastmod>2023-08-11T21:48:16+08:00</lastmod>
   </url><url>
-    <loc>/posts/toolchain/</loc>
+    <loc>www.junshou.top/posts/toolchain/</loc>
     <lastmod>2023-08-11T21:48:16+08:00</lastmod>
   </url><url>
-    <loc>/posts/toolchain/cmake/</loc>
+    <loc>www.junshou.top/posts/toolchain/cmake/</loc>
     <lastmod>2023-08-11T21:43:12+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/</loc>
+    <loc>www.junshou.top/posts/cs/</loc>
     <lastmod>2023-07-31T11:43:25+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/docker/</loc>
+    <loc>www.junshou.top/posts/cs/docker/</loc>
     <lastmod>2023-07-31T11:43:25+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/cpp/</loc>
+    <loc>www.junshou.top/posts/cs/cpp/</loc>
     <lastmod>2023-07-29T10:17:47+08:00</lastmod>
   </url><url>
-    <loc>/tags/cs/</loc>
+    <loc>www.junshou.top/tags/cs/</loc>
     <lastmod>2023-07-29T10:17:47+08:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>www.junshou.top/tags/</loc>
     <lastmod>2023-07-29T10:17:47+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/webserver/</loc>
+    <loc>www.junshou.top/posts/cs/webserver/</loc>
     <lastmod>2023-07-29T11:06:43+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/mysql/</loc>
+    <loc>www.junshou.top/posts/cs/mysql/</loc>
     <lastmod>2023-07-29T11:06:20+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/os/</loc>
+    <loc>www.junshou.top/posts/cs/os/</loc>
     <lastmod>2023-07-29T11:05:53+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/leetcode/</loc>
+    <loc>www.junshou.top/posts/cs/leetcode/</loc>
     <lastmod>2023-07-29T11:05:24+08:00</lastmod>
   </url><url>
-    <loc>/posts/cs/network/</loc>
+    <loc>www.junshou.top/posts/cs/network/</loc>
     <lastmod>2023-07-29T11:04:35+08:00</lastmod>
   </url><url>
-    <loc>/posts/read/</loc>
+    <loc>www.junshou.top/posts/read/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
-    <loc>/posts/read/read/</loc>
+    <loc>www.junshou.top/posts/read/read/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
-    <loc>/tags/read/</loc>
+    <loc>www.junshou.top/tags/read/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
-    <loc>/links/</loc>
+    <loc>www.junshou.top/links/</loc>
     <lastmod>2021-11-06T15:15:53+08:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>www.junshou.top/about/</loc>
     <lastmod>2021-11-06T14:57:28+08:00</lastmod>
   </url><url>
-    <loc>/archives/</loc>
+    <loc>www.junshou.top/archives/</loc>
   </url><url>
-    <loc>/search/</loc>
+    <loc>www.junshou.top/search/</loc>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>www.junshou.top/categories/</loc>
   </url><url>
-    <loc>/series/</loc>
+    <loc>www.junshou.top/series/</loc>
   </url>
 </urlset>
