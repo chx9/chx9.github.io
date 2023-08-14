@@ -9,14 +9,14 @@
 <meta name="keywords" content="">
 <meta name="description" content="start命令 在GDB中，start 命令用于启动程序并停在程序的入口点处，等待你进行调试。它相当于设置一个断点在程序的 main 函数上并运行程序。这使你可以在程序开始执行之前检查变量、设置断点以及做其他调试操作。 以下是 start 命令的用法，其中 [args] 是传递给程序的命令行参数（ start [args] gdb启动的时候指定">
 <meta name="author" content="chx9">
-<link rel="canonical" href="www.junshou.top/posts/toolchain/gdb/">
-<link crossorigin="anonymous" href="/www.junshou.top/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/www.junshou.top/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="www.junshou.top/img/svin.webp">
-<link rel="icon" type="image/png" sizes="16x16" href="www.junshou.top/img/svin.webp">
-<link rel="icon" type="image/png" sizes="32x32" href="www.junshou.top/img/svin.webp">
-<link rel="apple-touch-icon" href="www.junshou.top/img/svin.webp">
-<link rel="mask-icon" href="www.junshou.top/img/svin.webp">
+<link rel="canonical" href="/posts/toolchain/gdb/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="img/svin.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="img/svin.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="img/svin.webp">
+<link rel="apple-touch-icon" href="img/svin.webp">
+<link rel="mask-icon" href="img/svin.webp">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -76,7 +76,7 @@ var _hmt = _hmt || [];
 <meta property="og:title" content="gdb" />
 <meta property="og:description" content="start命令 在GDB中，start 命令用于启动程序并停在程序的入口点处，等待你进行调试。它相当于设置一个断点在程序的 main 函数上并运行程序。这使你可以在程序开始执行之前检查变量、设置断点以及做其他调试操作。 以下是 start 命令的用法，其中 [args] 是传递给程序的命令行参数（ start [args] gdb启动的时候指定" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="www.junshou.top/posts/toolchain/gdb/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/toolchain/gdb/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-11T21:48:16+08:00" />
 <meta property="article:modified_time" content="2023-08-11T21:48:16+08:00" />
 
@@ -95,20 +95,20 @@ var _hmt = _hmt || [];
           "@type": "ListItem",
           "position":  2 ,
           "name": "📚Articles",
-          "item": "www.junshou.top/posts/"
+          "item": "/posts/"
         },
 
         {
           "@type": "ListItem",
           "position":  3 ,
           "name": "🛠️ toolchain",
-          "item": "www.junshou.top/posts/toolchain/"
+          "item": "/posts/toolchain/"
         }, 
     {
       "@type": "ListItem",
       "position":  4 ,
       "name": "gdb",
-      "item": "www.junshou.top/posts/toolchain/gdb/"
+      "item": "/posts/toolchain/gdb/"
     }
   ]
 }
@@ -134,14 +134,14 @@ var _hmt = _hmt || [];
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "www.junshou.top/posts/toolchain/gdb/"
+    "@id": "/posts/toolchain/gdb/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "chx9",
     "logo": {
       "@type": "ImageObject",
-      "url": "www.junshou.top/img/svin.webp"
+      "url": "img/svin.webp"
     }
   }
 }
@@ -176,7 +176,7 @@ var _hmt = _hmt || [];
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="www.junshou.top" accesskey="h" title="chx9 (Alt + H)">chx9</a>
+            <a href="" accesskey="h" title="chx9 (Alt + H)">chx9</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -202,27 +202,27 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="www.junshou.top/search" title="🔍 search (Alt &#43; /)" accesskey=/>
+                <a href="search" title="🔍 search (Alt &#43; /)" accesskey=/>
                 <span>🔍 search</span>
                 </a>
             </li>
             <li>
-                <a href="www.junshou.top/www.junshou.top/" title="🏠 home">
+                <a href="/" title="🏠 home">
                 <span>🏠 home</span>
                 </a>
             </li>
             <li>
-                <a href="www.junshou.top/posts" title="📚 articles">
+                <a href="posts" title="📚 articles">
                 <span>📚 articles</span>
                 </a>
             </li>
             <li>
-                <a href="www.junshou.top/tags" title="🧩 tags">
+                <a href="tags" title="🧩 tags">
                 <span>🧩 tags</span>
                 </a>
             </li>
             <li>
-                <a href="www.junshou.top/about" title="🙋🏻‍♂️ about">
+                <a href="about" title="🙋🏻‍♂️ about">
                 <span>🙋🏻‍♂️ about</span>
                 </a>
             </li>
@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 <article class="post-single">
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="www.junshou.top">🏠 主页</a>&nbsp;»&nbsp;<a href="www.junshou.top/posts/">📚Articles</a>&nbsp;»&nbsp;<a href="www.junshou.top/posts/toolchain/">🛠️ toolchain</a></div>
+            <div class="breadcrumbs"><a href="">🏠 主页</a>&nbsp;»&nbsp;<a href="/posts/">📚Articles</a>&nbsp;»&nbsp;<a href="/posts/toolchain/">🛠️ toolchain</a></div>
             <h1 class="post-title">
                 gdb
             </h1>
@@ -317,7 +317,7 @@ var _hmt = _hmt || [];
                             <script>
                                 let url = document.documentURI
                                 
-                                let dnsUrl = "www.junshou.top"
+                                let dnsUrl = ""
                                 let urlSplit = url.split(dnsUrl)
                                 let finalUrl = urlSplit[1]
                                 if (finalUrl[0] !== '/') {
@@ -670,7 +670,7 @@ info functions
         <footer class="post-footer">
             
 <nav class="paginav">
-  <a class="next" href="www.junshou.top/posts/toolchain/cmake/">
+  <a class="next" href="/posts/toolchain/cmake/">
     <span class="title">下一页 »</span>
     <br>
     <span>CMake</span>
@@ -721,7 +721,7 @@ info functions
         Copyright
         &copy;
         -2023
-        <a href="www.junshou.top" style="color:#939393;">chx9</a>
+        <a href="" style="color:#939393;">chx9</a>
         All Rights Reserved
     </span>
     <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;"></a>&nbsp;

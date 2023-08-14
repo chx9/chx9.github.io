@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>🛠️ toolchain on chx9</title>
-    <link>www.junshou.top/posts/toolchain/</link>
+    <link>/posts/toolchain/</link>
     <description>Recent content in 🛠️ toolchain on chx9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Aug 2023 21:48:16 +0800</lastBuildDate><atom:link href="www.junshou.top/posts/toolchain/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Aug 2023 21:48:16 +0800</lastBuildDate><atom:link href="/posts/toolchain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gdb</title>
-      <link>www.junshou.top/posts/toolchain/gdb/</link>
+      <link>/posts/toolchain/gdb/</link>
       <pubDate>Fri, 11 Aug 2023 21:48:16 +0800</pubDate>
       
-      <guid>www.junshou.top/posts/toolchain/gdb/</guid>
+      <guid>/posts/toolchain/gdb/</guid>
       <description>start命令 在GDB中，start 命令用于启动程序并停在程序的入口点处，等待你进行调试。它相当于设置一个断点在程序的 main 函数上并运行程序。这使你可以在程序开始执行之前检查变量、设置断点以及做其他调试操作。 以下是 start 命令的用法，其中 [args] 是传递给程序的命令行参数（ start [args] gdb启动的时候指定</description>
     </item>
     
     <item>
       <title>CMake</title>
-      <link>www.junshou.top/posts/toolchain/cmake/</link>
+      <link>/posts/toolchain/cmake/</link>
       <pubDate>Fri, 11 Aug 2023 21:43:12 +0800</pubDate>
       
-      <guid>www.junshou.top/posts/toolchain/cmake/</guid>
+      <guid>/posts/toolchain/cmake/</guid>
       <description>CMake介绍 CMake是一个跨平台的构建工具，它能够帮助开发者管理大型项目，处理各种依赖关系，实现多平台、多编译器下的统一构建。使用CMake，开发者可以摆脱繁琐的手动配置环境，专注于核心的代码实现，从而大大提高开发效率。 第一个CMake文件 在一个C++项目中，我们通常需要编写</description>
     </item>
     
