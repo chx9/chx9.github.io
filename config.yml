@@ -46,7 +46,7 @@ languages:
         buttons:
           # - name: 🧱 建站
           #   url: posts/blog
-          - name: 👨🏻‍💻 cs
+          - name: 👨🏻‍💻 programming
             url: posts/cs
           - name: 📕 reading
             url: posts/read

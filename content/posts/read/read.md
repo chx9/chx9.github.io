@@ -8,7 +8,7 @@ keywords:
 categories: 
 - 
 tags: 
-- read
+- reading
 description: ""
 weight:
 slug: ""
