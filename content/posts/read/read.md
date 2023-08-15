@@ -1,5 +1,5 @@
 ---
-title: "My Reading List"
+title: "My Book List"
 date: 2022-05-05T00:18:06+08:00
 lastmod: 2022-05-05T00:18:06+08:00
 author: ["chx9"]

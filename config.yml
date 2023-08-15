@@ -96,7 +96,7 @@ params:
   author: chx9
   # author: ["Me", "You"] # multiple authors
 
-  defaultTheme: auto  # defaultTheme: light or  dark
+  defaultTheme: light  # defaultTheme: light or  dark
   disableThemeToggle: false
   DateFormat: "2006-01-02"
   ShowShareButtons: true
