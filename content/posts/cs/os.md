@@ -1,5 +1,5 @@
 ---
-title: "Operating System"
+title: "operating system"
 date: 2023-07-29T11:05:53+08:00
 lastmod: 2023-07-29T11:05:53+08:00
 author: ["chx9"]

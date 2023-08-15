@@ -1,5 +1,5 @@
 ---
-title: "Mysql"
+title: "mysql"
 date: 2023-07-29T11:06:20+08:00
 lastmod: 2023-07-29T11:06:20+08:00
 author: ["chx9"]

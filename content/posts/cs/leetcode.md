@@ -1,5 +1,5 @@
 ---
-title: "Leetcode"
+title: "leetcode"
 date: 2023-07-29T11:05:24+08:00
 lastmod: 2023-07-29T11:05:24+08:00
 author: ["chx9"]
@@ -1910,6 +1910,7 @@ public:
 ```
 
 ## 461 汉明距离
+https://leetcode.cn/problems/hamming-distance/
 
 异或
 
@@ -1934,7 +1935,6 @@ public:
 
 [https://leetcode.cn/problems/target-sum](https://leetcode.cn/problems/target-sum)
 
-![Untitled](Leetcode-hot-100%20ae5bdb987aab4dafb1522f8abeb65786/Untitled%204.png)
 
 算出 neg 的和然后转化为背包问题
 
@@ -1946,6 +1946,8 @@ public:
         for(int num: nums){
             sum += num;
         }
+        // neg + pos = sum
+        // -neg + pos = target
         int tp = sum - target;
         if(tp %2 != 0 || tp<0){
             return 0;
