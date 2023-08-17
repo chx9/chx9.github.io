@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Gcc | chx9</title>
+<meta name="keywords" content="">
+<meta name="description" content="gcc 优化的几个等级 gcc 中指定优化级别的参数有：-O0、-O1、-O2、-O3、-Og、-Os、-Ofast。 在编译时，如果没有指定上面的任何优化参数，则默认为 -O0，即没有优化。 参数 -O1、-O2、-O3 中，随着数字变大，代码的优化程度也越高，不过这在某种意义上来说，也是以牺牲程序的">
+<meta name="author" content="chx9">
+<link rel="canonical" href="https://www.junshou.top/posts/toolchain/gcc/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://www.junshou.top/img/svin.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.junshou.top/img/svin.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.junshou.top/img/svin.webp">
+<link rel="apple-touch-icon" href="https://www.junshou.top/img/svin.webp">
+<link rel="mask-icon" href="https://www.junshou.top/img/svin.webp">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="og:title" content="Gcc" />
+<meta property="og:description" content="gcc 优化的几个等级 gcc 中指定优化级别的参数有：-O0、-O1、-O2、-O3、-Og、-Os、-Ofast。 在编译时，如果没有指定上面的任何优化参数，则默认为 -O0，即没有优化。 参数 -O1、-O2、-O3 中，随着数字变大，代码的优化程度也越高，不过这在某种意义上来说，也是以牺牲程序的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.junshou.top/posts/toolchain/gcc/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-15T21:04:34+08:00" />
+<meta property="article:modified_time" content="2023-08-15T21:04:34+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gcc"/>
+<meta name="twitter:description" content="gcc 优化的几个等级 gcc 中指定优化级别的参数有：-O0、-O1、-O2、-O3、-Og、-Os、-Ofast。 在编译时，如果没有指定上面的任何优化参数，则默认为 -O0，即没有优化。 参数 -O1、-O2、-O3 中，随着数字变大，代码的优化程度也越高，不过这在某种意义上来说，也是以牺牲程序的"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "📚Articles",
+          "item": "https://www.junshou.top/posts/"
+        },
+
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "🛠️ toolchain",
+          "item": "https://www.junshou.top/posts/toolchain/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Gcc",
+      "item": "https://www.junshou.top/posts/toolchain/gcc/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Gcc",
+  "name": "Gcc",
+  "description": "gcc 优化的几个等级 gcc 中指定优化级别的参数有：-O0、-O1、-O2、-O3、-Og、-Os、-Ofast。 在编译时，如果没有指定上面的任何优化参数，则默认为 -O0，即没有优化。 参数 -O1、-O2、-O3 中，随着数字变大，代码的优化程度也越高，不过这在某种意义上来说，也是以牺牲程序的",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "gcc 优化的几个等级 gcc 中指定优化级别的参数有：-O0、-O1、-O2、-O3、-Og、-Os、-Ofast。\n在编译时，如果没有指定上面的任何优化参数，则默认为 -O0，即没有优化。\n参数 -O1、-O2、-O3 中，随着数字变大，代码的优化程度也越高，不过这在某种意义上来说，也是以牺牲程序的可调试性为代价的。\n参数 -Og 是在 -O1 的基础上，去掉了那些影响调试的优化，所以如果最终是为了调试程序，可以使用这个参数。不过光有这个参数也是不行的，这个参数只是告诉编译器，编译后的代码不要影响调试，但调试信息的生成还是靠 -g 参数的。\n参数 -Os 是在 -O2 的基础上，去掉了那些会导致最终可执行程序增大的优化，如果想要更小的可执行程序，可选择这个参数。\n参数 -Ofast 是在 -O3 的基础上，添加了一些非常规优化，这些优化是通过打破一些国际标准（比如一些数学函数的实现标准）来实现的，所以一般不推荐使用该参数\ngcc 的参数 gcc 是 GNU Compiler Collection 的缩写，它是一个用于编译 C/C++以及其他语言的强大编译器。以下是一些常用的 gcc 命令行参数：\n-o outputfile: 指定输出文件的名称。例如，gcc -o myprog myprog.c 将会编译 myprog.c 并生成可执行文件 myprog。 -c: 只编译但不链接，通常生成 .o 对象文件。例如，gcc -c myprog.c 会生成 myprog.o。 -g: 在编译的时候包含调试信息，这样在使用 gdb 或其他调试器时可以显示更多有用的信息。 -Wall: 开启所有警告信息。这个参数可以帮助你发现代码中的潜在问题。 -I dir: 添加头文件搜索路径。如果你的头文件不在标准的系统路径下，你可以用 -I 参数告诉 gcc 到哪里找它们。 -L dir: 添加库文件搜索路径。如果你的库文件不在标准的系统路径下，你可以用 -L 参数告诉 gcc 到哪里找它们。 -l libname: 链接到名为 libname 的库。例如，-lm 将链接到数学库 libm。 -std=: 用于指定 C 或 C++的版本，例如 -std=c99 或 -std=c++11。 -D name: 定义预处理宏。例如，gcc -D DEBUG ... 相当于在源码前面添加了 #define DEBUG。 以上只是 gcc 最常用的部分参数，实际上 gcc 的参数非常丰富，可以根据具体需求选择合适的参数。\n",
+  "wordCount" : "806",
+  "inLanguage": "en",
+  "datePublished": "2023-08-15T21:04:34+08:00",
+  "dateModified": "2023-08-15T21:04:34+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "chx9"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.junshou.top/posts/toolchain/gcc/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "chx9",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.junshou.top/img/svin.webp"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.junshou.top/" accesskey="h" title="chx9 (Alt + H)">chx9</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.junshou.top/search" title="🔍 search (Alt &#43; /)" accesskey=/>
+                <span>🔍 search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.junshou.top/" title="🏠 home">
+                <span>🏠 home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.junshou.top/posts" title="📚 articles">
+                <span>📚 articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.junshou.top/tags" title="🧩 tags">
+                <span>🧩 tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.junshou.top/about" title="🙋🏻‍♂️ about">
+                <span>🙋🏻‍♂️ about</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://www.junshou.top/">🏠 主页</a>&nbsp;»&nbsp;<a href="https://www.junshou.top/posts/">📚Articles</a>&nbsp;»&nbsp;<a href="https://www.junshou.top/posts/toolchain/">🛠️ toolchain</a></div>
+            <h1 class="post-title">
+                Gcc
+            </h1>
+            <div class="post-meta">
+
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>2023-08-15
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>806字
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>2分钟
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>chx9
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo//twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "https://www.junshou.top/"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
+</div>
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#gcc-%e4%bc%98%e5%8c%96%e7%9a%84%e5%87%a0%e4%b8%aa%e7%ad%89%e7%ba%a7" aria-label="gcc 优化的几个等级">gcc 优化的几个等级</a></li>
+                <li>
+                    <a href="#gcc-%e7%9a%84%e5%8f%82%e6%95%b0" aria-label="gcc 的参数">gcc 的参数</a>
+                </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h1 id="gcc-优化的几个等级">gcc 优化的几个等级<a hidden class="anchor" aria-hidden="true" href="#gcc-优化的几个等级">#</a></h1>
+<ol>
+<li>
+<p>gcc 中指定优化级别的参数有：-O0、-O1、-O2、-O3、-Og、-Os、-Ofast。</p>
+</li>
+<li>
+<p>在编译时，如果没有指定上面的任何优化参数，则默认为 -O0，即没有优化。</p>
+</li>
+<li>
+<p>参数 -O1、-O2、-O3 中，随着数字变大，代码的优化程度也越高，不过这在某种意义上来说，也是以牺牲程序的可调试性为代价的。</p>
+</li>
+<li>
+<p>参数 -Og 是在 -O1 的基础上，去掉了那些影响调试的优化，所以如果最终是为了调试程序，可以使用这个参数。不过光有这个参数也是不行的，这个参数只是告诉编译器，编译后的代码不要影响调试，但调试信息的生成还是靠 -g 参数的。</p>
+</li>
+<li>
+<p>参数 -Os 是在 -O2 的基础上，去掉了那些会导致最终可执行程序增大的优化，如果想要更小的可执行程序，可选择这个参数。</p>
+</li>
+<li>
+<p>参数 -Ofast 是在 -O3 的基础上，添加了一些非常规优化，这些优化是通过打破一些国际标准（比如一些数学函数的实现标准）来实现的，所以一般不推荐使用该参数</p>
+</li>
+</ol>
+<h1 id="gcc-的参数">gcc 的参数<a hidden class="anchor" aria-hidden="true" href="#gcc-的参数">#</a></h1>
+<p><code>gcc</code> 是 GNU Compiler Collection 的缩写，它是一个用于编译 C/C++以及其他语言的强大编译器。以下是一些常用的 <code>gcc</code> 命令行参数：</p>
+<ol>
+<li><code>-o outputfile</code>: 指定输出文件的名称。例如，<code>gcc -o myprog myprog.c</code> 将会编译 <code>myprog.c</code> 并生成可执行文件 <code>myprog</code>。</li>
+<li><code>-c</code>: 只编译但不链接，通常生成 <code>.o</code> 对象文件。例如，<code>gcc -c myprog.c</code> 会生成 <code>myprog.o</code>。</li>
+<li><code>-g</code>: 在编译的时候包含调试信息，这样在使用 gdb 或其他调试器时可以显示更多有用的信息。</li>
+<li><code>-Wall</code>: 开启所有警告信息。这个参数可以帮助你发现代码中的潜在问题。</li>
+<li><code>-I dir</code>: 添加头文件搜索路径。如果你的头文件不在标准的系统路径下，你可以用 <code>-I</code> 参数告诉 <code>gcc</code> 到哪里找它们。</li>
+<li><code>-L dir</code>: 添加库文件搜索路径。如果你的库文件不在标准的系统路径下，你可以用 <code>-L</code> 参数告诉 <code>gcc</code> 到哪里找它们。</li>
+<li><code>-l libname</code>: 链接到名为 <code>libname</code> 的库。例如，<code>-lm</code> 将链接到数学库 <code>libm</code>。</li>
+<li><code>-std=</code>: 用于指定 C 或 C++的版本，例如 <code>-std=c99</code> 或 <code>-std=c++11</code>。</li>
+<li><code>-D name</code>: 定义预处理宏。例如，<code>gcc -D DEBUG ...</code> 相当于在源码前面添加了 <code>#define DEBUG</code>。</li>
+</ol>
+<p>以上只是 <code>gcc</code> 最常用的部分参数，实际上 <code>gcc</code> 的参数非常丰富，可以根据具体需求选择合适的参数。</p>
+
+
+        </div>
+
+        <footer class="post-footer">
+            
+<nav class="paginav">
+  <a class="next" href="https://www.junshou.top/posts/toolchain/gdb/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>gdb</span>
+  </a>
+</nav>
+
+        </footer>
+    </div>
+
+<style>
+    .comments_details summary::marker {
+        font-size: 20px;
+        content: '👉展开评论';
+        color: var(--content);
+    }
+    .comments_details[open] summary::marker{
+        font-size: 20px;
+        content: '👇关闭评论';
+        color: var(--content);
+    }
+</style>
+
+
+<div>
+    <details class="comments_details">
+        <summary style="cursor: pointer; margin: 50px 0 20px 0;width: 130px;">
+            <span style="font-size: 20px;color: var(--content);">...</span>
+        </summary>
+        <div id="tcomment"></div>
+    </details>
+    <script src="https://cdn.staticfile.org/twikoo//twikoo.all.min.js">
+    </script>
+    <script>
+        twikoo.init({
+            envId:  null ,
+        el: "#tcomment",
+            lang: 'zh-CN',
+            region:  null ,
+        path: window.TWIKOO_MAGIC_PATH||window.location.pathname,
+        })
+    </script>
+</div>
+</article>
+</main>
+
+<footer class="footer">
+    <span>
+        Copyright
+        &copy;
+        -2023
+        <a href="https://www.junshou.top/" style="color:#939393;">chx9</a>
+        All Rights Reserved
+    </span>
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;"></a>&nbsp;
+    <span>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=null"
+           style="display:inline-block;text-decoration:none;height:20px;color:#939393;">
+            <img src="" style="float:left;margin: 0px 5px 0px 0px;"/>
+            
+        </a>
+    </span>
+    <span id="busuanzi_container">
+        <span class="fa fa-user"></span> <span id="busuanzi_value_site_uv"></span>
+        <span class="fa fa-eye"></span> <span id="busuanzi_value_site_pv"></span>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() 
+                let textData = window.getSelection().toString() 
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '📄复制';
+
+        function copyingDone() {
+            copybutton.innerText = '👌🏻已复制!';
+            setTimeout(() => {
+                copybutton.innerText = '📄复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent 
+                
+                
+                
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        
+        
+        
+        
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+</body>
+
+</html>

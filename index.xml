@@ -6,7 +6,16 @@
     <description>Recent content on chx9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Aug 2023 21:48:16 +0800</lastBuildDate><atom:link href="https://www.junshou.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Aug 2023 21:04:34 +0800</lastBuildDate><atom:link href="https://www.junshou.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gcc</title>
+      <link>https://www.junshou.top/posts/toolchain/gcc/</link>
+      <pubDate>Tue, 15 Aug 2023 21:04:34 +0800</pubDate>
+      
+      <guid>https://www.junshou.top/posts/toolchain/gcc/</guid>
+      <description>gcc 优化的几个等级 gcc 中指定优化级别的参数有：-O0、-O1、-O2、-O3、-Og、-Os、-Ofast。 在编译时，如果没有指定上面的任何优化参数，则默认为 -O0，即没有优化。 参数 -O1、-O2、-O3 中，随着数字变大，代码的优化程度也越高，不过这在某种意义上来说，也是以牺牲程序的</description>
+    </item>
+    
     <item>
       <title>gdb</title>
       <link>https://www.junshou.top/posts/toolchain/gdb/</link>
