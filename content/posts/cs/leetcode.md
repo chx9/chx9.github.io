@@ -2132,6 +2132,8 @@ public:
 
 ## 739 每日温度
 
+https://leetcode.cn/problems/daily-temperatures/
+
 单调栈
 
 ```cpp
@@ -2205,6 +2207,8 @@ public:
 ```
 
 ## 2 两数相交
+
+https://leetcode.cn/problems/intersection-of-two-linked-lists/
 
 链表，注意进位的最后一次运算
 
@@ -2375,6 +2379,8 @@ public:
 ```
 
 ## 15 三数之和
+
+https://leetcode.cn/problems/3sum/
 
 首先对数组进行排序，然后转换为两数之和。（其中要进行去重 both in main and two sum）
 
