@@ -95,8 +95,8 @@ var _hmt = _hmt || [];
   "keywords": [
     ""
   ],
-  "articleBody": "start命令 在GDB中，start 命令用于启动程序并停在程序的入口点处，等待你进行调试。它相当于设置一个断点在程序的 main 函数上并运行程序。这使你可以在程序开始执行之前检查变量、设置断点以及做其他调试操作。\n以下是 start 命令的用法，其中 [args] 是传递给程序的命令行参数（\nstart [args] gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下\ngdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置\n首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行：\ngdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该运行：\n(gdb) set args arg1 arg2 现在，当你使用 run 命令开始执行程序时，它将使用你指定的参数。你可以使用 show args 命令查看当前设置的参数：\n(gdb) show args Argument list to give program being debugged when it is started is \"arg1 arg2\". run (r) 运行程序\nr(un) break (b) 设置断点\nb(reak) main next (n) 执行下一行代码\nn(ext) list (l) 显示源代码\nl(ist) up 进入上一级函数的上下文\nup down 进入下一级函数的上下文\ndown display/undisplay 每次步进时显示或取消显示变量的值\ndisplay variable_name undisplay variable_name backtrace (bt) 显示函数调用堆栈\nbt(acktrace) step 单步进入函数\ns(tep) continue 继续执行直到下一个断点\n``` c(ontinue) ``` finish 执行完当前函数并停在调用该函数的位置\n``` finish ``` watch 监视变量的值是否发生变化\n``` watch variable_name ``` info breakpoints 显示当前设置的断点信息\n``` info breakpoints ``` delete 删除指定断点\n``` delete breakpoint_number ``` reverse-next (rn) 反向执行到上一行\n``` reverse-next ``` set var 设置变量的值\n``` set var x = new_value ``` print (p) 打印变量的值\narduinoCopy code print variable_name info locals 显示当前函数的局部变量\ninfo locals info args 显示当前函数的参数\ninfo args set breakpoint condition 设置断点的触发条件\nbreak main if condition disable/enable breakpoints 禁用/启用断点\ndisable breakpoint_number enable breakpoint_number ignore breakpoint 设置忽略断点的次数\nignore breakpoint_number count tbreak (tb) 在单次执行后自动移除断点\ntbreak function_name info frame 显示当前栈帧的信息\ninfo frame info registers 显示寄存器的内容\ninfo registers set $register = value 设置寄存器的值\n``` set $rax = 42 ``` x 以不同的格式显示内存内容\n``` x/4xw memory_address ``` info threads 显示所有线程的信息\n``` info threads ``` thread 切换到指定线程的上下文\n``` thread thread_number ``` set pagination off/on 关闭/打开分页显示\n``` set pagination off ``` attach 附加到正在运行的进程\n``` attach process_id ``` detach 从正在调试的进程中分离\n``` detach ``` info functions 显示可用函数的列表\n``` info functions ``` ",
-  "wordCount" : "803",
+  "articleBody": "start命令 在GDB中，start 命令用于启动程序并停在程序的入口点处，等待你进行调试。它相当于设置一个断点在程序的 main 函数上并运行程序。这使你可以在程序开始执行之前检查变量、设置断点以及做其他调试操作。\n以下是 start 命令的用法，其中 [args] 是传递给程序的命令行参数（\nstart [args] gdb启动的时候指定参数 一种方法是在 gdb 启动程序的同时直接指定参数。格式如下\ngdb --args your_program arg1 arg2 arg3... 另一种方法是在gdb中设置\n首先启动 gdb 并加载你的程序。例如，如果你的程序名为 myprogram，则运行：\ngdb myprogram 在 gdb 提示符下，使用 set args 命令设置参数。例如，如果你想将 arg1 和 arg2 作为参数传递给你的程序，你应该运行：\n(gdb) set args arg1 arg2 现在，当你使用 run 命令开始执行程序时，它将使用你指定的参数。你可以使用 show args 命令查看当前设置的参数：\n(gdb) show args Argument list to give program being debugged when it is started is \"arg1 arg2\". run (r) 运行程序\nr(un) break (b) 设置断点\nb(reak) main next (n) 执行下一行代码\nn(ext) list (l) 显示源代码\nl(ist) up 进入上一级函数的上下文\nup down 进入下一级函数的上下文\ndown display/undisplay 每次步进时显示或取消显示变量的值\ndisplay variable_name undisplay variable_name backtrace (bt) 显示函数调用堆栈\nbt(acktrace) step 单步进入函数\ns(tep) continue 继续执行直到下一个断点\n``` c(ontinue) ``` finish 执行完当前函数并停在调用该函数的位置\n``` finish ``` watch 监视变量的值是否发生变化\n``` watch variable_name ``` info breakpoints 显示当前设置的断点信息\n``` info breakpoints ``` delete 删除指定断点\n``` delete breakpoint_number ``` reverse-next (rn) 反向执行到上一行\n``` reverse-next ``` set var 设置变量的值\n``` set var x = new_value ``` print (p) 打印变量的值\narduinoCopy code print variable_name info locals 显示当前函数的局部变量\ninfo locals info args 显示当前函数的参数\ninfo args set breakpoint condition 设置断点的触发条件\nbreak main if condition disable/enable breakpoints 禁用/启用断点\ndisable breakpoint_number enable breakpoint_number ignore breakpoint 设置忽略断点的次数\nignore breakpoint_number count tbreak (tb) 在单次执行后自动移除断点\ntbreak function_name info frame 显示当前栈帧的信息\ninfo frame info registers 显示寄存器的内容\ninfo registers set $register = value 设置寄存器的值\n``` set $rax = 42 ``` x 以不同的格式显示内存内容\n``` x/4xw memory_address ``` info threads 显示所有线程的信息\n``` info threads ``` thread 切换到指定线程的上下文\n``` thread thread_number ``` set pagination off/on 关闭/打开分页显示\n``` set pagination off ``` attach 附加到正在运行的进程\n``` attach process_id ``` detach 从正在调试的进程中分离\n``` detach ``` info functions 显示可用函数的列表\n``` info functions ``` 发生段错误如何调试 段错误（Segmentation fault），通常也被称为 Sigsegv，是一种特定的错误条件，表示一个程序试图访问的内存区域并未被分配给它，或者只读。这通常是由于编程错误引起的，比如在 C/C++ 中，非法指针解引用、数组越界、堆栈溢出等情况可能触发段错误。\n解决段错误的关键步骤如下：\n1. 定位错误\n你可以使用各种工具来帮助定位引发段错误的代码行，如 GDB、Valgrind 等。\n对于 GDB，你可以这样使用：\ngdb your-program run 当段错误发生时，使用 backtrace 或 bt 命令查看调用堆栈。\n2. 检查可能的原因\n非法指针解引用：你是否有指针没有初始化就使用，或者指针已经释放后又使用？ 数组越界：你是否访问了数组的边界之外？ 堆栈溢出：你是否在栈上申请了大量的内存？ 3. 修复问题\n找到问题后，修复相应的代码。例如，对于空指针解引用，你需要检查指针是否为空，然后再进行操作。如果是数组越界，确定你的索引或计数器在正确范围内。\n4. 测试\n修复后，重新编译并运行你的程序，确认问题是否已经解决。\n以上步骤并不保证能解决所有的段错误，但是至少能帮你找到出错的地方，并且提供一些可能的解决方案。碰到棘手的问题时，不要忘记寻求同事或者网络社区的帮助。\ngdb如何调试多线程程序 要使用 GDB 调试这个多线程程序，需要以下步骤:\n先编译你的程序并包含调试信息。你可以用 -g 参数来做到这一点： g++ -g -std=c++11 multithread.cpp -o multithread -pthread 然后，启动 GDB 并加载你的程序： gdb ./multithread 在 main 函数或者 worker 函数开始处设置断点。比如我们在 worker 函数设置断点，执行如下命令： (gdb) break worker 开始运行你的程序： (gdb) run 当程序停在断点时，你可以查看所有的线程： (gdb) info threads 这会列出所有的线程及其状态。每个线程都有一个唯一的 ID，你可以用这个 ID 来切换不同的线程，例如，切换到线程 2： (gdb) thread 2 你可以使用 next, step, continue 等命令在选定的线程中进行单步调试，或查看堆栈信息： bt ",
+  "wordCount" : "1545",
   "inLanguage": "en",
   "datePublished": "2023-08-11T21:48:16+08:00",
   "dateModified": "2023-08-11T21:48:16+08:00",
@@ -232,13 +232,13 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>803字
+        <span>1545字
             &nbsp;&nbsp;
         </span>
     </span>
     <span id="post_meta_style_4">
         <span class="fa fa-clock-o"></span>
-        <span>2分钟
+        <span>4分钟
             &nbsp;&nbsp;
         </span>
     </span>
@@ -381,7 +381,11 @@ var _hmt = _hmt || [];
                 <li>
                     <a href="#detach" aria-label="detach"><strong>detach</strong></a></li>
                 <li>
-                    <a href="#info-functions" aria-label="info functions"><strong>info functions</strong></a>
+                    <a href="#info-functions" aria-label="info functions"><strong>info functions</strong></a></li>
+                <li>
+                    <a href="#%e5%8f%91%e7%94%9f%e6%ae%b5%e9%94%99%e8%af%af%e5%a6%82%e4%bd%95%e8%b0%83%e8%af%95" aria-label="发生段错误如何调试">发生段错误如何调试</a></li>
+                <li>
+                    <a href="#gdb%e5%a6%82%e4%bd%95%e8%b0%83%e8%af%95%e5%a4%9a%e7%ba%bf%e7%a8%8b%e7%a8%8b%e5%ba%8f" aria-label="gdb如何调试多线程程序">gdb如何调试多线程程序</a>
                 </li>
             </ul>
         </div>
@@ -618,7 +622,57 @@ detach
 info functions
 ```
 </code></pre>
-
+<h1 id="发生段错误如何调试">发生段错误如何调试<a hidden class="anchor" aria-hidden="true" href="#发生段错误如何调试">#</a></h1>
+<p>段错误（Segmentation fault），通常也被称为 Sigsegv，是一种特定的错误条件，表示一个程序试图访问的内存区域并未被分配给它，或者只读。这通常是由于编程错误引起的，比如在 C/C++ 中，非法指针解引用、数组越界、堆栈溢出等情况可能触发段错误。</p>
+<p>解决段错误的关键步骤如下：</p>
+<p><strong>1. 定位错误</strong></p>
+<p>你可以使用各种工具来帮助定位引发段错误的代码行，如 GDB、Valgrind 等。</p>
+<p>对于 GDB，你可以这样使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gdb your-program
+</span></span><span style="display:flex;"><span>run
+</span></span></code></pre></div><p>当段错误发生时，使用 <code>backtrace</code> 或 <code>bt</code> 命令查看调用堆栈。</p>
+<p><strong>2. 检查可能的原因</strong></p>
+<ul>
+<li>非法指针解引用：你是否有指针没有初始化就使用，或者指针已经释放后又使用？</li>
+<li>数组越界：你是否访问了数组的边界之外？</li>
+<li>堆栈溢出：你是否在栈上申请了大量的内存？</li>
+</ul>
+<p><strong>3. 修复问题</strong></p>
+<p>找到问题后，修复相应的代码。例如，对于空指针解引用，你需要检查指针是否为空，然后再进行操作。如果是数组越界，确定你的索引或计数器在正确范围内。</p>
+<p><strong>4. 测试</strong></p>
+<p>修复后，重新编译并运行你的程序，确认问题是否已经解决。</p>
+<p>以上步骤并不保证能解决所有的段错误，但是至少能帮你找到出错的地方，并且提供一些可能的解决方案。碰到棘手的问题时，不要忘记寻求同事或者网络社区的帮助。</p>
+<h1 id="gdb如何调试多线程程序">gdb如何调试多线程程序<a hidden class="anchor" aria-hidden="true" href="#gdb如何调试多线程程序">#</a></h1>
+<p>要使用 GDB 调试这个多线程程序，需要以下步骤:</p>
+<ol>
+<li>先编译你的程序并包含调试信息。你可以用 <code>-g</code> 参数来做到这一点：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>g++ -g -std=c++11 multithread.cpp -o multithread -pthread
+</span></span></code></pre></div><ol>
+<li>然后，启动 GDB 并加载你的程序：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>gdb ./multithread
+</span></span></code></pre></div><ol>
+<li>在 <code>main</code> 函数或者 <code>worker</code> 函数开始处设置断点。比如我们在 <code>worker</code> 函数设置断点，执行如下命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(gdb) break worker
+</span></span></code></pre></div><ol>
+<li>开始运行你的程序：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(gdb) run
+</span></span></code></pre></div><ol>
+<li>当程序停在断点时，你可以查看所有的线程：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(gdb) info threads
+</span></span></code></pre></div><ol>
+<li>这会列出所有的线程及其状态。每个线程都有一个唯一的 ID，你可以用这个 ID 来切换不同的线程，例如，切换到线程 2：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(gdb) thread 2
+</span></span></code></pre></div><ol>
+<li>你可以使用 <code>next</code>, <code>step</code>, <code>continue</code> 等命令在选定的线程中进行单步调试，或查看堆栈信息：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>bt
+</span></span></code></pre></div>
 
         </div>
 
