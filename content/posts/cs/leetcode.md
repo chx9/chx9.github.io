@@ -2728,8 +2728,8 @@ public:
 };
 ```
 
-## 49 [字母异分位词](https://leetcode.cn/problems/group-anagrams/)
-
+## 49 字母异分位词
+https://leetcode.cn/problems/group-anagrams/
 利用 dict
 
 ```cpp
