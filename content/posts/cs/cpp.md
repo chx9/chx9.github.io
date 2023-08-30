@@ -1766,3 +1766,5 @@ vec.emplace_back("hello");在以上例子中，`vec.push_back(std::string("hello
 `mmap` 还能配合 Linux 中的 `sendfile` 系统调用实现零拷贝文件传输，大大提高了网络 I/O 的效率。`sendfile` 可以直接从 `mmap` 创建的内存页发送数据到网络，避免了数据在用户空间和内核空间之间的拷贝，降低了 CPU 的负载。
 
 总的来说，在 Web 服务器中使用 `mmap` 能够提高文件操作效率，简化编程，利于共享，并且能配合其他技术（如 `sendfile`）进一步优化性能。
+
+# 域

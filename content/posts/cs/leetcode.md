@@ -1502,6 +1502,7 @@ public:
 ```
 
 ## 312.戳气球
+
 https://leetcode.cn/problems/burst-balloons/
 动态规划要求子问题必须独立，所以我们将其 nums 扩容 2（两个边界-1 和 n）并设置成 1，气球的索引变成了 1-n,并且我们将戳气球的操作变成添加气球操作
 
@@ -1546,7 +1547,6 @@ d[k][j]
 ```
 
 (其中 i<k<j)，所以要注意顺序，
-
 
 ```cpp
 class Solution {
@@ -1812,6 +1812,7 @@ public:
 ```
 
 ## 438 找到字符串中所有字母异位词
+
 https://leetcode.cn/problems/find-all-anagrams-in-a-string/
 
 滑动窗口,注意滑动窗口 valid 的条件，当 windows[add]==need[add]是 valid 才增加或者减少，valid 的数值和 need 的 key 值相同时进行左边界改变
@@ -1910,6 +1911,7 @@ public:
 ```
 
 ## 461 汉明距离
+
 https://leetcode.cn/problems/hamming-distance/
 
 异或
@@ -1934,7 +1936,6 @@ public:
 # 494 目标和
 
 [https://leetcode.cn/problems/target-sum](https://leetcode.cn/problems/target-sum)
-
 
 算出 neg 的和然后转化为背包问题
 
@@ -1974,6 +1975,8 @@ public:
 ```
 
 # 538. 把二叉搜索树转换为累加树
+
+https://leetcode.cn/problems/convert-bst-to-greater-tree/
 
 深度搜索，不过是先右节点，中间节点，左节点，用全局的 cur 变量记录
 
@@ -2077,8 +2080,6 @@ public:
     }
 };
 ```
-
-##
 
 ## 617 合并二叉树
 
@@ -2637,6 +2638,8 @@ public:
 
 ## !31 下一个排列
 
+https://leetcode.cn/problems/next-permutation/
+
 ```cpp
 class Solution {
 public:
@@ -2729,7 +2732,9 @@ public:
 ```
 
 ## 49 字母异分位词
+
 https://leetcode.cn/problems/group-anagrams/
+
 利用 dict
 
 ```cpp
@@ -2754,6 +2759,8 @@ public:
 ```
 
 ## 53 最大子数组和
+
+https://leetcode.cn/problems/maximum-subarray/
 
 动态规划
 
@@ -2798,7 +2805,9 @@ public:
 };
 ```
 
-## 33 \***\*[搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/)\*\***
+## 33 搜索旋转排序数组
+
+https://leetcode.cn/problems/search-in-rotated-sorted-array
 
 二分搜索，分类讨论，target 是在两块区间的那个部分（和 nums[0]作比较），然后再讨论 num[mid]在哪个区间
 
@@ -2873,7 +2882,7 @@ public:
 };
 ```
 
-## 34 \***\*[在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)\*\***
+## 34 [在排序数组中查找元素的第一个和最后一个位置]
 
 [https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
@@ -2934,6 +2943,7 @@ public:
 ## ！39 组合总和
 
 [https://leetcode.cn/problems/combination-sum/submissions/](https://leetcode.cn/problems/combination-sum/submissions/)
+
 经典题目，回溯剪枝，当前节点 选择还是不选择？ 选择的话：
 
 ```cpp
@@ -2978,6 +2988,8 @@ public:
 ```
 
 ## 42 接雨水
+
+https://leetcode.cn/problems/trapping-rain-water/
 
 维护一个 left_max 和 right_max
 
@@ -3125,6 +3137,8 @@ public:
 
 ## 不同路径
 
+https://leetcode.cn/problems/unique-paths/
+
 动态规划
 
 ```cpp
@@ -3208,7 +3222,7 @@ public:
 
 ## 72 编辑距离
 
-动态规划
+https://leetcode.cn/problems/edit-distance/
 
 ```cpp
 class Solution {
@@ -3278,6 +3292,8 @@ public:
 
 ## 78 子集
 
+https://leetcode.cn/problems/subsets
+
 回溯， 两条路，选或者不选
 
 ```cpp
@@ -3303,9 +3319,9 @@ public:
 };
 ```
 
-## 柱状图中的最大矩形
+## 84. 柱状图中的最大矩形
 
-[https://leetcode.cn/problems/maximal-rectangle/](https://leetcode.cn/problems/maximal-rectangle/)
+https://leetcode.cn/problems/largest-rectangle-in-histogram
 
 单调栈
 
@@ -3349,9 +3365,9 @@ public:
 
 ## 85 最大矩形
 
-单调栈
+https://leetcode.cn/problems/maximal-rectangle
 
-！ 注意 matrix 是字符的情况，转换成 int 的 matrix 的时候一定要注意先决条件 matrix[i][j] == '0'
+！ 注意 matrix 是字符的情况，转换成 int 的 matrix 的时候一定要注意先决条件 matrix[i][j] == '0', 还有要注意行和列
 
 ```cpp
 class Solution {
@@ -3409,33 +3425,40 @@ public:
 
 ## 94 二叉树的中序遍历
 
+https://leetcode.cn/problems/binary-tree-inorder-traversal/
+
 掌握非递归方法
 
 ```cpp
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-        stack<TreeNode* > stk;
-        vector<int> res;
+        vector<int> ans;
+        stack<TreeNode*> stk;
         auto cur = root;
-        while(cur || !stk.empty())
-        {
+        while(cur || !stk.empty()){
             while(cur){
                 stk.push(cur);
                 cur = cur->left;
             }
             auto top = stk.top();
             stk.pop();
-            res.push_back(top->val);
-            if(top->right)
-            cur = top->right;
+            ans.push_back(top->val);
+            if(top->right){
+                cur = top->right;
+            }
+           
         }
-        return res;
+    
+        return ans;
     }
 };
+
+
 ```
 
 ## 不同的二叉搜索树
+一共i个点，左边j的范围[0, i-1],右边[i-1-j]
 
 [https://leetcode.cn/problems/unique-binary-search-trees](https://leetcode.cn/problems/unique-binary-search-trees)
 
@@ -3659,6 +3682,8 @@ public:
 
 ## 128 最长连续序列
 
+https://leetcode.cn/problems/longest-consecutive-sequence/
+
 用 map 或者 set（有序的）， 并且用 iterator
 
 ```cpp
@@ -3690,6 +3715,8 @@ public:
 ```
 
 ## 136 只出现一次的数字
+
+https://leetcode.cn/problems/single-number/
 
 利用亦或
 
@@ -3745,6 +3772,8 @@ public:
 
 # 剑指 Offer 12. 矩阵中的路径
 
+https://leetcode.cn/problems/ju-zhen-zhong-de-lu-jing-lcof/
+
 用 visit 数组
 
 ```c++
@@ -3790,6 +3819,8 @@ public:
 
 # 剑指 Offer 14- I. 剪绳子
 
+https://leetcode.cn/problems/jian-sheng-zi-lcof/
+
 动态规划，切出来的部分分为两种情况：
 一种继续切割，另一种一整块，不切割
 
@@ -3815,6 +3846,9 @@ public:
 
 # 剑指 Offer 16. 数值的整数次方
 
+https://leetcode.cn/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/
+
+
 递归的方式（其实是二分）
 
 ```c++
@@ -3835,6 +3869,8 @@ public:
 ```
 
 # 剑指 Offer 26. 树的子结构
+
+https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/
 
 递归
 
@@ -3858,6 +3894,8 @@ public:
 
 # 剑指 Offer 31. 栈的压入、弹出序列
 
+https://leetcode.cn/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
+
 ```c++
 class Solution {
 public:
@@ -3878,26 +3916,24 @@ public:
 
 # 剑指 Offer 33. 二叉搜索树的后序遍历序列
 
+https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/
+
 遍历，`veriy(vector<int>& postorder, int begin, int end)`， i 从 begin 到 root 是小于， begin+1，到 end 是小于，最后判断 i 是否等于 end。
 
 ```c++
 class Solution {
 public:
-    bool veriy(vector<int>& postorder, int begin, int end){
-        if(begin >= end) return true;
-        int root_val = postorder[end];
-        int i = begin;
-        while(i<end && postorder[i]<root_val){
-            i++;
-        }
-        int left = i-1;
-        while(i<end && postorder[i]>root_val){
-            i++;
-        }
-        return i==end && veriy(postorder, begin, left) && veriy(postorder, left+1, end-1);
+    bool verify(vector<int>& postorder, int l, int r){
+        if(l>=r) return true;
+        int root_val = postorder[r];
+        int i = l;
+        while(i<r && postorder[i]<root_val) i++;
+        int tp = i;
+        while(i<r && postorder[i]>root_val) i++;
+        return i == r && verify(postorder, l, tp-1) && verify(postorder, tp, r-1);
     }
     bool verifyPostorder(vector<int>& postorder) {
-        return veriy(postorder, 0, postorder.size()-1);
+        return verify(postorder, 0, postorder.size()-1);
     }
 };
 ```
@@ -3906,43 +3942,39 @@ public:
 
 dfs
 
+https://leetcode.cn/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof
+
 ```c++
 class Solution {
 private:
-    vector<vector<int>> res;
+    vector<vector<int>> ans;
 public:
-    void dfs(TreeNode* root, vector<int>& tp, int target){
-        if(root==nullptr) return;
-        if(target == root->val && root->left==nullptr && root->right==nullptr){
-            tp.push_back(root->val);
-            res.push_back(tp);
-            tp.pop_back();
-            return;
+    void dfs(TreeNode* root, int target, int cur, vector<int>& cur_vec){
+        if(!root) return;
+        cur_vec.push_back(root->val);
+        if(root->left==nullptr && root->right == nullptr && cur+root->val == target){
+            ans.push_back(cur_vec);
+        }else{
+            if(root->left)
+            dfs(root->left, target, cur+root->val, cur_vec);
+            if(root->right)
+            dfs(root->right, target, cur+root->val, cur_vec);
         }
-        if(root->left){
-            tp.push_back(root->val);
-            dfs(root->left, tp, target - root->val);
-            tp.pop_back();
-        }
-
-        if(root->right){
-            tp.push_back(root->val);
-            dfs(root->right, tp, target - root->val);
-            tp.pop_back();
-        }
-
+        cur_vec.pop_back();
     }
     vector<vector<int>> pathSum(TreeNode* root, int target) {
-        vector<int> tp;
-        dfs(root, tp, target);
-        return res;
+        vector<int> cur_vec;
+        dfs(root, target, 0, cur_vec);
+        return ans;
     }
 };
 ```
 
 # 剑指 Offer 35. 复杂链表的复制
 
-用一个 unordered_map 存储对应的节点，然后利用后序遍历，当遍历完成之后，map 也做好了
+https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/
+
+用一个 unordered_map 存储对应的节点，然后利用先序遍历，当遍历完成之后，map 也做好了
 
 ```c++
 class Solution {
@@ -3962,93 +3994,79 @@ public:
 
 # 剑指 Offer 36. 二叉搜索树与双向链表
 
+https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/
+
 head 和 prev
 
 ```c++
 class Solution {
-private:
+private:   
     Node* prev = nullptr;
     Node* head = nullptr;
 public:
-    void inorder(Node* root){
-        if(!root) return;
-        inorder(root->left);
-        if(!head){
+    void dfs(Node* root){
+        if(!root){
+            return ;
+        }
+        dfs(root->left);
+        if(head==nullptr){
             head = root;
         }
         auto right = root->right;
         if(prev){
             prev->right = root;
-            root->left = prev;
         }
+        root->left = prev;
         prev = root;
-        inorder(right);
+        dfs(right);
     }
     Node* treeToDoublyList(Node* root) {
-        if(!root) return root;
-        inorder(root);
-        prev->right = head;
+        if(!root) return nullptr;
+        dfs(root);
         head->left = prev;
+        prev->right = head;
         return head;
     }
 };
 ```
 
 # 剑指 Offer 38. 字符串的排列
+在 dfs 的时候去重
 
-1、对字符串进行排序
-2、`if(i!=0 && s[i]==s[i-1] && visit[i-1]==true) continue;` 在 dfs 的时候去重
+https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/
 
-````c++
-class Solution {
-private:
-    Node* prev = nullptr;
-    Node* head = nullptr;
-public:
-    void inorder(Node* root){
-        if(!root) return;
-        inorder(root->left);
-        if(!head){
-            head = root;
-        }
-        auto right = root->right;
-        if(prev){
-            prev->right = root;
-            root->left = prev;
-        }
-        prev = root;
-        inorder(right);
-    }
-    Node* treeToDoublyList(Node* root) {
-        if(!root) return root;
-        inorder(root);
-        prev->right = head;
-        head->left = prev;
-        return head;
-    }
-};
-# 剑指 Offer 46. 把数字翻译成字符串
+`if(i!=0 && s[i]==s[i-1] && visit[i-1]==true)` continue; 
+
 ```c++
 class Solution {
+private:
+    vector<string> ans;
+    vector<bool> visit;
 public:
-    int translateNum(int num) {
-        string str = to_string(num);
-        vector<int> dp(str.size()+1);
-        dp[1] = 1;
-        dp[0] = 1;
-        for(int i=2;i<=str.size();i++){
-            int x = (str[i-2] - '0') * 10 + (str[i-1] - '0');
-            if(x>=10 && x<=25){
-                dp[i] = dp[i-2]+dp[i-1];
-            }else{
-                dp[i] = dp[i-1];
+    void dfs(const string& s, string& cur){
+        if(cur.size() == s.size()){
+            ans.push_back(cur);
+            return;
+        }
+        for(int i=0;i<s.size();i++){
+            if(i!=0 && s[i] == s[i-1] && visit[i-1]) continue;
+            if(visit[i] == false){
+                visit[i] = true;
+                cur.push_back(s[i]);
+                dfs(s, cur);
+                cur.pop_back();
+                visit[i] = false;
             }
         }
-        return dp[str.size()];
+    }
+    vector<string> permutation(string s) {
+        sort(s.begin(), s.end());
+        visit = vector<bool>(s.size(), false);
+        string cur = "";
+        dfs(s, cur);
+        return ans;
     }
 };
-````
-
 # 剑指 Offer 46. 把数字翻译成字符串
 
 动态规划
@@ -4088,6 +4106,8 @@ public:
 
 # 剑指 Offer 47. 礼物的最大价值
 
+https://leetcode.cn/problems/li-wu-de-zui-da-jie-zhi-lcof/
+
 动态规划
 
 ```c++
@@ -4118,6 +4138,8 @@ public:
 ```
 
 # 剑指 Offer 49. 丑数
+
+https://leetcode.cn/problems/chou-shu-lcof/
 
 类似于合并三个有序链表
 
@@ -4153,6 +4175,8 @@ public:
 
 # 剑指 Offer 56 - I. 数组中数字出现的次数
 
+https://leetcode.cn/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof
+
 首先将所有数字进行异或操作，得到 x， x 中找到那个为 1 的位，根据异或为 1 的那个位将数字分为两组
 
 ```c++
@@ -4182,6 +4206,8 @@ public:
 ```
 
 # 剑指 Offer 56 - II. 数组中数字出现的次数 II
+
+https://leetcode.cn/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-ii-lcof/
 
 题目大概意思是有一个数只出现过 1 次，其他数都出现过 3 次。
 解法是每个位上的 1 进行统计，然后对三取余，如果是 1 的话说明只出现过一次的数这个位上有 1
@@ -4236,6 +4262,8 @@ public:
 
 # 剑指 Offer 66. 构建乘积数组
 
+https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof
+
 构建从左边和从右边的累计数组
 
 ```c++
@@ -4261,6 +4289,8 @@ public:
 ```
 
 # 面试题 13. 机器人的运动范围
+
+https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/
 
 ```c++
 class Solution {
