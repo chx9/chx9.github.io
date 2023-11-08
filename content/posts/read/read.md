@@ -27,7 +27,30 @@ cover:
     alt: ""
     relative: false
 ---
+# 《game of thrones》
+# Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》
+# 《just for fun》
+# jang jin-sung《Dear Leader》
+# George Orwell《1984》
+# George Orwell《animal farm》
 
+# 余华《兄弟》
+# 余华《十个词汇里的中国》
+# 余华《活着》
+# 余华《许三观卖血记》
+# 莫言《丰乳肥臀》
+# 莫言《生死疲劳》
+# 莫言《红高粱家族》
+# 莫言《檀香刑》
 
-
-
+# 《王小波全集》
+# 金庸《鹿鼎记》
+# 天下霸唱《鬼吹灯》
+# 毕飞宇《推拿》
+# 当年明月《明朝那些事》
+# 苏通《妻妾成群》
+# 王沪宁《美国反对美国》
+# Ezra Feivel Vogel《邓小平时代》
+# 王朔《动物凶猛》
+# 《极简欧洲史》
+# Robert Lawrence Kuhn《他改变了中国》
