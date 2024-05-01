@@ -46,12 +46,12 @@ languages:
         buttons:
           # - name: 🧱 建站
           #   url: posts/blog
-          - name: 👨🏻‍💻 programming
+          - name: 👨🏻‍💻  面经
             url: posts/cs
-          - name: 📕 reading
+          - name: 📕 阅读
             url: posts/read
-          - name: 🏖 toolchain
-            url: posts/toolchain
+          # - name: 🏖 工具链
+          #   url: posts/toolchain
     menu:
       main:
         - identifier: search

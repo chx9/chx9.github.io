@@ -1,5 +1,5 @@
 ---
-title: "Gcc"
+title: "gcc"
 date: 2023-08-15T21:04:34+08:00
 lastmod: 2023-08-15T21:04:34+08:00
 author: ["chx9"]

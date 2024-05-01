@@ -1,5 +1,5 @@
 ---
-title: "我的书单"
+title: "golang"
 date: 2022-05-05T00:18:06+08:00
 lastmod: 2022-05-05T00:18:06+08:00
 author: ["chx9"]
@@ -8,7 +8,7 @@ keywords:
 categories: 
 - 
 tags: 
-- 阅读
+- golang
 description: ""
 weight:
 slug: ""
