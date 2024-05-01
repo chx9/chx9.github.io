@@ -8,7 +8,7 @@ keywords:
 categories: # 没有分类界面可以不填写
 - 
 tags: # 标签
-- 6.840
+- "6.840"
 description: ""
 weight:
 slug: ""

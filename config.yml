@@ -1,5 +1,5 @@
-# baseURL: "https://chx9.github.io/"
-baseURL: "https://chx9.one/"
+baseURL: "https://chx9.github.io/"
+# baseURL: "https://chx9.one/"
 languageCode: zh-cn # en-us
 title: chx9
 theme: hugo-PaperMod  # 主题名字，和themes文件夹下的一致
