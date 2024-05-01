@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>💻 Programming on chx9</title>
+    <title>💻 面经 on chx9</title>
     <link>https://chx9.github.io/posts/cs/</link>
-    <description>Recent content in 💻 Programming on chx9</description>
+    <description>Recent content in 💻 面经 on chx9</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Jul 2023 11:43:25 +0800</lastBuildDate><atom:link href="https://chx9.github.io/posts/cs/index.xml" rel="self" type="application/rss+xml" />
@@ -23,15 +23,6 @@
       
       <guid>https://chx9.github.io/posts/cs/cpp/</guid>
       <description>apple 多态介绍 定义：首先，可以解释一下什么是多态。多态（Polymorphism）是面向对象编程的一个重要特性，它允许我们使用父类的指针或引用来操作子类对象。这样，同一个函数或者操作符可以对不同类型的对象产生不同的行为。 两种形式：C++中的多态主要有两种形式：静态多态（或编译时多态）</description>
-    </item>
-    
-    <item>
-      <title>webserver</title>
-      <link>https://chx9.github.io/posts/cs/webserver/</link>
-      <pubDate>Sat, 29 Jul 2023 11:06:43 +0800</pubDate>
-      
-      <guid>https://chx9.github.io/posts/cs/webserver/</guid>
-      <description>1、采用 IO 复用技术 Epoll 和线程池实现多线程的 Reactor 高并发模型 IO 复用 IO 多路复用是现代操作系统中常用的一种网络编程技术。它允许一个进程同时监听多个文件描述符，从而可以同时处理多个网络连接，而无需为每个连接使用一个单独的线程。 常用的 IO 多路复用的三种方式是 select、poll 和 epoll。它们</description>
     </item>
     
     <item>

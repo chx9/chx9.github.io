@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>golang | chx9</title>
+<meta name="keywords" content="">
+<meta name="description" content="《game of thrones》 Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》 《just for fun》 jang jin-sung《Dear Leader》 George Orwell《1984》 George Orwell《animal farm》 余华《兄弟》 余华《十个词汇里的中国》 余华《活着》 余华《许三观卖血">
+<meta name="author" content="chx9">
+<link rel="canonical" href="https://chx9.github.io/posts/golang/golang/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://chx9.github.io/img/svin.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="https://chx9.github.io/img/svin.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="https://chx9.github.io/img/svin.webp">
+<link rel="apple-touch-icon" href="https://chx9.github.io/img/svin.webp">
+<link rel="mask-icon" href="https://chx9.github.io/img/svin.webp">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://chx9.github.io/posts/golang/golang/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+
+<meta property="og:title" content="golang" />
+<meta property="og:description" content="《game of thrones》 Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》 《just for fun》 jang jin-sung《Dear Leader》 George Orwell《1984》 George Orwell《animal farm》 余华《兄弟》 余华《十个词汇里的中国》 余华《活着》 余华《许三观卖血" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chx9.github.io/posts/golang/golang/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-05T00:18:06+08:00" />
+<meta property="article:modified_time" content="2022-05-05T00:18:06+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="golang"/>
+<meta name="twitter:description" content="《game of thrones》 Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》 《just for fun》 jang jin-sung《Dear Leader》 George Orwell《1984》 George Orwell《animal farm》 余华《兄弟》 余华《十个词汇里的中国》 余华《活着》 余华《许三观卖血"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "文章",
+          "item": "https://chx9.github.io/posts/"
+        },
+
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "📕 golang",
+          "item": "https://chx9.github.io/posts/golang/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "golang",
+      "item": "https://chx9.github.io/posts/golang/golang/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "golang",
+  "name": "golang",
+  "description": "《game of thrones》 Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》 《just for fun》 jang jin-sung《Dear Leader》 George Orwell《1984》 George Orwell《animal farm》 余华《兄弟》 余华《十个词汇里的中国》 余华《活着》 余华《许三观卖血",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "《game of thrones》 Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》 《just for fun》 jang jin-sung《Dear Leader》 George Orwell《1984》 George Orwell《animal farm》 余华《兄弟》 余华《十个词汇里的中国》 余华《活着》 余华《许三观卖血记》 莫言《丰乳肥臀》 莫言《生死疲劳》 莫言《红高粱家族》 莫言《檀香刑》 《王小波全集》 金庸《鹿鼎记》 天下霸唱《鬼吹灯》 南派三叔《盗墓笔记》 毕飞宇《推拿》 当年明月《明朝那些事》 苏通《妻妾成群》 王沪宁《美国反对美国》 Ezra Feivel Vogel《邓小平时代》 王朔《动物凶猛》 《极简欧洲史》 Robert Lawrence Kuhn《他改变了中国》 ",
+  "wordCount" : "287",
+  "inLanguage": "en",
+  "datePublished": "2022-05-05T00:18:06+08:00",
+  "dateModified": "2022-05-05T00:18:06+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "chx9"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://chx9.github.io/posts/golang/golang/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "chx9",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chx9.github.io/img/svin.webp"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://chx9.github.io/" accesskey="h" title="chx9 (Alt + H)">chx9</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://chx9.github.io/search" title="🔍 search (Alt &#43; /)" accesskey=/>
+                <span>🔍 search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://chx9.github.io/" title="🏠 home">
+                <span>🏠 home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://chx9.github.io/posts" title="📚 articles">
+                <span>📚 articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://chx9.github.io/tags" title="🧩 tags">
+                <span>🧩 tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://chx9.github.io/about" title="🙋🏻‍♂️ about">
+                <span>🙋🏻‍♂️ about</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://chx9.github.io/">🏠 主页</a>&nbsp;»&nbsp;<a href="https://chx9.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://chx9.github.io/posts/golang/">📕 golang</a></div>
+            <h1 class="post-title">
+                golang
+            </h1>
+            <div class="post-meta">
+
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>2022-05-05
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>287字
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>1分钟
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>chx9
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+                <a href="https://chx9.github.io/tags/golang/" style="color: var(--secondary)!important;">Golang</a>
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo//twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "https://chx9.github.io/"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
+</div>
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#game-of-thrones" aria-label="《game of thrones》">《game of thrones》</a></li>
+                <li>
+                    <a href="#jared-diamondguns-germs-and-steel-the-fates-of-human-societies" aria-label="Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》">Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》</a></li>
+                <li>
+                    <a href="#just-for-fun" aria-label="《just for fun》">《just for fun》</a></li>
+                <li>
+                    <a href="#jang-jin-sungdear-leader" aria-label="jang jin-sung《Dear Leader》">jang jin-sung《Dear Leader》</a></li>
+                <li>
+                    <a href="#george-orwell1984" aria-label="George Orwell《1984》">George Orwell《1984》</a></li>
+                <li>
+                    <a href="#george-orwellanimal-farm" aria-label="George Orwell《animal farm》">George Orwell《animal farm》</a></li>
+                <li>
+                    <a href="#%e4%bd%99%e5%8d%8e%e5%85%84%e5%bc%9f" aria-label="余华《兄弟》">余华《兄弟》</a></li>
+                <li>
+                    <a href="#%e4%bd%99%e5%8d%8e%e5%8d%81%e4%b8%aa%e8%af%8d%e6%b1%87%e9%87%8c%e7%9a%84%e4%b8%ad%e5%9b%bd" aria-label="余华《十个词汇里的中国》">余华《十个词汇里的中国》</a></li>
+                <li>
+                    <a href="#%e4%bd%99%e5%8d%8e%e6%b4%bb%e7%9d%80" aria-label="余华《活着》">余华《活着》</a></li>
+                <li>
+                    <a href="#%e4%bd%99%e5%8d%8e%e8%ae%b8%e4%b8%89%e8%a7%82%e5%8d%96%e8%a1%80%e8%ae%b0" aria-label="余华《许三观卖血记》">余华《许三观卖血记》</a></li>
+                <li>
+                    <a href="#%e8%8e%ab%e8%a8%80%e4%b8%b0%e4%b9%b3%e8%82%a5%e8%87%80" aria-label="莫言《丰乳肥臀》">莫言《丰乳肥臀》</a></li>
+                <li>
+                    <a href="#%e8%8e%ab%e8%a8%80%e7%94%9f%e6%ad%bb%e7%96%b2%e5%8a%b3" aria-label="莫言《生死疲劳》">莫言《生死疲劳》</a></li>
+                <li>
+                    <a href="#%e8%8e%ab%e8%a8%80%e7%ba%a2%e9%ab%98%e7%b2%b1%e5%ae%b6%e6%97%8f" aria-label="莫言《红高粱家族》">莫言《红高粱家族》</a></li>
+                <li>
+                    <a href="#%e8%8e%ab%e8%a8%80%e6%aa%80%e9%a6%99%e5%88%91" aria-label="莫言《檀香刑》">莫言《檀香刑》</a></li>
+                <li>
+                    <a href="#%e7%8e%8b%e5%b0%8f%e6%b3%a2%e5%85%a8%e9%9b%86" aria-label="《王小波全集》">《王小波全集》</a></li>
+                <li>
+                    <a href="#%e9%87%91%e5%ba%b8%e9%b9%bf%e9%bc%8e%e8%ae%b0" aria-label="金庸《鹿鼎记》">金庸《鹿鼎记》</a></li>
+                <li>
+                    <a href="#%e5%a4%a9%e4%b8%8b%e9%9c%b8%e5%94%b1%e9%ac%bc%e5%90%b9%e7%81%af" aria-label="天下霸唱《鬼吹灯》">天下霸唱《鬼吹灯》</a></li>
+                <li>
+                    <a href="#%e5%8d%97%e6%b4%be%e4%b8%89%e5%8f%94%e7%9b%97%e5%a2%93%e7%ac%94%e8%ae%b0" aria-label="南派三叔《盗墓笔记》">南派三叔《盗墓笔记》</a></li>
+                <li>
+                    <a href="#%e6%af%95%e9%a3%9e%e5%ae%87%e6%8e%a8%e6%8b%bf" aria-label="毕飞宇《推拿》">毕飞宇《推拿》</a></li>
+                <li>
+                    <a href="#%e5%bd%93%e5%b9%b4%e6%98%8e%e6%9c%88%e6%98%8e%e6%9c%9d%e9%82%a3%e4%ba%9b%e4%ba%8b" aria-label="当年明月《明朝那些事》">当年明月《明朝那些事》</a></li>
+                <li>
+                    <a href="#%e8%8b%8f%e9%80%9a%e5%a6%bb%e5%a6%be%e6%88%90%e7%be%a4" aria-label="苏通《妻妾成群》">苏通《妻妾成群》</a></li>
+                <li>
+                    <a href="#%e7%8e%8b%e6%b2%aa%e5%ae%81%e7%be%8e%e5%9b%bd%e5%8f%8d%e5%af%b9%e7%be%8e%e5%9b%bd" aria-label="王沪宁《美国反对美国》">王沪宁《美国反对美国》</a></li>
+                <li>
+                    <a href="#ezra-feivel-vogel%e9%82%93%e5%b0%8f%e5%b9%b3%e6%97%b6%e4%bb%a3" aria-label="Ezra Feivel Vogel《邓小平时代》">Ezra Feivel Vogel《邓小平时代》</a></li>
+                <li>
+                    <a href="#%e7%8e%8b%e6%9c%94%e5%8a%a8%e7%89%a9%e5%87%b6%e7%8c%9b" aria-label="王朔《动物凶猛》">王朔《动物凶猛》</a></li>
+                <li>
+                    <a href="#%e6%9e%81%e7%ae%80%e6%ac%a7%e6%b4%b2%e5%8f%b2" aria-label="《极简欧洲史》">《极简欧洲史》</a></li>
+                <li>
+                    <a href="#robert-lawrence-kuhn%e4%bb%96%e6%94%b9%e5%8f%98%e4%ba%86%e4%b8%ad%e5%9b%bd" aria-label="Robert Lawrence Kuhn《他改变了中国》">Robert Lawrence Kuhn《他改变了中国》</a>
+                </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h1 id="game-of-thrones">《game of thrones》<a hidden class="anchor" aria-hidden="true" href="#game-of-thrones">#</a></h1>
+<h1 id="jared-diamondguns-germs-and-steel-the-fates-of-human-societies">Jared Diamond《Guns, Germs, and Steel: The Fates of Human Societies》<a hidden class="anchor" aria-hidden="true" href="#jared-diamondguns-germs-and-steel-the-fates-of-human-societies">#</a></h1>
+<h1 id="just-for-fun">《just for fun》<a hidden class="anchor" aria-hidden="true" href="#just-for-fun">#</a></h1>
+<h1 id="jang-jin-sungdear-leader">jang jin-sung《Dear Leader》<a hidden class="anchor" aria-hidden="true" href="#jang-jin-sungdear-leader">#</a></h1>
+<h1 id="george-orwell1984">George Orwell《1984》<a hidden class="anchor" aria-hidden="true" href="#george-orwell1984">#</a></h1>
+<h1 id="george-orwellanimal-farm">George Orwell《animal farm》<a hidden class="anchor" aria-hidden="true" href="#george-orwellanimal-farm">#</a></h1>
+<h1 id="余华兄弟">余华《兄弟》<a hidden class="anchor" aria-hidden="true" href="#余华兄弟">#</a></h1>
+<h1 id="余华十个词汇里的中国">余华《十个词汇里的中国》<a hidden class="anchor" aria-hidden="true" href="#余华十个词汇里的中国">#</a></h1>
+<h1 id="余华活着">余华《活着》<a hidden class="anchor" aria-hidden="true" href="#余华活着">#</a></h1>
+<h1 id="余华许三观卖血记">余华《许三观卖血记》<a hidden class="anchor" aria-hidden="true" href="#余华许三观卖血记">#</a></h1>
+<h1 id="莫言丰乳肥臀">莫言《丰乳肥臀》<a hidden class="anchor" aria-hidden="true" href="#莫言丰乳肥臀">#</a></h1>
+<h1 id="莫言生死疲劳">莫言《生死疲劳》<a hidden class="anchor" aria-hidden="true" href="#莫言生死疲劳">#</a></h1>
+<h1 id="莫言红高粱家族">莫言《红高粱家族》<a hidden class="anchor" aria-hidden="true" href="#莫言红高粱家族">#</a></h1>
+<h1 id="莫言檀香刑">莫言《檀香刑》<a hidden class="anchor" aria-hidden="true" href="#莫言檀香刑">#</a></h1>
+<h1 id="王小波全集">《王小波全集》<a hidden class="anchor" aria-hidden="true" href="#王小波全集">#</a></h1>
+<h1 id="金庸鹿鼎记">金庸《鹿鼎记》<a hidden class="anchor" aria-hidden="true" href="#金庸鹿鼎记">#</a></h1>
+<h1 id="天下霸唱鬼吹灯">天下霸唱《鬼吹灯》<a hidden class="anchor" aria-hidden="true" href="#天下霸唱鬼吹灯">#</a></h1>
+<h1 id="南派三叔盗墓笔记">南派三叔《盗墓笔记》<a hidden class="anchor" aria-hidden="true" href="#南派三叔盗墓笔记">#</a></h1>
+<h1 id="毕飞宇推拿">毕飞宇《推拿》<a hidden class="anchor" aria-hidden="true" href="#毕飞宇推拿">#</a></h1>
+<h1 id="当年明月明朝那些事">当年明月《明朝那些事》<a hidden class="anchor" aria-hidden="true" href="#当年明月明朝那些事">#</a></h1>
+<h1 id="苏通妻妾成群">苏通《妻妾成群》<a hidden class="anchor" aria-hidden="true" href="#苏通妻妾成群">#</a></h1>
+<h1 id="王沪宁美国反对美国">王沪宁《美国反对美国》<a hidden class="anchor" aria-hidden="true" href="#王沪宁美国反对美国">#</a></h1>
+<h1 id="ezra-feivel-vogel邓小平时代">Ezra Feivel Vogel《邓小平时代》<a hidden class="anchor" aria-hidden="true" href="#ezra-feivel-vogel邓小平时代">#</a></h1>
+<h1 id="王朔动物凶猛">王朔《动物凶猛》<a hidden class="anchor" aria-hidden="true" href="#王朔动物凶猛">#</a></h1>
+<h1 id="极简欧洲史">《极简欧洲史》<a hidden class="anchor" aria-hidden="true" href="#极简欧洲史">#</a></h1>
+<h1 id="robert-lawrence-kuhn他改变了中国">Robert Lawrence Kuhn《他改变了中国》<a hidden class="anchor" aria-hidden="true" href="#robert-lawrence-kuhn他改变了中国">#</a></h1>
+
+
+        </div>
+
+        <footer class="post-footer">
+            
+<nav class="paginav">
+  <a class="prev" href="https://chx9.github.io/posts/cs/network/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>network</span>
+  </a>
+  <a class="next" href="https://chx9.github.io/posts/read/read/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>我的书单</span>
+  </a>
+</nav>
+
+        </footer>
+    </div>
+
+<style>
+    .comments_details summary::marker {
+        font-size: 20px;
+        content: '👉展开评论';
+        color: var(--content);
+    }
+    .comments_details[open] summary::marker{
+        font-size: 20px;
+        content: '👇关闭评论';
+        color: var(--content);
+    }
+</style>
+
+
+<div>
+    <details class="comments_details">
+        <summary style="cursor: pointer; margin: 50px 0 20px 0;width: 130px;">
+            <span style="font-size: 20px;color: var(--content);">...</span>
+        </summary>
+        <div id="tcomment"></div>
+    </details>
+    <script src="https://cdn.staticfile.org/twikoo//twikoo.all.min.js">
+    </script>
+    <script>
+        twikoo.init({
+            envId:  null ,
+        el: "#tcomment",
+            lang: 'zh-CN',
+            region:  null ,
+        path: window.TWIKOO_MAGIC_PATH||window.location.pathname,
+        })
+    </script>
+</div>
+</article>
+</main>
+
+<footer class="footer">
+    <span>
+        Copyright
+        &copy;
+        -2024
+        <a href="https://chx9.github.io/" style="color:#939393;">chx9</a>
+        All Rights Reserved
+    </span>
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;"></a>&nbsp;
+    <span>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=null"
+           style="display:inline-block;text-decoration:none;height:20px;color:#939393;">
+            <img src="" style="float:left;margin: 0px 5px 0px 0px;"/>
+            
+        </a>
+    </span>
+    <span id="busuanzi_container">
+        <span class="fa fa-user"></span> <span id="busuanzi_value_site_uv"></span>
+        <span class="fa fa-eye"></span> <span id="busuanzi_value_site_pv"></span>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() 
+                let textData = window.getSelection().toString() 
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '📄复制';
+
+        function copyingDone() {
+            copybutton.innerText = '👌🏻已复制!';
+            setTimeout(() => {
+                copybutton.innerText = '📄复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent 
+                
+                
+                
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        
+        
+        
+        
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+</body>
+
+</html>
