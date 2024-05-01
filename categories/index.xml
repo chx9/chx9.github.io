@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on chx9</title>
-    <link>https://chx9.one/categories/</link>
+    <link>https://chx9.github.io/categories/</link>
     <description>Recent content in Categories on chx9</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://chx9.one/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://chx9.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
