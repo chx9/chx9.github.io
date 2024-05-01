@@ -9,17 +9,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="start命令 在GDB中，start 命令用于启动程序并停在程序的入口点处，等待你进行调试。它相当于设置一个断点在程序的 main 函数上并运行程序。这使你可以在程序开始执行之前检查变量、设置断点以及做其他调试操作。 以下是 start 命令的用法，其中 [args] 是传递给程序的命令行参数（ start [args] gdb启动的时候指定">
 <meta name="author" content="chx9">
-<link rel="canonical" href="https://chx9.github.io/posts/toolchain/gdb/">
+<link rel="canonical" href="https://chx9.one/posts/toolchain/gdb/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://chx9.github.io/img/svin.webp">
-<link rel="icon" type="image/png" sizes="16x16" href="https://chx9.github.io/img/svin.webp">
-<link rel="icon" type="image/png" sizes="32x32" href="https://chx9.github.io/img/svin.webp">
-<link rel="apple-touch-icon" href="https://chx9.github.io/img/svin.webp">
-<link rel="mask-icon" href="https://chx9.github.io/img/svin.webp">
+<link rel="icon" href="https://chx9.one/img/svin.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="https://chx9.one/img/svin.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="https://chx9.one/img/svin.webp">
+<link rel="apple-touch-icon" href="https://chx9.one/img/svin.webp">
+<link rel="mask-icon" href="https://chx9.one/img/svin.webp">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://chx9.github.io/posts/toolchain/gdb/">
+<link rel="alternate" hreflang="en" href="https://chx9.one/posts/toolchain/gdb/">
 <noscript>
     <style>
         #theme-toggle,
@@ -52,7 +52,7 @@ var _hmt = _hmt || [];
 <meta property="og:title" content="gdb" />
 <meta property="og:description" content="start命令 在GDB中，start 命令用于启动程序并停在程序的入口点处，等待你进行调试。它相当于设置一个断点在程序的 main 函数上并运行程序。这使你可以在程序开始执行之前检查变量、设置断点以及做其他调试操作。 以下是 start 命令的用法，其中 [args] 是传递给程序的命令行参数（ start [args] gdb启动的时候指定" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chx9.github.io/posts/toolchain/gdb/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://chx9.one/posts/toolchain/gdb/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-11T21:48:16+08:00" />
 <meta property="article:modified_time" content="2023-08-11T21:48:16+08:00" />
 
@@ -71,20 +71,20 @@ var _hmt = _hmt || [];
           "@type": "ListItem",
           "position":  1 ,
           "name": "文章",
-          "item": "https://chx9.github.io/posts/"
+          "item": "https://chx9.one/posts/"
         },
 
         {
           "@type": "ListItem",
           "position":  2 ,
           "name": "🛠️ 工具链",
-          "item": "https://chx9.github.io/posts/toolchain/"
+          "item": "https://chx9.one/posts/toolchain/"
         }, 
     {
       "@type": "ListItem",
       "position":  3 ,
       "name": "gdb",
-      "item": "https://chx9.github.io/posts/toolchain/gdb/"
+      "item": "https://chx9.one/posts/toolchain/gdb/"
     }
   ]
 }
@@ -110,14 +110,14 @@ var _hmt = _hmt || [];
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://chx9.github.io/posts/toolchain/gdb/"
+    "@id": "https://chx9.one/posts/toolchain/gdb/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "chx9",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://chx9.github.io/img/svin.webp"
+      "url": "https://chx9.one/img/svin.webp"
     }
   }
 }
@@ -135,7 +135,7 @@ var _hmt = _hmt || [];
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://chx9.github.io/" accesskey="h" title="chx9 (Alt + H)">chx9</a>
+            <a href="https://chx9.one/" accesskey="h" title="chx9 (Alt + H)">chx9</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -163,27 +163,27 @@ var _hmt = _hmt || [];
         </div>
         <ul id="menu">
             <li>
-                <a href="https://chx9.github.io/search" title="🔍 search (Alt &#43; /)" accesskey=/>
+                <a href="https://chx9.one/search" title="🔍 search (Alt &#43; /)" accesskey=/>
                 <span>🔍 search</span>
                 </a>
             </li>
             <li>
-                <a href="https://chx9.github.io/" title="🏠 home">
+                <a href="https://chx9.one/" title="🏠 home">
                 <span>🏠 home</span>
                 </a>
             </li>
             <li>
-                <a href="https://chx9.github.io/posts" title="📚 articles">
+                <a href="https://chx9.one/posts" title="📚 articles">
                 <span>📚 articles</span>
                 </a>
             </li>
             <li>
-                <a href="https://chx9.github.io/tags" title="🧩 tags">
+                <a href="https://chx9.one/tags" title="🧩 tags">
                 <span>🧩 tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://chx9.github.io/about" title="🙋🏻‍♂️ about">
+                <a href="https://chx9.one/about" title="🙋🏻‍♂️ about">
                 <span>🙋🏻‍♂️ about</span>
                 </a>
             </li>
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
 <article class="post-single">
     <div id="single-content">
         <header class="post-header">
-            <div class="breadcrumbs"><a href="https://chx9.github.io/">🏠 主页</a>&nbsp;»&nbsp;<a href="https://chx9.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://chx9.github.io/posts/toolchain/">🛠️ 工具链</a></div>
+            <div class="breadcrumbs"><a href="https://chx9.one/">🏠 主页</a>&nbsp;»&nbsp;<a href="https://chx9.one/posts/">文章</a>&nbsp;»&nbsp;<a href="https://chx9.one/posts/toolchain/">🛠️ 工具链</a></div>
             <h1 class="post-title">
                 gdb
             </h1>
@@ -278,7 +278,7 @@ var _hmt = _hmt || [];
                             <script>
                                 let url = document.documentURI
                                 
-                                let dnsUrl = "https://chx9.github.io/"
+                                let dnsUrl = "https://chx9.one/"
                                 let urlSplit = url.split(dnsUrl)
                                 let finalUrl = urlSplit[1]
                                 if (finalUrl[0] !== '/') {
@@ -685,12 +685,12 @@ info functions
         <footer class="post-footer">
             
 <nav class="paginav">
-  <a class="prev" href="https://chx9.github.io/posts/toolchain/gcc/">
+  <a class="prev" href="https://chx9.one/posts/toolchain/gcc/">
     <span class="title">« 上一页</span>
     <br>
     <span>gcc</span>
   </a>
-  <a class="next" href="https://chx9.github.io/posts/toolchain/cmake/">
+  <a class="next" href="https://chx9.one/posts/toolchain/cmake/">
     <span class="title">下一页 »</span>
     <br>
     <span>CMake</span>
@@ -741,7 +741,7 @@ info functions
         Copyright
         &copy;
         -2024
-        <a href="https://chx9.github.io/" style="color:#939393;">chx9</a>
+        <a href="https://chx9.one/" style="color:#939393;">chx9</a>
         All Rights Reserved
     </span>
     <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;"></a>&nbsp;
